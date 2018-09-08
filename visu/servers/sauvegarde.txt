@@ -1,0 +1,308 @@
+phpDoc:
+  name: servers.yaml
+  title: servers.yaml - Racine utilisée par visu de la liste de serveurs WMTS/WMS
+  doc: |
+    Contient:
+    - classification: un classement hiérarchique, chaque entrée définie par:
+        etiquette:
+          titre: titre de l'entrée à afficher
+          url?: URL optionnel d'une page d'info
+          children?: éventuellement une liste de sous-entrées
+    - servers: une liste de serveurs, chacun défini par:
+        etiquette:
+          titre: titre du serveur à afficher
+          class: une des étiquettes du classement hiérarchique
+          url: URL du serveur sans paramètres SERVICE ni REQUEST finissant sur ? ou &
+          protocol?: WMTS|WMS
+    Lorsque le protocole d'un serveur n'est pas défini, l'URL correspond à un fichier de définition d'une sous-liste (sous-fichier).
+    Un tel fichier a la même structure que le fichier principal ; la classification définie est insérée sous la classe 
+    définie par l'entrée. L'entrée est remplacée par les serveurs du sous-fichier.
+  journal: |
+    9/11/2016
+      ajout du serveur utility
+    8/11/2016
+      ajout de Copernicus et NASA
+    3/11/2016
+      création de sous-fichiers
+    2/11/2016
+      ajouts
+    30/10/2016
+      première version
+# 
+# classement hiérarchique des serveurs:
+# etiquette:
+#   title: titre du thème
+#   url?: page d'infos
+#   children?: sous-arborescence éventuelle
+classification:
+  FR:
+    title: nationales (FR)
+    children:
+      IGNSHOM:
+        title: IGN & SHOM
+      MinEnv:
+        title: Min. Env.
+#  -> servers-minculture.yaml
+# détaillé dans serv-sandre.yaml
+      Sandre:
+        title: SIEau (SANDRE)
+      MNHN-INPN:
+        title: MNHN-INPN
+      BRGM:
+        url: http://infoterre.brgm.fr/geoservices-ogc
+        title: BRGM
+# détaillé dans serv-ifremer.yaml
+      Ifremer:
+        url: http://sextant.ifremer.fr/fr/nos-services
+        title: Ifremer - Sextant
+      Meteo:
+        url: https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14
+        title: Météo-France
+      SNCF:
+        title: SNCF
+  Regions:
+    title: régionales
+    children:
+  Europe:
+    title: européennes
+  Etranger:
+    title: étrangères
+    children:
+      Espagne:
+        title: Espagne
+      USA:
+        title: USA
+        children:
+          USA-NOAA:
+            url: http://maps.ngdc.noaa.gov/index.html
+            title: NOAA (USA)
+          USA-NASA:
+            url: https://wiki.earthdata.nasa.gov/display/GIBS/GIBS+API+for+Developers#GIBSAPIforDevelopers-OGCWebMapTileService(WMTS)
+            title: NASA (USA)
+  Mondial:
+    title: mondiales
+            
+# Structure:
+# etiquette:
+#   title: titre du serveur
+#   class: une des étiquettes du classement hiérarchique
+#   url: URL du serveur sans paramètres SERVICE ni REQUEST finissant sur ? ou &
+#   protocol: WMTS|WMS
+#
+servers:
+  IGNFGP-WMTS-WM:
+    title: Géoportail IGN WM
+    class: IGNSHOM
+    url: http://gpp3-wxs.ign.fr/49qcg7rckqrk3og45nm5i4s3/wmts?
+    protocol: WMTS
+  IGNFGP-WMS-R:
+    title: Géoportail IGN WMS raster 
+    class: IGNSHOM
+    url: http://gpp3-wxs.ign.fr/49qcg7rckqrk3og45nm5i4s3/geoportail/r/wms?
+    protocol: WMS
+  IGNFGP-WMS-V:
+    title: Géoportail IGN WMS vecteur
+    class: IGNSHOM
+    url: http://gpp3-wxs.ign.fr/49qcg7rckqrk3og45nm5i4s3/geoportail/v/wms?
+    protocol: WMS
+  IGNFGP-WMS-Inspire-R:
+    title: Géoportail IGN WMS Inspire raster 
+    class: IGNSHOM
+    url: http://gpp3-wxs.ign.fr/0czlrp8frromgao3lyk9eyje/inspire/r/wms?
+    protocol: WMS
+  IGNFGP-WMS-Inspire-V:
+    title: Géoportail IGN WMS Inspire vecteur
+    class: IGNSHOM
+    url: http://gpp3-wxs.ign.fr/0czlrp8frromgao3lyk9eyje/inspire/v/wms?
+    protocol: WMS
+  SHOM-WMTS-WM:
+    title: SHOM WM
+    class: IGNSHOM
+    url: http://services.data.shom.fr/INSPIRE/wmts?
+    protocol: WMTS
+  SHOM-WMS-R:
+    title: SHOM WMS raster
+    class: IGNSHOM
+    url: http://services.data.shom.fr/INSPIRE/wms/r?
+    protocol: WMS
+  proxy-cadastre:
+    title: Cadastre
+    class: IGNSHOM
+    url: http://localhost/cadastrewm/wms.php?
+    protocol: WMS
+  SHOM-WMS-V:
+    title: SHOM WMS vecteur
+    class: IGNSHOM
+    url: http://services.data.shom.fr/INSPIRE/wms/v?
+    protocol: WMS
+  utility:
+    title: Pseudo serveur utilitaires
+    class: IGNSHOM
+    protocol: Utility
+    
+# MinEnv
+  CLC-WMTS:
+    title: Corine Land Cover (SOES) - pas WM
+    class: MinEnv
+    url: http://clc.developpement-durable.gouv.fr/geoserver/gwc/service/wmts?
+    protocol: WMTS
+  CLC-WMS:
+    title: Corine Land Cover (SOES)
+    class: MinEnv
+    url: http://clc.developpement-durable.gouv.fr/geoserver/wms?
+    protocol: WMS
+  MinEnv-georisques:
+    title: Géorisques - Risques naturels et industriels
+    class: MinEnv
+    url: http://georisques.gouv.fr/services?
+    protocol: WMS
+  geolittoral-WMS:
+    title: GéoLittoral
+    class: MinEnv
+    url: http://geolittoral.application.developpement-durable.gouv.fr/wms2/metropole?
+    protocol: WMS
+  gpu:
+    title: Géoportail de l'urbanisme
+    class: MinEnv
+    url: http://visu.gexplor.fr/gen/gpu.php?action=genServer
+  canalisationsTMD:
+    title: Canalisations de transport de matières dangereuses
+    class: MinEnv
+    url: http://mapserveur.application.developpement-durable.gouv.fr/map/mapserv?map=/opt/data/carto/cartelie/prod/CEREMA/CanalisationsTMD.www.map&
+    protocol: WMS
+    phpDoc:
+      title: Carte des Canalisations de transport de matières dangereuses
+      doc: |
+        URL de la carte:
+          http://cartelie.application.developpement-durable.gouv.fr/cartelie/voir.do?carte=CanalisationsTMD&service=CEREMA
+        Exemple d'URL d'un serveur WMS Cartélie: http://mapserveur.application.developpement-durable.gouv.fr/map/mapserv?map=/opt/data/carto/cartelie/prod/SETRA/functionalroadclass.www.map?
+
+# Min. Culture -> servers-minculture.yaml
+
+# Services du Sandre - Générés par gensandre.php
+# Sandre renvoie aux services définis dans serv-sandre.yaml
+# Ce noeud sera remplacé par la liste des serveurs définis dans le fichier
+  Sandre:
+    title: Services du Sandre
+    class: Sandre
+    url: serv-sandre.yaml
+    
+  AAMP:
+    title: AAMP
+    class: MNHN-INPN
+    url: http://cartographie.aires-marines.fr/wms?
+    protocol: WMS
+    
+# MNHN-INPN
+  MNHN-INPN-metropole:
+    title: INPN - métropole
+    class: MNHN-INPN
+    url: http://ws.carmencarto.fr/WMS/119/fxx_inpn?version=1.3.0&
+    protocol: WMS
+  MNHN-INPN-glp:
+    title: INPN - Guadeloupe
+    class: MNHN-INPN
+    url: http://ws.carmencarto.fr/WMS/119/glp_inpn?version=1.3.0&
+    protocol: WMS
+  MNHN-INPN-mtq:
+    title: INPN - Martinique
+    class: MNHN-INPN
+    url: http://ws.carmencarto.fr/WMS/119/mtq_inpn?version=1.3.0&
+    protocol: WMS
+  MNHN-INPN-guf:
+    title: INPN - Guyane
+    class: MNHN-INPN
+    url: http://ws.carmencarto.fr/WMS/119/guf_inpn?version=1.3.0&
+    protocol: WMS
+  MNHN-INPN-reu:
+    title: INPN - Réunion
+    class: MNHN-INPN
+    url: http://ws.carmencarto.fr/WMS/119/reu_inpn?version=1.3.0&
+    protocol: WMS
+  MNHN-INPN-myt:
+    title: INPN - Mayotte
+    class: MNHN-INPN
+    url: http://ws.carmencarto.fr/WMS/119/myt_inpn?version=1.3.0&
+    protocol: WMS
+
+# BRGM
+  BRGM-geologie:
+    title: Géologie
+    class: BRGM
+    url: http://geoservices.brgm.fr/geologie?
+    protocol: WMS
+  BRGM-risques:
+    title: Risques naturels et industriels
+    class: BRGM
+    url: http://geoservices.brgm.fr/risques?
+    protocol: WMS
+  BRGM-odmgm:
+    title: Observatoire des matériaux – Granulats marins
+    class: BRGM
+    url: http://geoservices.brgm.fr/odmgm?
+    protocol: WMS
+    
+# Ifremer - Sextant
+  Ifremer:
+    title: Services Ifremer - Sextant
+    class: Ifremer
+    url: serv-ifremer.yaml
+    
+  SNCF:
+    title: SNCF (ex RFF)
+    class: SNCF
+    url: http://46.137.101.74/ArcGIS/services/RFFInspireService/MapServer/WMSServer?
+    protocol: WMS
+    
+# Météo-France
+# Token fourni le 4/11/2016
+  MeteoFr-MF-NWP-GLOBAL-ARPEGE-05-GLOBE-WMS:
+    title: MF-NWP-GLOBAL-ARPEGE-05-GLOBE-WMS
+    class: Meteo
+    url: https://geoservices.meteofrance.fr/inspire/services/MF-NWP-GLOBAL-ARPEGE-05-GLOBE-WMS?token=__S_hdJcN4qjsK_bD4CvAqdjELtNY_qG0A__&
+    protocol: WMS
+
+# Régions
+  regions:
+    title: Régions
+    class: Regions
+    url: serv-regions.yaml
+    
+# Europe
+  europe:
+    title: Europe
+    class: Europe
+    url: serv-europe.yaml
+
+# Etranger
+# Espagne IGN
+  IGN-Espagne-base:
+    title: Mapa base de España del Instituto Geográfico Nacional
+    class: Espagne
+    url: http://www.ign.es/wms-inspire/ign-base?
+    protocol: WMS
+  IGN-Espagne-mapa-raster:
+    title: Cartografía raster (IGN-ES)
+    class: Espagne
+    url: http://www.ign.es/wms-inspire/mapa-raster?
+    protocol: WMS
+    
+# USA
+# NOAA
+  USA-NOAA:
+    title: NOAA (USA)
+    class: USA-NOAA
+    url: serv-usa-noaa.yaml
+# NASA
+  USA-NASA:
+    title: NASA (USA)
+    class: USA-NASA
+    url: serv-usa-nasa.yaml
+    
+# Mondial
+  MarineRegions:
+# http://www.marineregions.org/webservices.php
+    title: Régions marines (www.marineregions.org)
+    class: Mondial
+    url: http://geo.vliz.be/geoserver/MarineRegions/wms?
+    protocol: WMS

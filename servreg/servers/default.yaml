@@ -1,0 +1,406 @@
+phpDoc:
+  name: default.yaml
+  title: default.yaml - Fichier des serveurs pour gp.gexplor.fr
+  doc: |
+    Contient:
+    - classification: un plan de classement hiérarchique, chaque entrée définie par:
+        etiquette:
+          title: titre de l'entrée à afficher
+          abstract?: résumé optionnel utilisé pour les bulles d'aide
+          url?: URL optionnel d'une page d'info
+          children?: éventuellement une liste de sous-classes
+    - servers: une liste de serveurs ou sous-fichiers, chaque serveur est défini par:
+        etiquette:
+          title: titre du serveur à afficher
+          class?: une des étiquettes du classement hiérarchique
+          url: URL du serveur sans paramètres SERVICE ni REQUEST finissant sur ? ou &
+          protocol: tile|WMTS|WMS|OSM
+      chaque sous-fichier est défini par:
+        etiquette:
+          title: titre à afficher
+          class?: une des étiquettes du classement hiérarchique
+          subfile: chemin relatif ou URL du sous-fichier de définition
+    Le schema du fichier est défini dans yamlschema.yaml
+  journal: |
+    27/3/2017
+      ajout de georef
+    26/3/2017
+      renommage de tous les fichiers dont celui-ci en default.yaml
+    19/3/2017
+      chgt du nom IGNFGP-WMTS-WM en IGNFGP-WMTS car le serveur propose aussi des couches en Lambert93
+    13/3/2017
+      définition d'un schema, vérification de la conformité des fichiers au schema
+      modification du schema: pour un sous-fichier le chemin vers ce sous-fichier est donné par le champ subfile
+    6/3/2017
+      nombreux ajouts
+    5/3/2017
+      décomposition en fichiers plus élémentaires
+    4/3/2017
+      ajout d'OSM
+    26/2/2017
+      diverses modifications
+    19/2/2017
+      ajout de GEBCO
+    13/2/2017
+      recopie d'une grande partie des serveurs définis pour visu
+yamlSchema: yamlschema.yaml
+# 
+# classement hiérarchique des serveurs et couches préférées:
+# etiquette:
+#   title: titre du thème
+#   url?: page d'infos
+#   children?: sous-arborescence éventuelle
+classification:
+  FR:
+    title: nationales (FR)
+    abstract: couches diffusées par des acteurs français nationaux
+    children:
+      IGN:
+        title: IGN
+        abstract: couches référentielles diffusées par l'IGN
+      SHOM:
+        title: Shom
+        abstract: couches référentielles diffusées par le Shom
+      Cadastre:
+        title: Cadastre
+        abstract: couches référentielles diffusées par le Cadastre
+      MinEnv:
+        title: Ministère chargé de l'environnement
+        abstract: couches diffusées par le Ministère de l'environnement
+      MinAgri:
+        title: Ministère chargé de l'agriculture
+        abstract: couches diffusées par le Ministère de l'agriculture
+      CEREMA:
+        title: CEREMA
+        abstract: couches diffusées par le Céréma
+      AFB:
+        title: AFB + SIEau (SANDRE)
+        abstract: couches diffusées par l'AFB et/ou le Système d'Information sur l'eau
+      MNHN-INPN:
+        title: MNHN-INPN
+        abstract: couches diffusées par l'INPN (MNHN)
+      BRGM:
+        title: BRGM
+        url: http://infoterre.brgm.fr/geoservices-ogc
+        abstract: couches diffusées par le BRGM, cliquez pour plus d'infos
+      Ifremer:
+        title: Ifremer - Sextant
+        url: http://sextant.ifremer.fr/fr/nos-services
+        abstract: couches diffusées par l'Ifremer, cliquez pour plus d'infos
+      Meteo:
+        title: Météo-France
+        url: https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14
+        abstract: couches diffusées par Météo-France, cliquez pour plus d'infos
+      SNCF:
+        title: SNCF
+           
+  Regions:
+    title: régionales
+    abstract: couches diffusées par des acteurs régionaux
+  
+  Europe:
+    title: européennes
+    abstract: couches diffusées par des acteurs européens
+    children:
+      Copernicus:
+        title: Copernicus
+        url: http://cidportal.jrc.ec.europa.eu/home/data-services/copernicus-core003-view
+  Espagne:
+    title: Espagne
+    abstract: couches diffusées par des acteurs espagnols
+  USA:
+    title: USA
+    abstract: couches diffusées par des acteurs états-uniens
+    children:
+      USA-NOAA:
+        url: http://maps.ngdc.noaa.gov/index.html
+        title: NOAA
+      USA-NASA:
+        url: https://wiki.earthdata.nasa.gov/display/GIBS/GIBS+API+for+Developers#GIBSAPIforDevelopers-OGCWebMapTileService(WMTS)
+        title: NASA
+      USA-USGS:
+        url: https://viewer.nationalmap.gov/services/
+        title: USGS
+  Mondial:
+    title: mondiales
+    abstract: couches diffusées par des acteurs mondiaux
+# Le script main-tree.php affecte à la dernière classe les serveurs affectés à aucune classe
+  Autres:
+    title: Autres
+    abstract: Serveurs n'appartenant à aucune des classes ci-dessus
+#
+# Liste des serveurs
+# Structure:
+# identifiant:
+#   title: titre du serveur
+#   class: une des étiquettes du classement hiérarchique
+#   url: URL du serveur sans paramètres SERVICE ni REQUEST finissant sur ? ou &
+#   protocol: tile|WMTS|WMS
+#
+servers:
+# IGN
+  IGNFGP-tile-WM:
+    title: GP IGN WM
+    class: IGN
+    url: http://igngp.geoapi.fr/tile.php
+    protocol: tile
+  IGNFGP-WMTS:
+    title: GP IGN
+    class: IGN
+    url: http://wxs.ign.fr/49qcg7rckqrk3og45nm5i4s3/wmts?
+    protocol: WMTS
+  IGNFGP-WMS-R:
+    title: GP IGN WMS raster 
+    class: IGN
+    url: http://wxs.ign.fr/49qcg7rckqrk3og45nm5i4s3/geoportail/r/wms?
+    protocol: WMS
+  IGNFGP-WMS-V:
+    title: GP IGN WMS vecteur
+    class: IGN
+    url: http://wxs.ign.fr/49qcg7rckqrk3og45nm5i4s3/geoportail/v/wms?
+    protocol: WMS
+  IGNFGP-WMS-Inspire-R:
+    title: GP IGN WMS Inspire raster 
+    class: IGN
+    url: http://wxs.ign.fr/0czlrp8frromgao3lyk9eyje/inspire/r/wms?
+    protocol: WMS
+  IGNFGP-WMS-Inspire-V:
+    title: GP IGN WMS Inspire vecteur
+    class: IGN
+    url: http://wxs.ign.fr/0czlrp8frromgao3lyk9eyje/inspire/v/wms?
+    protocol: WMS
+    
+# SHOM
+  SHOM-WMTS-WM:
+    title: SHOM WM
+    class: SHOM
+    url: http://services.data.shom.fr/INSPIRE/wmts?
+    protocol: WMTS
+  SHOM-WMS-R:
+    title: SHOM WMS raster
+    class: SHOM
+    url: http://services.data.shom.fr/INSPIRE/wms/r?
+    protocol: WMS
+  SHOM-WMS-V:
+    title: SHOM WMS vecteur
+    class: SHOM
+    url: http://services.data.shom.fr/INSPIRE/wms/v?
+    protocol: WMS
+  SHOM-GeoTIFF-tile:
+    title: GéoTIFF du Shom
+    class: SHOM
+    url: https://geoapi.fr/shomgt/tile.php
+    protocol: tile
+    
+# Cadastre
+  cadastre-tile:
+    title: Cadastre tuilé
+    class: Cadastre
+    url: http://cadastre.geoapi.fr/tile.php
+    protocol: tile
+  cadastre-wms:
+    title: Cadastre
+    class: Cadastre
+    url: http://cadastre.geoapi.fr/wms.php?
+    protocol: WMS
+    
+# MinEnv
+  CLC-WMS:
+    title: Corine Land Cover (SOES)
+    class: MinEnv
+    url: http://clc.developpement-durable.gouv.fr/geoserver/wms?
+    protocol: WMS
+  MinEnv-georisques:
+    title: Géorisques - Risques naturels et industriels
+    class: MinEnv
+    url: http://georisques.gouv.fr/services?
+    protocol: WMS
+  geolittoral-WMS:
+    title: GéoLittoral
+    class: MinEnv
+    url: http://geolittoral.application.developpement-durable.gouv.fr/wms2/metropole?
+    protocol: WMS
+    
+# GeorefGp n'a pas à être inclus
+#  GeorefGp: {title: "Services de Géoref + GP", class: MinEnv, subfile: "georefgeoportail.yaml" }
+  Georef: {title: "Services de Géoref", class: MinEnv, subfile: "georef.yaml" }
+  gpu: {title: "Géoportail de l'urbanisme", class: MinEnv, subfile: gpu.yaml }
+    
+  Geo-IDE: {title: "Services WMS de Geo-IDE", subfile: "geoide.yaml" }
+  Cartelie: {title: "Services WMS de Cartelie", subfile: "cartelie.yaml" }
+
+# MNHN-INPN
+  MNHN-INPN-metropole:
+    title: INPN - métropole
+    class: MNHN-INPN
+    url: http://ws.carmencarto.fr/WMS/119/fxx_inpn?
+    protocol: WMS
+  MNHN-INPN-glp:
+    title: INPN - Guadeloupe
+    class: MNHN-INPN
+    url: http://ws.carmencarto.fr/WMS/119/glp_inpn?
+    protocol: WMS
+  MNHN-INPN-mtq:
+    title: INPN - Martinique
+    class: MNHN-INPN
+    url: http://ws.carmencarto.fr/WMS/119/mtq_inpn?
+    protocol: WMS
+  MNHN-INPN-guf:
+    title: INPN - Guyane
+    class: MNHN-INPN
+    url: http://ws.carmencarto.fr/WMS/119/guf_inpn?
+    protocol: WMS
+  MNHN-INPN-reu:
+    title: INPN - Réunion
+    class: MNHN-INPN
+    url: http://ws.carmencarto.fr/WMS/119/reu_inpn?
+    protocol: WMS
+  MNHN-INPN-myt:
+    title: INPN - Mayotte
+    class: MNHN-INPN
+    url: http://ws.carmencarto.fr/WMS/119/myt_inpn?
+    protocol: WMS
+
+  AFB: { title: "Services de l'AFB", class: AFB, subfile: afb.yaml }
+ 
+# BRGM
+  BRGM-geologie:
+    title: Géologie
+    class: BRGM
+    url: http://geoservices.brgm.fr/geologie?
+    protocol: WMS
+  BRGM-risques:
+    title: Risques naturels et industriels
+    class: BRGM
+    url: http://geoservices.brgm.fr/risques?
+    protocol: WMS
+  BRGM-odmgm:
+    title: Observatoire des matériaux – Granulats marins
+    class: BRGM
+    url: http://geoservices.brgm.fr/odmgm?
+    protocol: WMS
+  BRGM-rgf_demo_vfr:
+    title: Données du démonstrateur RGF Vosges - Fossé Rhénan
+    class: BRGM
+    url: http://geoservices.brgm.fr/rgf_demo_vfr?
+    protocol: WMS
+
+# Ifremer - Sextant
+  Ifremer: { title: "Serveurs de l'Ifremer", class: Ifremer, subfile: ifremer.yaml }
+    
+  SNCF:
+    title: SNCF (ex RFF)
+    class: SNCF
+    url: http://46.137.101.74/ArcGIS/services/RFFInspireService/MapServer/WMSServer?
+    protocol: WMS
+
+# Météo-France
+# Token fourni le 4/11/2016 - ne fonctionne qu'en EPSG:4326
+  MeteoFr-MF-NWP-GLOBAL-ARPEGE-05-GLOBE-WMS:
+    title: MF-NWP-GLOBAL-ARPEGE-05-GLOBE-WMS
+    class: Meteo
+    url: https://geoservices.meteofrance.fr/inspire/services/MF-NWP-GLOBAL-ARPEGE-05-GLOBE-WMS?token=__S_hdJcN4qjsK_bD4CvAqdjELtNY_qG0A__&
+    protocol: WMS
+
+# Régions
+  Regions: { title: Régions, class: Regions, subfile: regions.yaml }
+       
+# Europe
+# Copernicus
+  core003-wmts:
+    title: core003
+    class: Copernicus
+    url: http://cidportal.jrc.ec.europa.eu/copernicus/services/tile/wmts?
+    protocol: WMTS
+  core003-wms:
+    title: core003
+    class: Copernicus
+    url: http://cidportal.jrc.ec.europa.eu/copernicus/services/ows/wms/public/core003?
+    protocol: WMS
+# http://www.sentinel-hub.com/apps/wms
+
+# Etranger
+# Espagne IGN
+  IGN-Espagne-base:
+    title: Mapa base de España del Instituto Geográfico Nacional
+    class: Espagne
+    url: http://www.ign.es/wms-inspire/ign-base?
+    protocol: WMS
+  IGN-Espagne-mapa-raster:
+    title: Cartografía raster (IGN-ES)
+    class: Espagne
+    url: http://www.ign.es/wms-inspire/mapa-raster?
+    protocol: WMS
+
+# USA
+# USA-NOAA
+  USA-NOAA-gebco08_hillshade:
+    title: Global Relief Model (GEBCO08) - Shaded-Relief Visualization
+    class: USA-NOAA
+    url: http://maps.ngdc.noaa.gov/arcgis/services/gebco08_hillshade/MapServer/WMSServer?
+    protocol: WMS
+  USA-NOAA-etopo1_hillshade:
+    title: Global Relief Model (ETOPO1) - Shaded-Relief Visualization (Web Mercator projection)
+    class: USA-NOAA
+    url: http://maps.ngdc.noaa.gov/arcgis/services/web_mercator/etopo1_hillshade/MapServer/WMSServer?
+    protocol: WMS
+  USA-NOAA-undersea_features:
+    title: Undersea Feature Names (Web Mercator projection)
+    class: USA-NOAA
+    url: http://maps.ngdc.noaa.gov/arcgis/services/web_mercator/undersea_features/MapServer/WMSServer?
+    protocol: WMS
+# USA-NASA
+# https://wiki.earthdata.nasa.gov/display/GIBS/GIBS+API+for+Developers#GIBSAPIforDevelopers-ServiceEndpoints
+  nasa-gibs-best-wmts:
+    title: GIBS - The 'Best Available' imagery products
+    class: USA-NASA
+    url: http://gibs.earthdata.nasa.gov/wmts/epsg3857/best/wmts.cgi?
+    protocol: WMTS
+  nasa-gibs-std-wmts:
+    title: GIBS - Standard imagery products only
+    class: USA-NASA
+    url: http://gibs.earthdata.nasa.gov/wmts/epsg3857/std/wmts.cgi?
+    protocol: WMTS
+  nasa-gibs-nrt-wmts:
+    title: GIBS - Near Real-Time imagery products only
+    class: USA-NASA
+    url: http://gibs.earthdata.nasa.gov/wmts/epsg3857/nrt/wmts.cgi?
+    protocol: WMTS
+  nasa-gibs-all-wmts:
+    title: GIBS - All Best Available, Standard, and Near Real-Time imagery products
+    class: USA-NASA
+    url: http://gibs.earthdata.nasa.gov/wmts/epsg3857/all/wmts.cgi?
+    protocol: WMTS
+  nasa-neo-wms:
+    title: NASA Earth Observations (NEO)
+    class: USA-NASA
+    url: https://neo.sci.gsfc.nasa.gov/wms/wms?
+    protocol: WMS
+    
+# USGS
+  USGS: { title: USGS, class: USA-USGS, subfile: usgs.yaml }
+    
+# Mondial
+  OSM:
+    title: OSM
+    class: Mondial
+    url: http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
+    protocol: OSM
+  MarineRegions:
+# http://www.marineregions.org/webservices.php
+    title: Régions marines (www.marineregions.org)
+    class: Mondial
+    url: http://geo.vliz.be/geoserver/MarineRegions/wms?
+    protocol: WMS
+  www.gebco.net:
+# http://www.gebco.net/data_and_products/gebco_web_services/web_map_service/
+    title: UNESCO-GEBCO (www.gebco.net)
+    class: Mondial
+    url: http://www.gebco.net/data_and_products/gebco_web_services/web_map_service/mapserv?
+    protocol: WMS
+# Serveur utilitaire
+  utilityserver:
+    title: Utilitaires
+    class: Mondial
+    url: http://visu.gexplor.fr/utilityserver.php
+    protocol: tile

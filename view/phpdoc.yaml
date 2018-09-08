@@ -1,0 +1,54 @@
+title: view.gexplor.fr - publication dans Google des couches des serveurs de servreg (ABANDONNE)
+path: /gexplor/view
+doc: |
+  Objectif:
+  ---------
+  L'objectif de ce module est de publier dans Google les couches des serveurs de servreg.
+  Ce module définit tout d'abord l'URI des couches qui aura la forme:
+    http://view.gexplor.fr/{server}/{layer}
+  Les couches définies dans servreg ont actuellement un URI de la forme:
+    http://gexplor.fr/servreg/servreg.php/{server}/{layer}
+  
+  Pour faciliter la compréhension des objets et améliorer l'efficacité des requêtes, l'idée est de présenter pour Google
+  les couches en utilisant le formalisme schema.org + JSON-LD
+  Voir:
+    <a href='https://schema.org/'>https://schema.org/</a>
+    <a href='https://developers.google.com/search/docs/guides/intro-structured-data'>https://developers.google.com/search/docs/guides/intro-structured-data</a>
+  Dans un premier temps, je dissocie ce module de l'API web http://gexplor.fr/servreg/servreg.php
+  On verra dans un second temps s'il est souhaitable de les fusionner.
+  
+  Mise en oeuvre:
+  ---------------
+  Sur la version en production, http://view.gexplor.fr/ renvoie vers http://gexplor.fr/view/index.php/
+  
+  Ce module définit:
+  - un fichier sitemap.xml qui référence les couches à indexer vers les URI http://view.gexplor.fr/{server}/{layer}
+  - un fichier robots.txt
+  - le fichier index.php qui qui contient la définition des pages correspondant aux couches
+  
+  Dans un premier temps, on se limite aux couches de SigLoire (http://gexplor.fr/servreg/servreg.php/sigloire)
+
+  Une couche est décrite comme https://schema.org/CreativeWork
+  
+    encoding: http://schema.org/MediaObject ??
+    http://schema.org/fileFormat
+    https://schema.org/headline
+    https://schema.org/isAccessibleForFree
+    https://schema.org/keywords
+    https://schema.org/spatialCoverage https://schema.org/Place
+      http://dbpedia.org/ ?
+    https://schema.org/temporalCoverage ISO_8601#Time_intervals
+  
+  Un appel de cet URI
+
+  
+journal: |
+  6/4/2017 :
+    Chgt de stratégie: création d'un module /gcat pour publier plus globalement les catalogues
+  1/4/2017 :
+    création
+submodules:
+phpScripts:
+  - /gexplor/view/index.php
+phpIncludes:
+htmlFiles:

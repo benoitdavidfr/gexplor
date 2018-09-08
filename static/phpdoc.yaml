@@ -1,0 +1,11 @@
+title: static - cartes stockées sous la forme d'un fichier HTML
+path: /gexplor/static
+doc: |
+  Répertoire de stockage de cartes définies statiquement comme un fichier Html.
+  L'objectif est fiabiliser des cartes que je puisse diffuser.
+  Correspond au site http://www.gexplor.fr/
+journal: |
+  6/5/2017:
+    première version
+htmlFiles:
+  - /gexplor/static/index.html

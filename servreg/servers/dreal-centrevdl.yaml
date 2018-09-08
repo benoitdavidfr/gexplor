@@ -1,0 +1,53 @@
+phpDoc:
+  name: dreal-centrevdl.yaml
+  title: dreal-centrevdl.yaml - Serveurs de la DREAL Centre-Val de Loire
+  doc: |
+    Pour éviter le pb d'ordre des coordonnées, les serveurs Carmen sont utulisées en version 1.1.1
+  journal: |
+    19/3/2017
+      url des serveurs Carmen en version 1.1.1
+yamlSchema: yamlschema.yaml
+
+classification:
+
+servers:
+  Carmen11-DREAL24:
+    title: Carte Carmen - Données de la DREAL Centre-Val de Loire
+    class: DrealCentreVdL
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/11/DREAL24?
+    protocol: WMS
+  Carmen11-PHEC_CHER_NIEVRE:
+    title: Carte Carmen - Hauteurs de submersion entre Nevers et Neuvy-sur-Loire
+    class: DrealCentreVdL
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/11/PHEC_CHER_NIEVRE?
+    protocol: WMS
+  Carmen11-testFG:
+    title: Carte Carmen - Base de données des repères de crues du bassin Loire-Bretagne
+    class: DrealCentreVdL
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/11/testFG?
+    protocol: WMS
+  Carmen11-eau_bassin1:
+    title: Carte Carmen - Zonage sur l'eau du Bassin Loire Bretagne
+    class: DrealCentreVdL
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/11/eau_bassin1?
+    protocol: WMS
+  Carmen11-reperes_crue:
+    title: Carte Carmen - Les sites de repères de crue
+    class: DrealCentreVdL
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/11/reperes_crue?
+    protocol: WMS
+  Carmen11-rzp_bassin:
+    title: Carte Carmen - Zones définies au titre du registre des zones protégées de la Directive Cadre sur l'Eau (DCE) du bassin Loire-Bretagne
+    class: DrealCentreVdL
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/11/rzp_bassin?
+    protocol: WMS
+  Carmen11-Carte_ZAR:
+    title: Carte Carmen - Zones d'actions renforcées (ZAR)
+    class: DrealCentreVdL
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/11/Carte_ZAR?
+    protocol: WMS
+  Carmen11-eau_bassin_L214_consultation2:
+    title: Carte Carmen - Procédure de classement L 214-17 du code de l'environnement
+    class: DrealCentreVdL
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/11/eau_bassin_L214_consultation2?
+    protocol: WMS

@@ -1,0 +1,20 @@
+title: servreg/gen - Générateurs de serveur
+path: /gexplor/servreg/gen
+doc: |
+ 
+journal: |
+  26/3/2017
+    ajout de servetat.php
+  11/3/2017
+    migration vers servreg
+  6/11/2016
+    première version
+
+htmlFiles:
+  - /gexplor/servreg/gen/gpu.yaml
+  
+phpScripts:
+  - /gexplor/servreg/gen/gpu.php
+  - /gexplor/servreg/gen/geobzh.php
+  - /gexplor/servreg/gen/pigma.php
+  - /gexplor/servreg/gen/servetat.php

@@ -1,0 +1,152 @@
+phpDoc:
+  name: serv-ifremer.yaml
+  title: serv-ifremer.yaml - Liste des serveurs WMS Ifremer
+  doc: |
+    Contient:
+    - classification: un classement hiérarchique, chaque entrée définie par:
+        etiquette:
+          titre: titre de l'entrée à afficher
+          url?: URL optionnel d'une page d'info
+          children?: éventuellement une liste de sous-entrées
+    - servers: une liste de serveurs, chacun défini par:
+        etiquette:
+          titre: titre du serveur à afficher
+          class: une des étiquettes du classement hiérarchique
+          url: URL du serveur sans paramètres SERVICE ni REQUEST finissant sur ? ou &
+          protocol: WMTS|WMS
+  journal: |
+    4/11/2016
+      première version
+# 
+# classement hiérarchique des serveurs:
+# etiquette:
+#   title: titre du thème
+#   url?: page d'infos
+#   children?: sous-arborescence éventuelle
+# sous-classification rattachée à Ifremer
+classification:
+  Ifremer-physique:
+    title: Océanographie physique, Biologie, Geosciences, bathymétrie, Photos anciennes
+  Ifremer-observation:
+    title: Surveillance littorale, Granulats marins, Référentiels du SIH, SISMER
+  Ifremer-om:
+    title: Nouvelle-Calédonie, Océan Indien, Polmar la Réunion
+  Ifremer-recherche:
+    title: OGIVE/AGIL, CHARM, Euroshell, Observatoire PELAGIS
+  Ifremer-institutionnel:
+    title: DCSMM, DCE, MIMEL
+
+# Structure:
+# etiquette:
+#   title: titre du serveur
+#   class: une des étiquettes du classement hiérarchique
+#   url: URL du serveur sans paramètres SERVICE ni REQUEST finissant sur ? ou &
+#   protocol: WMTS|WMS
+#
+servers:
+# Ifremer - Sextant
+  Ifremer-oceanographie_physique:
+    title: Océanographie physique (courantologie, température, houle, chlorophylle...)
+    class: Ifremer-physique
+    url: http://www.ifremer.fr/services/wms/oceanographie_physique?
+    protocol: WMS
+  Ifremer-biologie:
+    title: Biologie (habitats marins, halieuthique, mamifères marins...)
+    class: Ifremer-physique
+    url: http://www.ifremer.fr/services/wms/biologie?
+    protocol: WMS
+  Ifremer-geosciences:
+    title: Geosciences (bathymétrie, sédimentologie, géologie, imagerie acoustique...)
+    class: Ifremer-physique
+    url: http://www.ifremer.fr/services/wms/geosciences?
+    protocol: WMS
+  Ifremer-MNT:
+    title: Modèles numérique de terrain (bathymétrie)
+    class: Ifremer-physique
+    url: http://www.ifremer.fr/ifremerWS/WS/wms/MNT?
+    protocol: WMS
+  Ifremer-photos_anciennes:
+    title: Photos anciennes du littoral
+    class: Ifremer-physique
+    url: http://www.ifremer.fr/services/photos_anciennes?
+    protocol: WMS
+  Ifremer-surveillance_littorale:
+    title: Surveillance littorale (réseaux de surveillance littorale actifs, historiques...)
+    class: Ifremer-observation
+    url: http://www.ifremer.fr/services/wms/surveillance_littorale?
+    protocol: WMS
+  Ifremer-granulats_marins:
+    title: Granulats marins (ressources minérales, halieuthiques, faune benthique, flux sédimentaires...)
+    class: Ifremer-observation
+    url: http://www.ifremer.fr/services/wms/granulats_marins?
+    protocol: WMS
+  Ifremer-sih_referentiels:
+    title: Référentiels du SIH (FAO, secteurs statistiques....)
+    class: Ifremer-observation
+    url: http://www.ifremer.fr/services/wms/sih_referentiels?
+    protocol: WMS
+  Ifremer-sismer:
+    title: SISMER (données de campagne à la mer...)
+    class: Ifremer-observation
+    url: http://www.ifremer.fr/services/wms/sismer?
+    protocol: WMS
+  Ifremer-nouvelle_caledonie:
+    title: Nouvelle-Calédonie (multi-thématiques)
+    class: Ifremer-om
+    url: http://www.ifremer.fr/services/wms/nouvelle_caledonie?
+    protocol: WMS
+  Ifremer-ambio:
+    title: Nouvelle-Calédonie (projet Ambio)
+    class: Ifremer-om
+    url: http://www.ifremer.fr/services/wms/ambio?
+    protocol: WMS
+  Ifremer-ocean_indien:
+    title: Océan Indien (multi-thématiques)
+    class: Ifremer-om
+    url: http://www.ifremer.fr/services/wms/ocean_indien?
+    protocol: WMS
+  Ifremer-polmar_reunion:
+    title: Polmar la Réunion
+    class: Ifremer-om
+    url: http://www.ifremer.fr/services/wms/polmar_reunion?
+    protocol: WMS
+  Ifremer-observatoire_pelagis:
+    title: Observatoire PELAGIS
+    class: Ifremer-recherche
+    url: http://www.ifremer.fr/services/wms/observatoire_pelagis?
+    protocol: WMS
+  Ifremer-ogive_agil:
+    title: OGIVE/AGIL (multi-thématiques)
+    class: Ifremer-recherche
+    url: http://www.ifremer.fr/services/wms/ogive_agil?
+    protocol: WMS
+  Ifremer-charm:
+    title: CHARM 2
+    class: Ifremer-recherche
+    url: http://www.ifremer.fr/services/wms_charm?
+    protocol: WMS
+  Ifremer-charm3:
+    title: CHARM 3
+    class: Ifremer-recherche
+    url: http://www.ifremer.fr/services/wms_charm3?
+    protocol: WMS
+  Ifremer-euroshell:
+    title: Euroshell (conchyliculture, aquaculture...)
+    class: Ifremer-recherche
+    url: http://www.ifremer.fr/services/wms/euroshell?
+    protocol: WMS
+  Ifremer-mimel:
+    title: MIMEL
+    class: Ifremer-institutionnel
+    url: http://www.ifremer.fr/services/wms_mimel?
+    protocol: WMS
+  Ifremer-dcsmm:
+    title: DCSMM (Directive Cadre Stratégique sur le Milieu Marin)
+    class: Ifremer-institutionnel
+    url: http://www.ifremer.fr/services/wms/dcsmm?
+    protocol: WMS
+  Ifremer-dce:
+    title: DCE (Directive Cadre sur l'Eau)
+    class: Ifremer-institutionnel
+    url: http://www.ifremer.fr/services/wms/dce?
+    protocol: WMS

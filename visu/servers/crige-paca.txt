@@ -1,0 +1,8 @@
+http://geoserver.webservice-energy.org/geoserver/paca/wms?
+http://www.webservice-energy.org/viewer/heron/applications/atlas-paca/
+http://geoservices.crige-paca.org/geoserver/pci_2016_05/wms?
+http://geoservices.crige-paca.org/geoserver/pci_2016_13/wms?
+http://geoservices.crige-paca.org/geoserver/pci_2016_04/wms?
+http://geoservices.crige-paca.org/geoserver/pci_2016_06/wms?
+http://geoservices.crige-paca.org/geoserver/crige_ortho/wms?
+http://geoservices.crige-paca.org/geoserver/pci_2016_84/wms?

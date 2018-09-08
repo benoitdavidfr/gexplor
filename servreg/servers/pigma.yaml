@@ -1,0 +1,206 @@
+phpDoc:
+  name: pigma.yaml
+  title: pigma.yaml - Serveurs de Pigma
+  doc: |
+  journal: |
+    5/3/2017
+      création par décomposition de servers.yaml
+yamlSchema: yamlschema.yaml
+classification:
+servers:
+  pigma-ign_r:
+    title: IGN-R
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/ign_r/ows?
+    protocol: WMS
+  pigma-medde:
+    title: MEDDE
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/medde/ows?
+    protocol: WMS
+  pigma-erdf:
+    title: ERDF
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/erdf/ows?
+    protocol: WMS
+  pigma-rte:
+    title: RTE
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/rte/ows?
+    protocol: WMS
+  pigma-dira:
+    title: DIRA
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/dira/ows?
+    protocol: WMS
+  pigma-draaf:
+    title: DRAAF
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/draaf/ows?
+    protocol: WMS
+  pigma-drac:
+    title: DRAC
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/drac/ows?
+    protocol: WMS
+  pigma-drjscs:
+    title: DRJSCS
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/drjscs/ows?
+    protocol: WMS
+  pigma-rect:
+    title: Rectorat
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/rect/ows?
+    protocol: WMS
+  pigma-ars:
+    title: ARS
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/ars/ows?
+    protocol: WMS
+  pigma-craquitaine:
+    title: CR Aquitaine
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/craquitaine/ows?
+    protocol: WMS
+  pigma-crt:
+    title: CR Tourisme
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/crt/ows?
+    protocol: WMS
+  pigma-crpf:
+    title: CRPF
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/crpf/ows?
+    protocol: WMS
+  pigma-pnrlg:
+    title: PNR LG
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/pnrlg/ows?
+    protocol: WMS
+  pigma-giplit:
+    title: GIP Littoral
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/giplit/ows?
+    protocol: WMS
+  pigma-tigf:
+    title: Transport Infrastructures Gaz France
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/tigf/ows?
+    protocol: WMS
+  pigma-aurba:
+    title: Agence d'urbanisme de la métropole bordelaise et de l'Aquitaine
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/aurba/ows?
+    protocol: WMS
+  pigma-audap:
+    title: Agence d'Urbanisme Atlantique et Pyrénées
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/audap/ows?
+    protocol: WMS
+  pigma-agrn:
+    title: Atelier de Géographie Rurale Numérique
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/agrn/ows?
+    protocol: WMS
+  pigma-apem:
+    title: apem
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/apem/ows?
+    protocol: WMS
+  pigma-airaq:
+    title: airaq
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/airaq/ows?
+    protocol: WMS
+  pigma-sdis:
+    title: sdis
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/sdis/ows?
+    protocol: WMS
+  pigma-ddtm33:
+    title: DDTM 33
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/ddtm33/ows?
+    protocol: WMS
+  pigma-ddtm40:
+    title: DDTM 40
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/ddtm40/ows?
+    protocol: WMS
+  pigma-ca24:
+    title: ca24
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/ca24/ows?
+    protocol: WMS
+  pigma-ce24:
+    title: ce24
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/ce24/ows?
+    protocol: WMS
+  pigma-cg33:
+    title: Conseil départemental 33
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/cg33/ows?
+    protocol: WMS
+  pigma-girnum:
+    title: girnum
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/girnum/ows?
+    protocol: WMS
+  pigma-chag33:
+    title: Chambre d'agriculture 33
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/chag33/ows?
+    protocol: WMS
+  pigma-fdc33:
+    title: fdc33
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/fdc33/ows?
+    protocol: WMS
+  pigma-fdp33:
+    title: fdp33
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/fdp33/ows?
+    protocol: WMS
+  pigma-caue33:
+    title: caue33
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/caue33/ows?
+    protocol: WMS
+  pigma-cg40:
+    title: Conseil départemental 40
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/cg40/ows?
+    protocol: WMS
+  pigma-adacl:
+    title: Agence Départementale d'Aide aux Collectivités Locales (ADACL)
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/adacl/ows?
+    protocol: WMS
+  pigma-cg47:
+    title: Conseil départemental 47
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/cg47/ows?
+    protocol: WMS
+  pigma-sdee47:
+    title: sdee47
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/sdee47/ows?
+    protocol: WMS
+  pigma-cg64:
+    title: Conseil départemental 64
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/cg64/ows?
+    protocol: WMS
+  pigma-chag64:
+    title: Chambre d'agriculture 64
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/chag64/ows?
+    protocol: WMS
+  pigma-gpmb:
+    title: Grand Port Maritime de Bordeaux
+    class: Pigma
+    url: https://ids.pigma.org/geoserver/gpmb/ows?
+    protocol: WMS
+ 

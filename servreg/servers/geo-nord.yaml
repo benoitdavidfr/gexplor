@@ -1,0 +1,50 @@
+phpDoc:
+  name: geo-nord.yaml
+  title: geo-nord.yaml - Serveurs de Géo-Nord
+  doc: |
+  journal: |
+    13/3/2017
+      création par décomposition de servers.yaml
+yamlSchema: yamlschema.yaml
+classification:
+servers:
+  geo-nord-Ortho1988:
+    title: Orthophotographies historiques du Département du Nord en 1988
+    class: geo-nord
+    url: https://sig.geo-nord.fr/arcgis/services/Fonds/Ortho1988/MapServer/WMSServer?
+    protocol: WMS
+  geo-nord-Ortho1983:
+    title: Orthophotographies historiques du Département du Nord en 1983
+    class: geo-nord
+    url: https://sig.geo-nord.fr/arcgis/services/Fonds/Ortho1983/MapServer/WMSServer?
+    protocol: WMS
+  geo-nord-Ortho1971:
+    title: Orthophotographies historiques du Département du Nord en 1971
+    class: geo-nord
+    url: https://sig.geo-nord.fr/arcgis/services/Fonds/Ortho1971/MapServer/WMSServer?
+    protocol: WMS
+  geo-nord-Carte1970:
+    title: Scans historiques des années 1970 sur le département du Nord
+    class: geo-nord
+    url: https://sig.geo-nord.fr/arcgis/services/Fonds/Carte1970/MapServer/WMSServer?
+    protocol: WMS
+  geo-nord-Ortho1955:
+    title: Orthophotographies historiques du Département du Nord en 1955
+    class: geo-nord
+    url: https://sig.geo-nord.fr/arcgis/services/Fonds/Ortho1955/MapServer/WMSServer?
+    protocol: WMS
+  geo-nord-Carte1950:
+    title: Scans historiques des années 1950 sur le département du Nord
+    class: geo-nord
+    url: https://sig.geo-nord.fr/arcgis/services/Fonds/Carte1950/MapServer/WMSServer?
+    protocol: WMS
+  geo-nord-Carte1930:
+    title: Scans historiques des années 1930 sur le département du Nord
+    class: geo-nord
+    url: https://sig.geo-nord.fr/arcgis/services/Fonds/Carte1930/MapServer/WMSServer?
+    protocol: WMS
+  geo-nord-Carte1870:
+    title: Scans historiques des années 1870 sur le département du Nord
+    class: geo-nord
+    url: https://sig.geo-nord.fr/arcgis/services/Fonds/Carte1870/MapServer/WMSServer?
+    protocol: WMS

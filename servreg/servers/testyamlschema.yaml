@@ -1,0 +1,54 @@
+phpDoc:
+  name: testyamlschema.yaml
+  title: testyamlschema.yaml - Fichier Yaml pour tester yamlschema
+  doc: |
+  journal: |
+yamlSchema:
+  ROOT:
+    phpDoc:
+      name: TEXT // nom court informatique utilisé comme clé
+      title: TEXT // titre long pour un humain
+      doc: TEXT // documentation textuelle
+      journal: TEXT // documentation complémentaire structurée en fonction du temps
+    classification:
+      KEY: CLASS // le classement hiérarchique est constitué de classes identifiées chacune par un identifiant
+    servers:
+      KEY: CHOICE(SERVER|SUBFILE) // liste des serveurs parmi lesquels des sous-fichiers peuvent être définis
+  CLASS:
+    title: TEXT // titre long de la classe pour un humain
+    url?: TEXT // url permettant de documenter la classe
+    children?:
+      KEY: CLASS // une classe peut avoir des enfants
+  SUBFILE:
+    title: TEXT // titre long désignant le serveur pour un humain
+    class: TEXT // classe sous laquelle tous les serveurs du sous-fichier seront classés, doit être l'ID d'une des classes du classement
+    url: TEXT // URL du sous-fichier
+  SERVER:
+    title: TEXT // titre long désignant le serveur pour un humain
+    class?: TEXT // classement du serveur, doit être l'ID d'une des classes du classement
+    url: TEXT // URL du serveur, pour un serveur OGC sans paramètres SERVICE ni REQUEST finissant sur ? ou &
+    protocol: ENUM('WMS','WMTS','tile','OSM') // indique le protocole du serveur
+    layers?:
+      - LAYER // ajout aux capacités des couches des caractéristiques manquantes
+  LAYER:
+    name: TEXT // nom court de la couche informatique utilisé comme clé
+    title: TEXT // titre long de la couche pour un humain
+    styles?:
+      - legend:
+          url: TEXT // URL de représentation graphique de la légende
+    children?:
+      - LAYER
+classification:
+servers:
+  xxx:
+    title: serveur XXX
+    class: xxx
+    url : url
+    protocol: WMS
+    layers:
+      -
+        name: nom
+        title: titre
+      -
+        name: nom
+        xtitle: titre

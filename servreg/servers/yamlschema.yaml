@@ -1,0 +1,60 @@
+phpDoc:
+  name: yamlschema.yaml
+  title: yamlschema.yaml - Schema Yaml du registre des serveurs
+  doc: |
+    Ce schema définit la structure des fichiers Yaml définissant les serveurs du registre et permet de vérifier leur validité.
+    Le schema suit les principes de la notation BNF (https://fr.wikipedia.org/wiki/Forme_de_Backus-Naur).
+    Il est défini par un dictionnaire de règles correspondant aux autres clés que 'phpDoc',
+    La clé de chaque règle correspond à un symbole non terminal BNF et sa valeur correspond à la définition du symbole en 
+    utilisant les conventions suivantes:
+    - // définit un commentaire à conserver dans le schéma,
+    - TEXT correspond à l'atome Yaml correspondant à du texte,
+    - ENUM('WMS','WMTS','tile','OSM') indique que la chaine doit être une des chaines indiquées,
+    - un dictionnaire Yaml correspond à la définition d'un n-uplet pour le fichier à vérifier sauf si ce dictionnaire 
+      ne contient que la clé KEY ce qui sigifie alors que le fichier doit contenir un dictionnaire,
+      les champs du n-uplet sont définis par les clés du dictionnaire
+    - si un champ d'un n-uplet se termine par ? cela signifie que le champ est optionnel,
+    - une liste Yaml correspond à la définition d'une liste pour le fichier à vérifier,
+    - CHOICE(SERVER|SUBFILE) signifie que le symbole de la clé correspond à une des possibilités,
+    - si la règle est définie par un symbole non terminal ...
+    Le symbole initial est ROOT et doit être le premier symbole.
+  journal: |
+    26/3/2017:
+      ajout de CLASS/abstract, SUBFILE/class devient optionnel
+    11-13/3/2017:
+      première version
+ROOT:
+  phpDoc:
+    name: TEXT // nom court informatique utilisé comme clé
+    title: TEXT // titre long pour un humain
+    doc?: TEXT // documentation textuelle
+    journal?: TEXT // documentation complémentaire structurée en fonction du temps
+  classification:
+    KEY: CLASS // le classement hiérarchique est constitué de classes identifiées chacune par un identifiant
+  servers:
+    KEY: CHOICE(SERVER|SUBFILE) // liste des serveurs parmi lesquels des sous-fichiers peuvent être définis
+CLASS:
+  title: TEXT // titre long de la classe pour un humain
+  abstract?: TEXT // résumé utilisé pour les bulles d'aide
+  url?: TEXT // url permettant de documenter la classe
+  children?:
+    KEY: CLASS // une classe peut avoir des enfants
+SUBFILE:
+  title: TEXT // titre long désignant le serveur pour un humain
+  class?: TEXT // classe sous laquelle tous les serveurs du sous-fichier seront classés, doit être l'ID d'une des classes du classement, si absente le sous-fichier utilise le même classement que celui du fichier principal
+  subfile: TEXT // chemin du sous-fichier, peut être un chemin relatif ou une URL
+SERVER:
+  title: TEXT // titre long désignant le serveur pour un humain
+  class?: TEXT // classement du serveur, doit être l'ID d'une des classes du classement
+  url: TEXT // URL du serveur, pour un serveur OGC sans paramètres SERVICE ni REQUEST finissant sur ? ou &
+  protocol: ENUM('WMS','WMTS','tile','OSM') // indique le protocole du serveur
+  layers?:
+    - LAYER // ajout aux capacités des couches des caractéristiques manquantes
+LAYER:
+  name: TEXT // nom court de la couche informatique utilisé comme clé
+  title: TEXT // titre long de la couche pour un humain
+  styles?:
+    - legend:
+        url: TEXT // URL de représentation graphique de la légende
+  children?:
+    - LAYER

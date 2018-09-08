@@ -1,0 +1,16 @@
+title: gexplor.fr/servreg/csw - utilisation par servreg de catalogues CSW
+path: /gexplor/servreg/csw
+doc: |
+journal: |
+  25-26/3/2017:
+    utilisation d'adminreg
+  14/3/2017:
+    transfert vers servreg
+  5/3/2017:
+    début des réflexions
+phpScripts:
+  - /gexplor/servreg/csw/extract.php
+  - /gexplor/servreg/csw/extract-geoide.php
+  - /gexplor/servreg/csw/extract-cartelie.php
+phpIncludes:
+htmlFiles:

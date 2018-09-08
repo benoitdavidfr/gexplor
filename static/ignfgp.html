@@ -1,0 +1,194 @@
+<!--PhpDoc:
+name: ignfgp.html
+title: ignfgp.html - carte des principales ressources IGNFGP
+doc: |
+  carte statique avec factorisation en variables JS de quelques variables
+journal: |
+  29/5/2017:
+    création
+-->
+<html>
+  <head>
+    <title>carte IGN du GP</title>
+    <meta charset="UTF-8">
+<!-- meta nécessaire pour le mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<!-- styles nécessaires pour le mobile -->
+    <link rel="stylesheet" href="https://visu.gexplor.fr/viewer.css">
+<!-- styles et src de Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0/dist/leaflet.js"></script>
+<!-- Include the edgebuffer plugin -->
+    <script src="https://visu.gexplor.fr/lib/leaflet.edgebuffer.js"></script>
+  </head>
+  <body>
+    <div id="map" style="height: 100%; width: 100%"></div>
+    <script>
+var map = L.map('map').setView([48, 3], 8); // view pour la zone
+L.control.scale({position:'bottomleft', metric:true, imperial:false}).addTo(map);
+var gpkey = '49qcg7rckqrk3og45nm5i4s3';
+var wmtsurl = 'https://wxs.ign.fr/'+gpkey+'/geoportail/wmts?'
+            + 'service=WMTS&version=1.0.0&request=GetTile&tilematrixSet=PM&height=256&width=256&'
+            + 'tilematrix={z}&tilecol={x}&tilerow={y}';
+var wmsurl = 'http://wxs.ign.fr/'+gpkey+'/geoportail/r/wms?';
+var detectRetina = true;
+var attrIGN = "&copy; <a href='http://www.ign.fr'>IGN</a>";
+
+var baseLayers = {
+  "Ortho-images" : new L.TileLayer(
+      wmtsurl + '&layer=ORTHOIMAGERY.ORTHOPHOTOS&format=image/jpeg&style=normal',
+      {"format":"image/jpeg","minZoom":0,"maxZoom":20,"detectRetina":detectRetina,"attribution":attrIGN}
+  ),
+  "Ortho-images HR" : new L.tileLayer.wms(wmsurl,
+      {"version":"1.3.0","layers":"HR.ORTHOIMAGERY.ORTHOPHOTOS","format":"image/png","transparent":true,"detectRetina":detectRetina,
+       "attribution":attrIGN}
+  ),
+  "Ortho-express" : new L.TileLayer(
+      wmtsurl + '&layer=ORTHOIMAGERY.ORTHOPHOTOS.ORTHO-EXPRESS&format=image/jpeg&style=normal',
+      {"format":"image/jpeg","minZoom":0,"maxZoom":19,"detectRetina":detectRetina,"attribution":attrIGN}
+  ),
+  "Ortho-images 2006-2010" : new L.TileLayer(
+      wmtsurl + '&layer=ORTHOIMAGERY.ORTHOPHOTOS2006-2010&format=image/jpeg&style=normal',
+      {"format":"image/jpeg","minZoom":0,"maxZoom":18,"detectRetina":detectRetina,"attribution":attrIGN}
+  ),
+  "Ortho-images 2000-2005" : new L.TileLayer(
+      wmtsurl + '&layer=ORTHOIMAGERY.ORTHOPHOTOS2000-2005&format=image/jpeg&style=normal',
+      {"format":"image/jpeg","minZoom":0,"maxZoom":18,"detectRetina":detectRetina,"attribution":attrIGN}
+  ),
+  "Ortho-images 1950-1965" : new L.TileLayer(
+      wmtsurl + '&layer=ORTHOIMAGERY.ORTHOPHOTOS.1950-1965&format=image/png&style=normal',
+      {"format":"image/png","minZoom":0,"maxZoom":18,"detectRetina":detectRetina,"attribution":attrIGN}
+  ),
+  "SPOT 6-7 - 2014" : new L.TileLayer(
+      wmtsurl + '&layer=ORTHOIMAGERY.ORTHO-SAT.SPOT.2014&format=image/jpeg&style=normal',
+      {"format":"image/jpeg","minZoom":0,"maxZoom":17,"detectRetina":detectRetina}
+  ),
+  "SPOT 6-7 - 2015" : new L.TileLayer(
+      wmtsurl + '&layer=ORTHOIMAGERY.ORTHO-SAT.SPOT.2015&format=image/jpeg&style=normal',
+      {"format":"image/jpeg","minZoom":0,"maxZoom":17,"detectRetina":detectRetina}
+  ),
+  "SPOT 6-7 - 2016" : new L.TileLayer(
+      wmtsurl + '&layer=ORTHOIMAGERY.ORTHO-SAT.SPOT.2016&format=image/jpeg&style=normal',
+      {"format":"image/jpeg","minZoom":0,"maxZoom":17,"detectRetina":detectRetina}
+  ),
+  "Altitude" : new L.TileLayer(
+      wmtsurl + '&layer=ELEVATION.SLOPES&format=image/jpeg&style=normal',
+      {"format":"image/jpeg","minZoom":6,"maxZoom":14,"detectRetina":detectRetina}
+  ),
+  "Cartes IGN classiques" : new L.TileLayer(
+      wmtsurl + '&layer=GEOGRAPHICALGRIDSYSTEMS.MAPS&format=image/jpeg&style=normal',
+      {"format":"image/jpeg","minZoom":0,"maxZoom":18,"detectRetina":detectRetina,"attribution":attrIGN}
+  ),
+  "Cartes IGN Express" : new L.TileLayer(
+      wmtsurl + '&layer=GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD&format=image/jpeg&style=normal',
+      {"format":"image/jpeg","minZoom":6,"maxZoom":18,"detectRetina":detectRetina,"attribution":attrIGN}
+  ),
+  "Cartes IGN Express N&amp;B" : new L.TileLayer(
+      wmtsurl + '&layer=GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.NIVEAUXGRIS&format=image/png&style=normal',
+      {"format":"image/png","minZoom":6,"maxZoom":18,"detectRetina":detectRetina,"attribution":attrIGN}
+  ),
+  "Plan IGN" : new L.TileLayer(
+      wmtsurl + '&layer=GEOGRAPHICALGRIDSYSTEMS.PLANIGN&format=image/jpeg&style=normal',
+      {"format":"image/jpeg","minZoom":0,"maxZoom":18,"detectRetina":detectRetina,"attribution":attrIGN}
+  ),
+  "Carte littorale" : new L.tileLayer.wms(wmsurl,
+      {"version":"1.3.0","layers":"SCANLITTO_PYR-JPEG_WLD_WM","format":"image/png","transparent":true,"detectRetina":detectRetina,
+       "attribution":"&copy; <a href='http://www.ign.fr'>IGN</a>, &copy; <a href='http://data.shom.fr'>SHOM</a>"}
+  ),
+  "Cartes 1:50.000 de 1950" : new L.TileLayer(
+      wmtsurl + '&layer=GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN50.1950&format=image/jpeg&style=normal',
+      {"format":"image/jpeg","minZoom":3,"maxZoom":15,"detectRetina":detectRetina,"attribution":attrIGN}
+  ),
+  "Carte de l'état-major (1820-1866)" : new L.TileLayer(
+      wmtsurl + '&layer=GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40&format=image/jpeg&style=normal',
+      {"format":"image/jpeg","minZoom":6,"maxZoom":15,"detectRetina":detectRetina,"attribution":attrIGN}
+  ),
+  "carte OACI-VFR 2017" : new L.TileLayer(
+      wmtsurl + '&layer=GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-OACI&format=image/jpeg&style=normal',
+      {"format":"image/jpeg","minZoom":6,"maxZoom":11,"detectRetina":detectRetina}
+  )
+};
+
+map.addLayer(baseLayers["Cartes IGN Express"]);
+
+var overlays = {
+  "PLEIADES - 2013" : new L.TileLayer(
+    wmtsurl + '&layer=ORTHOIMAGERY.ORTHO-SAT.PLEIADES.2013&format=image/png&style=normal',
+    {"format":"image/png","minZoom":0,"maxZoom":18,"detectRetina":detectRetina}
+  ),
+  "PLEIADES - 2014" : new L.TileLayer(
+    wmtsurl + '&layer=ORTHOIMAGERY.ORTHO-SAT.PLEIADES.2014&format=image/png&style=normal',
+    {"format":"image/png","minZoom":0,"maxZoom":18,"detectRetina":detectRetina}
+  ),
+  "PLEIADES - 2015" : new L.TileLayer(
+    wmtsurl + '&layer=ORTHOIMAGERY.ORTHO-SAT.PLEIADES.2015&format=image/png&style=normal',
+    {"format":"image/png","minZoom":0,"maxZoom":18,"detectRetina":detectRetina}
+  ),
+  "PLEIADES - 2016" : new L.tileLayer(
+    wmtsurl + '&layer=ORTHOIMAGERY.ORTHO-SAT.PLEIADES.2016&format=image/png&style=normal',
+    {"format":"image/png","minZoom":0,"maxZoom":18,"detectRetina":detectRetina}
+  ),
+  "Ortholittorale 2000" : new L.TileLayer(
+    wmtsurl + '&layer=ORTHOIMAGERY.ORTHOPHOTOS.COAST2000&format=image/png&style=normal',
+    {"format":"image/png","minZoom":6,"maxZoom":18,"detectRetina":detectRetina}
+  ),
+  "OCSGE - Couverture" : new L.TileLayer(
+    wmtsurl + '&layer=OCSGE.COUVERTURE&format=image/png&style=normal',
+    {"format":"image/png","minZoom":6,"maxZoom":16,"detectRetina":detectRetina}
+  ),
+  "OCSGE - Usage" : new L.TileLayer(
+    wmtsurl + '&layer=OCSGE.USAGE&format=image/png&style=normal',
+    {"format":"image/png","minZoom":6,"maxZoom":16,"detectRetina":detectRetina}
+  ),
+  "OCSGE - Constructions" : new L.TileLayer(
+    wmtsurl + '&layer=OCSGE.CONSTRUCTIONS&format=image/png&style=normal',
+    {"format":"image/png","minZoom":6,"maxZoom":16,"detectRetina":detectRetina}
+  ),
+  "Aéroports" : new L.TileLayer(
+    wmtsurl + '&layer=TRANSPORTNETWORKS.RUNWAYS&format=image/png&style=normal',
+    {"format":"image/png","minZoom":6,"maxZoom":18,"detectRetina":detectRetina}
+  ),
+  "Hydrographie" : new L.TileLayer(
+    wmtsurl + '&layer=HYDROGRAPHY.HYDROGRAPHY&format=image/png&style=normal',
+    {"format":"image/png","minZoom":6,"maxZoom":18,"detectRetina":detectRetina}
+  ),
+  "Trait de côte Histolitt" : new L.TileLayer(
+    wmtsurl + '&layer=ELEVATION.LEVEL0&format=image/png&style=normal',
+    {"format":"image/png","minZoom":6,"maxZoom":18,"detectRetina":detectRetina}
+  ),
+  "Réseau ferroviaire" : new L.TileLayer(
+    wmtsurl + '&layer=TRANSPORTNETWORKS.RAILWAYS&format=image/png&style=normal',
+    {"format":"image/png","minZoom":6,"maxZoom":18,"detectRetina":detectRetina}
+  ),
+  "Bâtiments" : new L.TileLayer(
+    wmtsurl + '&layer=BUILDINGS.BUILDINGS&format=image/png&style=normal',
+    {"format":"image/png","minZoom":6,"maxZoom":18,"detectRetina":detectRetina}
+  ),
+  "Routes" : new L.TileLayer(
+    wmtsurl + '&layer=TRANSPORTNETWORKS.ROADS&format=image/png&style=normal',
+    {"format":"image/png","minZoom":6,"maxZoom":18,"detectRetina":detectRetina}
+  ),
+  "Lignes électriques" : new L.TileLayer(
+    wmtsurl + '&layer=UTILITYANDGOVERNMENTALSERVICES.ALL&format=image/png&style=normal',
+    {"format":"image/png","minZoom":6,"maxZoom":18,"detectRetina":detectRetina}
+  ),
+  "Limites administratives" : new L.TileLayer(
+    wmtsurl + '&layer=ADMINISTRATIVEUNITS.BOUNDARIES&format=image/png&style=normal',
+    {"format":"image/png","minZoom":6,"maxZoom":18,"detectRetina":detectRetina}
+  ),
+  "Parcelles cadastrales (orange)" : new L.TileLayer(
+    wmtsurl + '&layer=CADASTRALPARCELS.PARCELS&format=image/png&style=bdparcellaire_o',
+    {"format":"image/png","minZoom":0,"maxZoom":20,"detectRetina":detectRetina}
+  ),
+  "Dénominations géographiques" : new L.TileLayer(
+    wmtsurl + '&layer=GEOGRAPHICALNAMES.NAMES&format=image/png&style=normal',
+    {"format":"image/png","minZoom":6,"maxZoom":18,"detectRetina":detectRetina}
+  )
+};
+
+<!-- ajout de l outil de sélection de couche -->
+L.control.layers(baseLayers, overlays).addTo(map);
+
+      </script>
+    </body>
+</html>

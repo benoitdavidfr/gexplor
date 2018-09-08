@@ -1,0 +1,44 @@
+title: carte exemple
+# Un documentation sur la carte
+phpDoc:
+  name: igngp2.yaml
+  title: igngp2.yaml - carte de test
+  doc: |
+    Cette carte fournit différents exemples du format Yaml de définition de carte.
+    <a href='../visu/viewer.php?url=maps%2Fmapex.yaml' target='_blank'>Elle peut être visualisée avec viewer.php</a>
+  journal: |
+    13/2/2017:
+      carte de test
+# le centre de la carte initiale
+center: 48, 3
+# le niveau de zoom initial de la carte
+zoom: 8
+# si l'affichage est effectué sur un écran Retina, la résolution est améliorée
+detectRetina: true
+# les couches de fond
+baseLayers:
+  - title: Fond blanc
+    server: utilityserver
+    layer: whiteimg
+  - title: Fond gris
+    server: utilityserver
+    layer: lightgreyimg
+  - title: Déverminage
+    server: utilityserver
+    layer: debug
+  - title: Cartes IGN classiques
+    server: IGNFGP-WMTS
+    layer: GEOGRAPHICALGRIDSYSTEMS.MAPS
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    selected: true
+  - title: cartes (tile)
+    server: IGNFGP-tile-WM
+    layer: cartes
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    
+# les couches superposables
+overlays:
+# Exemple sans title
+  - server: IGNFGP-WMTS
+    layer: TRANSPORTNETWORKS.ROADS
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"

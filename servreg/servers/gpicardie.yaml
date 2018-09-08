@@ -1,0 +1,61 @@
+phpDoc:
+  name: gpicardie.yaml
+  title: gpicardie.yaml - Serveurs de GéoPicardie
+yamlSchema: yamlschema.yaml
+
+classification:
+  GeoPicardie:
+    title: GéoPicardie
+    url: http://www.geopicardie.fr/
+    
+servers:
+  geopicardie:
+    title: GéoPicardie - Données communes
+    class: GeoPicardie
+    url: 'http://www.geopicardie.fr/geoserver/geopicardie/wms?SERVICE=WMS&REQUEST=GetCapabilities&'
+    protocol: WMS
+  geopicardie-autres:
+    title: GéoPicardie - Autres données
+    class: GeoPicardie
+    url: http://www.geopicardie.fr/geoserver/autres/wms?
+    protocol: WMS
+  geopicardie-reg22:
+    title: GéoPicardie - Région Hauts-de-France
+    class: GeoPicardie
+    url: http://www.geopicardie.fr/geoserver/reg22/wms?
+    protocol: WMS
+  geopicardie-dept60:
+    title: "GéoPicardie - Département de l'Oise"
+    class: GeoPicardie
+    url: http://www.geopicardie.fr/geoserver/dept60/wms?
+    protocol: WMS
+  geopicardie-agglo_beauvais:
+    title: GéoPicardie - Agglomération du Beauvaisis
+    class: GeoPicardie
+    url: http://www.geopicardie.fr/geoserver/agglo_beauvais/wms?
+    protocol: WMS
+  geopicardie-agglo_st_quentin:
+    title: GéoPicardie - Agglomération de Saint-Quentin
+    class: GeoPicardie
+    url: http://www.geopicardie.fr/geoserver/agglo_st_quentin/wms?
+    protocol: WMS
+  geopicardie-cc_pays_bray:
+    title: 'GéoPicardie - Communauté de Communes du Pays de Bray'
+    class: GeoPicardie
+    url: http://www.geopicardie.fr/geoserver/cc_pays_bray/wms?
+    protocol: WMS
+  geopicardie-olv:
+    title: 'GéoPicardie - Oise-la-Vallée'
+    class: GeoPicardie
+    url: http://www.geopicardie.fr/geoserver/olv/wms?
+    protocol: WMS
+  geopicardie-cc_canton_oulchy:
+    title: GéoPicardie - Communauté de Communes du Canton d'Oulchy-le-Château
+    class: GeoPicardie
+    url: http://www.geopicardie.fr/geoserver/cc_canton_oulchy/wms?
+    protocol: WMS
+  geopicardie-cenp:
+    title: GéoPicardie - Conservatoire d'Espaces Naturels de Picardie
+    class: GeoPicardie
+    url: http://www.geopicardie.fr/geoserver/cenp/wms?
+    protocol: WMS

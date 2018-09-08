@@ -1,0 +1,126 @@
+title: carte IGN du GP outils
+phpDoc:
+  name: ignfgpwtools.yaml
+  title: ignfgpwtools.yaml - carte avec les principales ressources IGN et les outils du Géoportail
+  doc: |
+    Cette carte utilise l'extension Leaflet du Géoportail et permet ainsi d'utiliser les différents outils proposés.
+    Cela présente 2 inconvénients:
+    - elle est plus longue à démarrer
+    - elle utilise une version ancienne de Leaflet qui pose certaines difficultés
+    - elle n'est pas utilisable sur téléphone portable
+    Elle <a href='../visu/viewer.php?url=maps%2Fignfgpwtools.yaml' target='_blank'>peut être visualisée avec viewer.php</a>
+  journal: |
+    6/11/2016:
+      première version
+center: 48, 3
+zoom: 8
+detectRetina: true
+baseLayers:
+  - title: Ortho-images
+    server: IGNFGP-WMTS
+    layer: ORTHOIMAGERY.ORTHOPHOTOS
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+  - title: Ortho-images HR
+    server: IGNFGP-WMS-R
+    layer: HR.ORTHOIMAGERY.ORTHOPHOTOS
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+  - title: Ortho-images 2006-2010
+    server: IGNFGP-WMTS
+    layer: ORTHOIMAGERY.ORTHOPHOTOS2006-2010
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+  - title: Ortho-images 2000-2005
+    server: IGNFGP-WMTS
+    layer: ORTHOIMAGERY.ORTHOPHOTOS2000-2005
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+  - title: Ortho-images 1950-1965
+    server: IGNFGP-WMTS
+    layer: ORTHOIMAGERY.ORTHOPHOTOS.1950-1965
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+  - server: IGNFGP-WMTS
+    layer: ORTHOIMAGERY.ORTHO-SAT.SPOT.2014
+  - server: IGNFGP-WMTS
+    layer: ORTHOIMAGERY.ORTHO-SAT.SPOT.2015
+  - server: IGNFGP-WMTS
+    layer: ELEVATION.SLOPES
+  - title: Cartes IGN classiques
+    server: IGNFGP-WMTS
+    layer: GEOGRAPHICALGRIDSYSTEMS.MAPS
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+  - title: Cartes IGN Express
+    server: IGNFGP-WMTS
+    layer: GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    selected: true
+  - title: Cartes IGN Express N&amp;B
+    server: IGNFGP-WMTS
+    layer: GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.NIVEAUXGRIS
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+  - server: IGNFGP-WMTS
+    layer: GEOGRAPHICALGRIDSYSTEMS.PLANIGN
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+  - title: Carte littorale
+    server: IGNFGP-WMS-R
+    layer: SCANLITTO_PYR-JPEG_WLD_WM
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>, &copy; <a href='http://data.shom.fr'>SHOM</a>"
+  - title: Cartes 1:50.000 de 1950
+    server: IGNFGP-WMTS
+    layer: GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN50.1950
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+  - server: IGNFGP-WMTS
+    layer: GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+  - server: IGNFGP-WMTS
+    layer: GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-OACI
+
+overlays:
+  - server: IGNFGP-WMTS
+    layer: ORTHOIMAGERY.ORTHO-SAT.PLEIADES.2013
+  - server: IGNFGP-WMTS
+    layer: ORTHOIMAGERY.ORTHO-SAT.PLEIADES.2014
+  - server: IGNFGP-WMTS
+    layer: ORTHOIMAGERY.ORTHO-SAT.PLEIADES.2015
+  - server: IGNFGP-WMTS
+    layer: ORTHOIMAGERY.ORTHOPHOTOS.COAST2000
+  - title: OCSGE - Couverture
+    server: IGNFGP-WMTS
+    layer: OCSGE.COUVERTURE
+  - title: OCSGE - Usage
+    server: IGNFGP-WMTS
+    layer: OCSGE.USAGE
+  - title: OCSGE - Constructions
+    server: IGNFGP-WMTS
+    layer: OCSGE.CONSTRUCTIONS
+  - server: IGNFGP-WMTS
+    layer: TRANSPORTNETWORKS.RUNWAYS
+  - server: IGNFGP-WMTS
+    layer: HYDROGRAPHY.HYDROGRAPHY
+  - server: IGNFGP-WMTS
+    layer: ELEVATION.LEVEL0
+  - server: IGNFGP-WMTS
+    layer: TRANSPORTNETWORKS.RAILWAYS
+  - server: IGNFGP-WMTS
+    layer: BUILDINGS.BUILDINGS
+  - server: IGNFGP-WMTS
+    layer: TRANSPORTNETWORKS.ROADS
+  - server: IGNFGP-WMTS
+    layer: UTILITYANDGOVERNMENTALSERVICES.ALL
+  - server: IGNFGP-WMTS
+    layer: ADMINISTRATIVEUNITS.BOUNDARIES
+  - title: Parcelles cadastrales (orange)
+    server: IGNFGP-WMTS
+    layer: CADASTRALPARCELS.PARCELS
+    style: bdparcellaire_o
+  - server: IGNFGP-WMTS
+    layer: GEOGRAPHICALNAMES.NAMES
+
+tools:
+# géocodage direct
+  - L.geoportalControl.SearchEngine
+# Géocodage inverse
+  - L.geoportalControl.ReverseGeocode
+# calcul d'itinéraire
+  - L.geoportalControl.Route
+# calcul d'isochrones
+  - L.geoportalControl.Isocurve
+# Coordonnées d'un point
+  - L.geoportalControl.MousePosition

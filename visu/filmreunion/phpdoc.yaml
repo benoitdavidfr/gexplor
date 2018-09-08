@@ -1,0 +1,16 @@
+title: filmreunion - Production d'images pour un film sur La Réunion
+path: /gexplor/visu/filmreunion
+doc: |
+  Extraction d'images de serveurs WMTS pour un film sur La Réunion à la demande du bureau des paysages
+journal: |
+  24/11/2016
+    ajout de BlueMarble
+  23/11/2016
+    nouvelle version; cette version répond à la demande
+  17/11/2016
+    première version
+
+htmlFiles:
+  - /gexplor/visu/filmreunion/index.html
+phpScripts:
+  - /gexplor/visu/filmreunion/reunion.php

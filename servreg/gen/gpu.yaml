@@ -1,0 +1,195 @@
+phpDoc:
+  name: gpu.yaml
+  title: gpu.yaml - organisation du GpU
+  doc: |
+    Ce fichier contient la structure de la légende du GpU y compris les références vers les images de la légende
+    Il contient aussi la liste des catégories de servitudes recopiées depuis le code du GpU le 5/11/2016
+    Il permet de :
+    - constater des erreurs d'organisation dans le GpU
+    - générer le "serveur GpU" ainsi que la carte GpU
+    Il serait intéressant de générer des couches agrégées
+    
+legend:
+# Légende définie hiérarchiquement
+# Les noeuds intermédiaires ne définissent qu'un libellé
+# Les feuilles définissent:
+# - image: nom de l'image de la légende
+# - layer: nom de la couche, si <> basename(image,png)
+# - codes: si l'entrée correspond à des SUP, liste des codes des catégories de SUP
+  VUE D'ENSEMBLE (PLUi, PLU, POS, CC, RNU):
+    layer: lowscale
+    image: municipality_lowScale.png
+  DOCUMENTS D'URBANISME (PLU/POS, CC):
+    Zonages des documents d'urbanisme:
+      layer: zone_secteur
+      image: zone_secteur_lowScale.png
+    Prescriptions:
+      image: prescription.png
+    Périmètres d'informations:
+      image: info.png
+  SERVITUDE D'UTILITE PUBLIQUE:
+    Conservation du patrimoine:
+      Patrimoine naturel:
+        Forêts:
+          codes: A1, A7, A8
+          image: forets.png
+        Littoral:
+          codes: EL1, EL9
+          image: littoral.png
+        Eaux:
+          codes: A4, AS1
+          image: eaux.png
+        Réserves naturelles et parcs nationaux:
+          codes: AC3, EL10
+          image: reserves.png
+        Zones agricoles protégées:
+          codes: A9
+          image: agricole.png
+      Patrimoine culturel:
+        Monuments historiques:
+          codes: AC1, AC4
+          image: historique.png
+        Monuments naturels et sites:
+          codes: AC2
+          image: naturel.png
+      Patrimoine sportif:
+        Installations sportives:
+          codes: JS1
+          image: sport.png
+    Ressources et équipements:
+      Energie:
+        Gaz et électricité:
+          codes: I3, I4
+          image: gaz.png
+        Energie hydraulique:
+          codes: I2
+          image: hydraulique.png
+        Hydrocarbures:
+          codes: I1, I1bis
+          image: hydrocarbures.png
+        Réseaux de chaleur:
+          codes: I9
+          image: chaleur.png
+      Mines et carrières:
+        Mines et carrières, stockage gaz et hydrocarbure:
+          codes: I6, I7, I8
+          image: carriere.png
+      Canalisations:
+        Produits chimiques:
+          codes: I5
+          image: chimique.png
+        Eau et assainissement:
+          codes: A3, A6, A2, A5
+          image: assainissement.png
+      Infrastructures terrestres et maritimes:
+        Cours d'eau:
+          codes: EL3
+          image: eau.png
+        Navigation maritime:
+          codes: EL8
+          image: navigation.png
+        Voies ferrées et aérotrains:
+          codes: T1, T3
+          image: voies_ferrees.png
+        Réseaux routiers:
+          codes: EL6, EL7, EL11
+          image: route.png
+        Remontées mécaniques et pistes de ski:
+          codes: EL4, T2
+          image: remontees.png
+        Associations syndicales:
+          codes: EL12
+          image: associations.png
+      Circulation aérienne:
+        Circulation aérienne:
+          codes: T4, T7, T5, T6
+          image: circulation.png
+      Télécommunication:
+        Télécommunication:
+          codes: PT1, PT2, PT3, PT4, T8
+          image: telecommunication.png
+    Défense nationale:
+      Défense nationale:
+        Ouvrages de défense:
+          codes: AR1, AR2, AR3, AR4, AR5, AR6
+          image: ouvrage_defense.png
+    Salubrité et sécurité publique:
+      Salubrité publique:
+        Cimetières:
+          codes: INT1
+          image: cimetieres.png
+        Etablissements conchylicoles:
+          codes: AS2
+          image: conchylicoles.png
+      Sécurité publique:
+        Ouvrages et plans de prévention des risques:
+          codes: EL2, EL2bis, PM1, PM1bis, PM2, PM3, PM4, PM5
+          image: ouvrage_plan_prevention_risque.png
+  SCHEMA DE COHERENCE TERRITORIALE:
+    image: scot.png
+SUP:
+  A1: Servitude relative à la protection des bois et forêts soumis au régime forestier
+  A2: Servitude attachée à l'établissement des canalisations souterraines d'irrigation
+  A3: Servitude de passage des engins mécaniques d'entretien et de dépôt des produits de curage et faucardement attachées aux canaux d'irrigation et émissaires d'assainissement
+  A4: Servitude de passage dans le lit ou sur les berges de cours d'eau non domaniaux
+  A5: Servitude attachée aux canalisations publiques d'eau et d'assainissement
+  A6: Servitude d'écoulement des eaux nuisibles
+  A7: Servitude relative aux forêts dites de protection
+  A8: Mise en défense des terrains en montagne et protection des dunes du Pas-de-Calais
+  A9: Zones agricoles protégées
+  AC1: Servitude de protection des monuments historiques classés ou inscrits
+  AC2: Servitude relative aux sites inscrits et classés
+  AC3: Réserve naturelle
+  AC4: Zone de protection du patrimoine architectural et urbain
+  AR1: Servitude de champs de vue concernant la détermination et la conservation des postes électro-sémaphoriques
+  AR2: Servitude liée aux ouvrages de défense des côtes ou de sécurité maritime
+  AR3: Zones et polygones d'isolement concernant les servitudes autour des magasins et établissements servant à la conservation, à la manipulation ou à la fabrication des poudres, munitions, artifices ou explosifs
+  AR4: Servitude concernant l'établissement de terrains d'atterrissage destinés en partie ou en totalité à l'armée de l'air
+  AR5: Servitude relative aux fortifications, places-fortes, postes et ouvrages militaires
+  AR6: Servitude aux abords des champs de tir
+  AS1: Servitude résultant de l'instauration de périmètres de protection des eaux potables et minérales
+  AS2: Périmètres de protection installés autour des établissements conchylicoles
+  EL1: Réserve de terrain en bord de mer
+  EL10: Parcs nationaux
+  EL11: Servitude relative aux interdiction d'accès grevant les propriétés limitrophes des autoroutes, routes express et déviations d'agglomération
+  EL12: Associations syndicales autorisées, associations syndicales constituées d'office et leurs unions
+  EL2: Défense contre les inondations
+  EL2bis: Servitude qui concerne la Loire et ses affluents
+  EL3: Servitude de halage et de marchepied
+  EL4: Servitude relative au développement et à la protection des montagnes
+  EL5: Servitude de visibilité sur les voies publiques
+  EL6: Servitude grévant les terrains nécessaires aux routes nationales et aux autoroutes
+  EL7: Servitudes attachées à l'alignement des voies nationales, départementales et communales
+  EL8: Champs de vue et servitude instituée ou maintenue en application relative à la visibilité des amers, des feux et des phares et au champs de vue des centres de surveillance de la navigation maritimes
+  EL9: Servitude de passage des piétons sur le littoral
+  I1: Construction et exploitation de pipe-line d'intérêt général
+  I1bis: Construction et exploitation de pipe-line
+  I2: Périmètre de servitude de submersion et d'occupation temporaire
+  I3: Périmètre de servitude autour d'une canalisation de transport de gaz
+  I4: Périmètre de servitude autour d'une ligne électrique aérienne ou souterraine
+  I5: Construction et exploitation de canalisations de transports de produits chimiques
+  I6: Servitude relative à l'exploitation des mines et carrières
+  I7: Servitude relative à la protection des stockages souterrains de gaz naturel, d'hydrocarbures liquides, liquéfiées ou gazeux ou de produits chimiques à destination industrielle dans les formations naturelles
+  I8: Servitude relative à la protection des stockages souterrains de gaz naturel, d'hydrocarbures liquides, liquéfiées ou gazeux ou de produits chimiques à destination industrielle dans les cavités étanches naturelles ou artificielles
+  I9: Canalisation de transport et de distribution de chaleur
+  INT1: Servitude instituée au voisinage des cimetières
+  JS1: Servitude de protection des installations sportives
+  PM1: Plans de prévention des risques naturels prévisibles et plans de prévention des risques miniers - documents valant PPRN
+  PM1bis: Servitude d'inondation pour la rétention des crues du Rhin
+  PM2: Servitude relative aux installations classées pour la protection de l'environnement
+  PM3: Plans de prévention des risques technologiques
+  PM4: Zones de rétention d'eau, zones de mobilité des cours d'eau et zones dites "stratégiques pour la gestion de l'eau"
+  PM5: Servitude relative à l'utilisation du sol lorsque un ouvrage hydraulique présente un danger pour la sécurité publique
+  PM6: Servitude autour des installations nucléaires de base
+  PT1: Servitude de protection des centres de réception radioélectrique contre les perturbations électromagnétiques
+  PT2: Servitude de protection des centres radioélectriques d'émission et de réception contre les obstacles
+  PT3: Servitude attachée aux réseaux de télécommunication
+  PT4: Servitude d'élagage relative aux lignes de télécommunication empruntant le domaine public
+  T1: Servitude relative aux voies ferrées
+  T2: Zones auxquelles s'applique la servitude de survol de téléphériques
+  T3: Zones de servitudes relatives aux aérotrains
+  T4: Servitude aéronautique de balisage
+  T5: Servitude aéronautique de dégagement
+  T6: Servitude grévant les terrains nécessaires aux besoins de la navigation aérienne
+  T7: Servitude établies à l'extérieur des zones de dégagement
+  T8: Servitude radioélectrique de protection des installations de navigation et d'atterrissage

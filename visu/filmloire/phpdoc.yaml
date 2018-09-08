@@ -1,0 +1,12 @@
+title: filmloire - Production d'images pour un film sur le département de la Loire
+path: /gexplor/visu/filmloire
+doc: |
+  Extraction d'images de serveurs WMTS pour un film sur le département de la Loire à la demande du bureau des paysages
+journal: |
+  8/9/2018
+    première version
+
+htmlFiles:
+  - /gexplor/visu/filmloire/index.html
+phpScripts:
+  - /gexplor/visu/filmloire/loire.php

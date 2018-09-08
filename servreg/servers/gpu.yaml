@@ -1,0 +1,180 @@
+phpDoc:
+  name: gpu.yaml
+  title: gpu.yaml - Définition du serveur GpU
+  doc: |
+    fichier généré par http://visu.gexplor.fr/gen/gpu.php?action=genServer
+  journal: |
+    13/3/2017
+      vérification de la conformité au schema
+    5/11/2016
+      première version
+      Test de la définition d'une légende absente du serveur
+yamlSchema: yamlschema.yaml
+classification:
+servers:
+  gpu:
+    title: Géoportail de l'urbanisme
+    class: MinEnv
+    url: http://wxs-gpu.mongeoportail.ign.fr/externe/vkd1evhid6jdj5h4hkhyzjto/wms/v?
+    protocol: WMS
+    layers:
+      - name: lowscale
+        title: VUE D'ENSEMBLE (PLUi, PLU, POS, CC, RNU)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/municipality_lowScale.png?v2.0.30
+      - name: zone_secteur
+        title: Zonages des documents d'urbanisme
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/zone_secteur_lowScale.png?v2.0.30
+      - name: prescription
+        title: Prescriptions
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/prescription.png?v2.0.30
+      - name: info
+        title: Périmètres d'informations
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/info.png?v2.0.30
+      - name: forets
+        title: Forêts (SUP A1, A7, A8)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/forets.png?v2.0.30
+      - name: littoral
+        title: Littoral (SUP EL1, EL9)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/littoral.png?v2.0.30
+      - name: eaux
+        title: Eaux (SUP A4, AS1)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/eaux.png?v2.0.30
+      - name: reserves
+        title: Réserves naturelles et parcs nationaux (SUP AC3, EL10)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/reserves.png?v2.0.30
+      - name: agricole
+        title: Zones agricoles protégées (SUP A9)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/agricole.png?v2.0.30
+      - name: historique
+        title: Monuments historiques (SUP AC1, AC4)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/historique.png?v2.0.30
+      - name: naturel
+        title: Monuments naturels et sites (SUP AC2)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/naturel.png?v2.0.30
+      - name: sport
+        title: Installations sportives (SUP JS1)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/sport.png?v2.0.30
+      - name: gaz
+        title: Gaz et électricité (SUP I3, I4)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/gaz.png?v2.0.30
+      - name: hydraulique
+        title: Energie hydraulique (SUP I2)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/hydraulique.png?v2.0.30
+      - name: hydrocarbures
+        title: Hydrocarbures (SUP I1, I1bis)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/hydrocarbures.png?v2.0.30
+      - name: chaleur
+        title: Réseaux de chaleur (SUP I9)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/chaleur.png?v2.0.30
+      - name: carriere
+        title: Mines et carrières, stockage gaz et hydrocarbure (SUP I6, I7, I8)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/carriere.png?v2.0.30
+      - name: chimique
+        title: Produits chimiques (SUP I5)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/chimique.png?v2.0.30
+      - name: assainissement
+        title: Eau et assainissement (SUP A3, A6, A2, A5)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/assainissement.png?v2.0.30
+      - name: eau
+        title: Cours d'eau (SUP EL3)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/eau.png?v2.0.30
+      - name: navigation
+        title: Navigation maritime (SUP EL8)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/navigation.png?v2.0.30
+      - name: voies_ferrees
+        title: Voies ferrées et aérotrains (SUP T1, T3)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/voies_ferrees.png?v2.0.30
+      - name: route
+        title: Réseaux routiers (SUP EL6, EL7, EL11)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/route.png?v2.0.30
+      - name: remontees
+        title: Remontées mécaniques et pistes de ski (SUP EL4, T2)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/remontees.png?v2.0.30
+      - name: associations
+        title: Associations syndicales (SUP EL12)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/associations.png?v2.0.30
+      - name: circulation
+        title: Circulation aérienne (SUP T4, T7, T5, T6)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/circulation.png?v2.0.30
+      - name: telecommunication
+        title: Télécommunication (SUP PT1, PT2, PT3, PT4, T8)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/telecommunication.png?v2.0.30
+      - name: ouvrage_defense
+        title: Ouvrages de défense (SUP AR1, AR2, AR3, AR4, AR5, AR6)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/ouvrage_defense.png?v2.0.30
+      - name: cimetieres
+        title: Cimetières (SUP INT1)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/cimetieres.png?v2.0.30
+      - name: conchylicoles
+        title: Etablissements conchylicoles (SUP AS2)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/conchylicoles.png?v2.0.30
+      - name: ouvrage_plan_prevention_risque
+        title: Ouvrages et plans de prévention des risques (SUP EL2, EL2bis, PM1, PM1bis, PM2, PM3, PM4, PM5)
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/ouvrage_plan_prevention_risque.png?v2.0.30
+      - name: scot
+        title: SCHEMA DE COHERENCE TERRITORIALE
+        styles:
+          - legend:
+              url: http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/scot.png?v2.0.30

@@ -1,0 +1,46 @@
+phpDoc:
+  name: crigepaca.yaml
+  title: crigepaca.yaml - Serveurs de CRIGE-PACA
+yamlSchema: yamlschema.yaml
+  
+classification:
+  crige-paca:
+    title: CRIGE-PACA
+    url: http://www.crige-paca.org/
+    
+servers:
+  crige-paca-crige_ortho:
+    title: Orthophotographies du CRIGE-PACA
+    class: crige-paca
+    url: http://geoservices.crige-paca.org/geoserver/crige_ortho/wms?
+    protocol: WMS
+  crige-paca-pci_2016_04:
+    title: PCI - DEPT 04
+    class: crige-paca
+    url: http://geoservices.crige-paca.org/geoserver/pci_2016_04/wms?
+    protocol: WMS
+  crige-paca-pci_2016_05:
+    title: PCI - DEPT 05
+    class: crige-paca
+    url: http://geoservices.crige-paca.org/geoserver/pci_2016_05/wms?
+    protocol: WMS
+  crige-paca-pci_2016_06:
+    title: PCI - DEPT 06
+    class: crige-paca
+    url: http://geoservices.crige-paca.org/geoserver/pci_2016_06/wms?
+    protocol: WMS
+  crige-paca-pci_2016_13:
+    title: PCI - DEPT 13
+    class: crige-paca
+    url: http://geoservices.crige-paca.org/geoserver/pci_2016_13/wms?
+    protocol: WMS
+  crige-paca-pci_2016_83:
+    title: PCI - DEPT 83
+    class: crige-paca
+    url: http://geoservices.crige-paca.org/geoserver/pci_2016_83/wms?
+    protocol: WMS
+  crige-paca-pci_2016_84:
+    title: PCI - DEPT 84
+    class: crige-paca
+    url: http://geoservices.crige-paca.org/geoserver/pci_2016_84/wms?
+    protocol: WMS

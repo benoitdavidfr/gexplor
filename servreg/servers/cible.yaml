@@ -1,0 +1,85 @@
+phpDoc:
+  name: cible.yaml
+  title: cible.yaml - Cible pour le fichier des serveurs pour gp.gexplor.fr
+  doc: |
+  journal: |
+    23/3/2017
+      cible
+yamlSchema: yamlschema.yaml
+# 
+# classement hiérarchique des serveurs et couches préférées:
+# etiquette:
+#   title: titre du thème
+#   url?: page d'infos
+#   children?: sous-arborescence éventuelle
+classification:
+  FR:
+    title: nationales (FR)
+    abstract: couches diffusées par des acteurs français nationaux
+    children:
+      IGN:
+        title: IGN
+        abstract: couches référentielles diffusées par l'IGN
+      MinEnv:
+        title: Min. Env.
+        abstract: couches diffusées par le Ministère de l'environnement à un niveau supra-régional
+        children:
+          DIRM:
+            title: Directions inter-régionales de la mer
+            children:
+              DIRM NAMO:
+                title: DIRM Nord-Atlantique - Manche Ouest
+          DIR:
+            title: Directions inter-départementales des routes
+            children:
+              DIR E:
+                title: DIR Est
+            
+  Regions:
+    title: régionales
+    abstract: couches diffusées par des acteurs régionaux
+    children:
+      {région}:
+        children:
+          {DREALyy}:
+          {DDTxx}:
+    example:
+      HautsDeFrance:
+        title: Hauts-de-France
+        children:
+          DrealHautsDeFrance:
+            title: DREAL Hauts-de-France
+          DDT62:
+            title: DDTM 62
+
+  Regions:
+    title: régionales
+    abstract: couches diffusées par des acteurs régionaux
+    children:
+      HautsDeFrance:
+        title: Hauts-de-France
+        children:
+          geo-nord:
+            title: "Géo-Nord: le portail du Nord"
+            url: http://www.geo-nord.fr/
+    
+  Europe:
+    title: européennes
+    abstract: couches diffusées par des acteurs européens
+    children:
+      Copernicus:
+        title: Copernicus
+        url: http://cidportal.jrc.ec.europa.eu/home/data-services/copernicus-core003-view
+  Espagne:
+    title: Espagne
+    abstract: couches diffusées par des acteurs espagnols
+  USA:
+    title: USA
+    abstract: couches diffusées par des acteurs états-uniens
+  Mondial:
+    title: mondiales
+    abstract: couches diffusées par des acteurs mondiaux
+# Le script main-tree.php affecte à la dernière classe les serveurs affectés à aucune classe
+  Autres:
+    title: Autres
+    abstract: Serveurs n'appartenant à aucune des classes ci-dessus

@@ -1,0 +1,51 @@
+phpDoc:
+  name: serv-usa-nasa.yaml
+  title: serv-usa-nasa.yaml - Liste des serveurs de la NASA
+  doc: |
+  journal: |
+    8/11/2016
+      première version
+# 
+# classement hiérarchique des serveurs:
+# etiquette:
+#   title: titre du thème
+#   url?: page d'infos
+#   children?: sous-arborescence éventuelle
+# sous-classification rattachée à NASA
+classification:
+
+# Structure:
+# etiquette:
+#   title: titre du serveur
+#   class: une des étiquettes du classement hiérarchique
+#   url: URL du serveur sans paramètres SERVICE ni REQUEST finissant sur ? ou &
+#   protocol: WMTS|WMS
+#
+servers:
+# USA-NASA
+# https://wiki.earthdata.nasa.gov/display/GIBS/GIBS+API+for+Developers#GIBSAPIforDevelopers-ServiceEndpoints
+  nasa-gibs-best-wmts:
+    title: GIBS - The 'Best Available' imagery products
+    class: USA-NASA
+    url: http://gibs.earthdata.nasa.gov/wmts/epsg3857/best/wmts.cgi?
+    protocol: WMTS
+  nasa-gibs-std-wmts:
+    title: GIBS - Standard imagery products only
+    class: USA-NASA
+    url: http://gibs.earthdata.nasa.gov/wmts/epsg3857/std/wmts.cgi?
+    protocol: WMTS
+  nasa-gibs-nrt-wmts:
+    title: GIBS - Near Real-Time imagery products only
+    class: USA-NASA
+    url: http://gibs.earthdata.nasa.gov/wmts/epsg3857/nrt/wmts.cgi?
+    protocol: WMTS
+  nasa-gibs-all-wmts:
+    title: GIBS - All Best Available, Standard, and Near Real-Time imagery products
+    class: USA-NASA
+    url: http://gibs.earthdata.nasa.gov/wmts/epsg3857/all/wmts.cgi?
+    protocol: WMTS
+  nasa-neo-wms:
+    title: NASA Earth Observations (NEO)
+    class: USA-NASA
+    url: http://neowms.sci.gsfc.nasa.gov/wms/wms?
+    protocol: WMS

@@ -1,0 +1,266 @@
+phpDoc:
+  name: serv-sandre.yaml
+  title: serv-sandre.yaml - Liste de serveurs WMTS/WMS du Sandre utilissés sur visu
+  doc: |
+    Contient:
+    - classification: un classement hiérarchique, chaque entrée définie par:
+        etiquette:
+          titre: titre de l'entrée à afficher
+          url?: URL optionnel d'une page d'info
+          children?: éventuellement une liste de sous-entrées
+    - servers: une liste de serveurs, chacun défini par:
+        etiquette:
+          titre: titre du serveur à afficher
+          class: une des étiquettes du classement hiérarchique
+          url: URL du serveur sans paramètres SERVICE ni REQUEST finissant sur ? ou &
+          protocol: WMTS|WMS
+  journal: |
+    3/11/2016
+      première version
+# 
+# classement hiérarchique des serveurs:
+# etiquette:
+#   title: titre du thème
+#   url?: page d'infos
+#   children?: sous-arborescence éventuelle
+classification:
+# sous-classification rattachée à Sandre
+  Sandre-FRA:
+    title: France entière
+  Sandre-FXX:
+    title: France Métropole
+  Sandre-MTQ:
+    title: Martinique
+  Sandre-GLP:
+    title: Guadeloupe
+  Sandre-GUF:
+    title: Guyane
+  Sandre-REU:
+    title: Réunion
+  Sandre-MYT:
+    title: Mayotte
+    
+# Structure:
+# etiquette:
+#   title: titre du serveur
+#   class: une des étiquettes du classement hiérarchique
+#   url: URL du serveur sans paramètres SERVICE ni REQUEST finissant sur ? ou &
+#   protocol: WMTS|WMS
+#
+servers:
+# Services du Sandre - Générés par gensandre.php
+  Sandre-com_FRA:
+    title: Référentiel administratif France entière
+    class: Sandre-FRA
+    url: http://services.sandre.eaufrance.fr/geo/com_FRA?
+    protocol: WMS
+  Sandre-eth_FXX:
+    title: Référentiel hydrographique (FXX)
+    class: Sandre-FXX
+    url: http://services.sandre.eaufrance.fr/geo/eth_FXX?
+    protocol: WMS
+  Sandre-eth_GLP:
+    title: Référentiel hydrographique (GLP)
+    class: Sandre-GLP
+    url: http://services.sandre.eaufrance.fr/geo/eth_GLP?
+    protocol: WMS
+  Sandre-eth_GUF:
+    title: Référentiel hydrographique (GUF)
+    class: Sandre-GUF
+    url: http://services.sandre.eaufrance.fr/geo/eth_GUF?
+    protocol: WMS
+  Sandre-eth_MTQ:
+    title: Référentiel hydrographique (MTQ)
+    class: Sandre-MTQ
+    url: http://services.sandre.eaufrance.fr/geo/eth_MTQ?
+    protocol: WMS
+  Sandre-eth_MYT:
+    title: Référentiel hydrographique (MYT)
+    class: Sandre-MYT
+    url: http://services.sandre.eaufrance.fr/geo/eth_MYT?
+    protocol: WMS
+  Sandre-eth_REU:
+    title: Référentiel hydrographique (REU)
+    class: Sandre-REU
+    url: http://services.sandre.eaufrance.fr/geo/eth_REU?
+    protocol: WMS
+  Sandre-hyd_FXX:
+    title: Hydrométrie (FXX)
+    class: Sandre-FXX
+    url: http://services.sandre.eaufrance.fr/geo/hyd_FXX?
+    protocol: WMS
+  Sandre-hyd_MTQ:
+    title: Hydrométrie (MTQ)
+    class: Sandre-MTQ
+    url: http://services.sandre.eaufrance.fr/geo/hyd_MTQ?
+    protocol: WMS
+  Sandre-mdo_FRA:
+    title: Référentiel des Masses d'eau (FRA)
+    class: Sandre-FRA
+    url: http://services.sandre.eaufrance.fr/geo/mdo_FRA?
+    protocol: WMS
+  Sandre-mdo_FXX:
+    title: Référentiel des Masses d'eau (FXX)
+    class: Sandre-FXX
+    url: http://services.sandre.eaufrance.fr/geo/mdo_FXX?
+    protocol: WMS
+  Sandre-mdo_GLP:
+    title: Référentiel des Masses d'eau (GLP)
+    class: Sandre-GLP
+    url: http://services.sandre.eaufrance.fr/geo/mdo_GLP?
+    protocol: WMS
+  Sandre-mdo_GUF:
+    title: Référentiel des Masses d'eau (GUF)
+    class: Sandre-GUF
+    url: http://services.sandre.eaufrance.fr/geo/mdo_GUF?
+    protocol: WMS
+  Sandre-mdo_MTQ:
+    title: Référentiel des Masses d'eau (MTQ)
+    class: Sandre-MTQ
+    url: http://services.sandre.eaufrance.fr/geo/mdo_MTQ?
+    protocol: WMS
+  Sandre-mdo_REU:
+    title: Référentiel des Masses d'eau (REU)
+    class: Sandre-REU
+    url: http://services.sandre.eaufrance.fr/geo/mdo_REU?
+    protocol: WMS
+  Sandre-mdo_VEDL_FXX:
+    title: Référentiel des Masses d'eau - Version 2013 Interne (Etat des lieux 2013) (FXX)
+    class: Sandre-FXX
+    url: http://services.sandre.eaufrance.fr/geo/mdo_VEDL_FXX?
+    protocol: WMS
+  Sandre-mdo_VEDL_GLP:
+    title: Référentiel des Masses d'eau - Version 2013 Interne (Etat des lieux 2013) (GLP)
+    class: Sandre-GLP
+    url: http://services.sandre.eaufrance.fr/geo/mdo_VEDL_GLP?
+    protocol: WMS
+  Sandre-mdo_VEDL_GUF:
+    title: Référentiel des Masses d'eau - Version 2013 Interne (Etat des lieux 2013) (GUF)
+    class: Sandre-GUF
+    url: http://services.sandre.eaufrance.fr/geo/mdo_VEDL_GUF?
+    protocol: WMS
+  Sandre-mdo_VEDL_MTQ:
+    title: Référentiel des Masses d'eau - Version 2013 Interne (Etat des lieux 2013) (MTQ)
+    class: Sandre-MTQ
+    url: http://services.sandre.eaufrance.fr/geo/mdo_VEDL_MTQ?
+    protocol: WMS
+  Sandre-mdo_VEDL_MYT:
+    title: Référentiel des Masses d'eau - Version 2013 Interne (Etat des lieux 2013) (MYT)
+    class: Sandre-MYT
+    url: http://services.sandre.eaufrance.fr/geo/mdo_VEDL_MYT?
+    protocol: WMS
+  Sandre-mdo_VEDL_REU:
+    title: Référentiel des Masses d'eau - Version 2013 Interne (Etat des lieux 2013) (REU)
+    class: Sandre-REU
+    url: http://services.sandre.eaufrance.fr/geo/mdo_VEDL_REU?
+    protocol: WMS
+  Sandre-obs_FXX:
+    title: Référentiel des Obstacles à l'Ecoulement (FXX)
+    class: Sandre-FXX
+    url: http://services.sandre.eaufrance.fr/geo/obs_FXX?
+    protocol: WMS
+  Sandre-obs_GLP:
+    title: Référentiel des Obstacles à l'Ecoulement (GLP)
+    class: Sandre-GLP
+    url: http://services.sandre.eaufrance.fr/geo/obs_GLP?
+    protocol: WMS
+  Sandre-obs_MTQ:
+    title: Référentiel des Obstacles à l'Ecoulement (MTQ)
+    class: Sandre-MTQ
+    url: http://services.sandre.eaufrance.fr/geo/obs_MTQ?
+    protocol: WMS
+  Sandre-obs_REU:
+    title: Référentiel des Obstacles à l'Ecoulement (REU)
+    class: Sandre-REU
+    url: http://services.sandre.eaufrance.fr/geo/obs_REU?
+    protocol: WMS
+  Sandre-odp_FRA:
+    title: Référentiel Ouvrages de dépollution France entière
+    class: Sandre-FXX
+    url: http://services.sandre.eaufrance.fr/geo/odp_FRA?
+    protocol: WMS
+  Sandre-saq_FXX:
+    title: Référentiel Hydrogéologique National (FXX)
+    class: Sandre-FXX
+    url: http://services.sandre.eaufrance.fr/geo/saq_FXX?
+    protocol: WMS
+  Sandre-sel_FXX:
+    title: Lieux de surveillance (FXX)
+    class: Sandre-FXX
+    url: http://services.sandre.eaufrance.fr/geo/sel_FXX?
+    protocol: WMS
+  Sandre-sel_GLP:
+    title: Lieux de surveillance (GLP)
+    class: Sandre-GLP
+    url: http://services.sandre.eaufrance.fr/geo/sel_GLP?
+    protocol: WMS
+  Sandre-sel_MTQ:
+    title: Lieux de surveillance (MTQ)
+    class: Sandre-MTQ
+    url: http://services.sandre.eaufrance.fr/geo/sel_MTQ?
+    protocol: WMS
+  Sandre-sel_MYT:
+    title: Lieux de surveillance (MYT)
+    class: Sandre-MYT
+    url: http://services.sandre.eaufrance.fr/geo/sel_MYT?
+    protocol: WMS
+  Sandre-sel_REU:
+    title: Lieux de surveillance (REU)
+    class: Sandre-REU
+    url: http://services.sandre.eaufrance.fr/geo/sel_REU?
+    protocol: WMS
+  Sandre-stq_FXX:
+    title: Stations de mesure de la qualité des eaux de surface (FXX)
+    class: Sandre-FXX
+    url: http://services.sandre.eaufrance.fr/geo/stq_FXX?
+    protocol: WMS
+  Sandre-stq_GLP:
+    title: Stations de mesure de la qualité des eaux de surface (GLP)
+    class: Sandre-GLP
+    url: http://services.sandre.eaufrance.fr/geo/stq_GLP?
+    protocol: WMS
+  Sandre-stq_GUF:
+    title: Stations de mesure de la qualité des eaux de surface (GUF)
+    class: Sandre-GUF
+    url: http://services.sandre.eaufrance.fr/geo/stq_GUF?
+    protocol: WMS
+  Sandre-stq_MTQ:
+    title: Stations de mesure de la qualité des eaux de surface (MTQ)
+    class: Sandre-MTQ
+    url: http://services.sandre.eaufrance.fr/geo/stq_MTQ?
+    protocol: WMS
+  Sandre-stq_MYT:
+    title: Stations de mesure de la qualité des eaux de surface (MYT)
+    class: Sandre-MYT
+    url: http://services.sandre.eaufrance.fr/geo/stq_MYT?
+    protocol: WMS
+  Sandre-stq_REU:
+    title: Stations de mesure de la qualité des eaux de surface (REU)
+    class: Sandre-REU
+    url: http://services.sandre.eaufrance.fr/geo/stq_REU?
+    protocol: WMS
+  Sandre-vic_FXX:
+    title: Vigilance Crues (FXX)
+    class: Sandre-FXX
+    url: http://services.sandre.eaufrance.fr/geo/vic_FXX?
+    protocol: WMS
+  Sandre-zon_FXX:
+    title: Zonages (FXX)
+    class: Sandre-FXX
+    url: http://services.sandre.eaufrance.fr/geo/zon_FXX?
+    protocol: WMS
+  Sandre-zon_GLP:
+    title: Zonages (GLP)
+    class: Sandre-GLP
+    url: http://services.sandre.eaufrance.fr/geo/zon_GLP?
+    protocol: WMS
+  Sandre-zon_MTQ:
+    title: Zonages (MTQ)
+    class: Sandre-MTQ
+    url: http://services.sandre.eaufrance.fr/geo/zon_MTQ?
+    protocol: WMS
+  Sandre-zon_REU:
+    title: Zonages (REU)
+    class: Sandre-REU
+    url: http://services.sandre.eaufrance.fr/geo/zon_REU?
+    protocol: WMS

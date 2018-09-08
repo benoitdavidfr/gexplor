@@ -1,0 +1,88 @@
+phpDoc:
+  name: serv-siglr.yaml
+  title: serv-siglr.yaml - Liste des serveurs WMS SIG LR
+  doc: |
+    Contient:
+    - classification: un classement hiérarchique, chaque entrée définie par:
+        etiquette:
+          titre: titre de l'entrée à afficher
+          url?: URL optionnel d'une page d'info
+          children?: éventuellement une liste de sous-entrées
+    - servers: une liste de serveurs, chacun défini par:
+        etiquette:
+          titre: titre du serveur à afficher
+          class: une des étiquettes du classement hiérarchique
+          url: URL du serveur sans paramètres SERVICE ni REQUEST finissant sur ? ou &
+          protocol: WMTS|WMS
+  journal: |
+    22/11/2016
+      première version
+# 
+# classement hiérarchique des serveurs:
+# etiquette:
+#   title: titre du thème
+#   url?: page d'infos
+#   children?: sous-arborescence éventuelle
+# sous-classification rattachée à Ifremer
+classification:
+
+# Structure:
+# etiquette:
+#   title: titre du serveur
+#   class: une des étiquettes du classement hiérarchique
+#   url: URL du serveur sans paramètres SERVICE ni REQUEST finissant sur ? ou &
+#   protocol: WMTS|WMS
+#
+servers:
+# SIGLR
+  siglr-wmsopendata:
+    title: SIG LR wmsopendata
+    class: SIGLR
+    url: http://geoservice.siglr.org/wmsopendata?
+    protocol: WMS
+    
+  siglr-wmsbdsol:
+    title: SIG LR BD SOL
+    class: SIGLR
+    url: http://geoservice.siglr.org/wmsbdsol?
+    protocol: WMS
+    
+# Authorization Required
+#  siglr-wmsocsol2006:
+#    title: SIG LR OCSOL 2006
+#    class: SIGLR
+#    url: http://geoservice.siglr.org/wmsocsol2006?
+#    protocol: WMS
+    
+# Authorization Required
+#  siglr-wmsocsol1999:
+#    title: SIG LR wmsocsol1999
+#    class: SIGLR
+#    url: http://geoservice.siglr.org/wmsocsol1999?
+#    protocol: WMS
+    
+# Authorization Required
+#  siglr-wmserdf:
+#    title: SIG LR ERDF
+#    class: SIGLR
+#    url: http://geoservice.siglr.org/wmserdf?
+#    protocol: WMS
+    
+  siglr-wmsccgpsl:
+    title: SIG LR CC Grand Pic Saint-Loup
+    class: SIGLR
+    url: http://geoservice.siglr.org/wmsccgpsl?
+    protocol: WMS
+    
+  siglr-wmscagn:
+    title: SIG LR CA Gd Narbonne
+    class: SIGLR
+    url: http://geoservice.siglr.org/wmscagn?
+    protocol: WMS
+    
+# Authorization Required
+#  siglr-wmsortho2012:
+#    title: SIG LR Ortho2012
+#    class: SIGLR
+#    url: http://wms.siglr.org/wmsortho2012?
+#    protocol: WMS

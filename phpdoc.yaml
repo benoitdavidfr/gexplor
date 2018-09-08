@@ -1,0 +1,53 @@
+title: gexplor.fr - explorations géographiques
+path: /gexplor
+doc: |
+  Domaine utilisé pour différents prototypes d'exploration de l'info géographique
+  - gnym est une réflexion sur l'indexation dans les moteurs de recherche des toponymes,
+  - leaflet contient des plug-ins Leaflet et des expérimentations sur Leaflet,
+  - demogp teste l'utilisation des services du Géoportail de l'IGN,
+  - search teste un outil de recherche dans les catalogues,
+  - visu est un outil de consultation de cartes prédéfinies
+  - servreg est un registre de serveurs utilisé par gp,
+  - gp est un outil de consultation des couches géographiques exposées par des serveurs,
+  - view teste un mécanisme de publication des couches des serveurs de servreg dans Google.
+  gexplor.fr est en lien avec geoapi.fr qui expose des API
+      
+  gexplor correspond à:
+  - (un répertoire local sur MyPassport dans \xampp\htdocs)
+  - un répertoire local sur le MacBook dans /users/benoit/Sites
+  - un répertoire de dev /home/bdavid/www/gexplor accessible sur http://bdavid.alwaysdata.net/gexplor
+    synchro local->dev: http://localhost/synchro.php?remote=http://bdavid.alwaysdata.net/&dir=gexplor
+  - un répertoire de prod /home/bdavid/prod/gexplor/ accessible sur http://gexplor.fr/
+    synchro local -> prod: http://localhost/synchro.php?remote=http://prod.geoapi.fr/
+    ou dev -> prod : http://bdavid.alwaysdata.net/gexplor/synchro.php?remote=http://gexplor.fr/
+    
+journal: |
+  6/5/2017 :
+    création du sous-module static
+  1/4/2017 :
+    création du sous-module view
+  18/3/2017 :
+    création du sous-module leaflet
+  13/3/2017 :
+    création de servreg par fork des serveurs définis dans visu
+    adaptation de gp à servreg
+  12/2/2017 :
+    améliorations de gp.gexplor.fr
+  11/2/2017 :
+    création
+submodules:
+  - /gexplor/gnym
+  - /gexplor/search
+  - /gexplor/demogp
+  - /gexplor/demoshom
+  - /gexplor/leaflet
+  - /gexplor/servreg
+  - /gexplor/visu
+  - /gexplor/gp
+  - /gexplor/view
+  - /gexplor/find
+  - /gexplor/static
+phpScripts:
+phpIncludes:
+htmlFiles:
+  - /gexplor/index.html

@@ -1,0 +1,58 @@
+phpDoc:
+  name: dreal-hautsdefr.yaml
+  title: dreal-hautsdefr.yaml - Serveurs de la DREAL Hauts-de-France
+yamlSchema: yamlschema.yaml
+
+classification:
+
+servers:
+  Carmen27-patrimoine_naturel_de_picardie:
+    title: Carte Carmen - Patrimoine naturel de Picardie
+    class: DrealHautsDeFrance
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/27/patrimoine_naturel_de_picardie?
+    protocol: WMS
+  Carmen27-sites_et_paysages_de_picardie:
+    title: Carte Carmen - Sites et paysages de Picardie
+    class: DrealHautsDeFrance
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/27/sites_et_paysages_de_picardie?
+    protocol: WMS
+  Carmen27-SRCE:
+    title: Carte Carmen - Schéma régional de cohérence écologique (Picardie)
+    class: DrealHautsDeFrance
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/27/SRCE?
+    protocol: WMS
+  Carmen27-eaux_et_milieux_aquatiques_en_picardie2:
+    title: Carte Carmen - L'eau et les milieux aquatiques en Picardie
+    class: DrealHautsDeFrance
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/27/eaux_et_milieux_aquatiques_en_picardie2?
+    protocol: WMS
+  Carmen27-risques_techno:
+    title: Carte Carmen - Risques technologiques (Nord-Pas-de-Calais)
+    class: DrealHautsDeFrance
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/24/risques_techno?
+    protocol: WMS
+  Carmen27-Cartographie_DI_CREIL:
+    title: Carte Carmen - Cartographie des risques d'inondation du TRI de CREIL
+    class: DrealHautsDeFrance
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/27/Cartographie_DI_CREIL?
+    protocol: WMS
+  Carmen27-Cartographie_DI_CHAUNY:
+    title: Carte Carmen - Cartographie des risques d'inondation du TRI de CHAUNY-TERGNIER-LA FERE
+    class: DrealHautsDeFrance
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/27/Cartographie_DI_CHAUNY?
+    protocol: WMS
+  Carmen27-Cartographie_DI_COMPIEGNE:
+    title: Carte Carmen - Cartographie des risques d'inondation du TRI de COMPIEGNE
+    class: DrealHautsDeFrance
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/27/Cartographie_DI_COMPIEGNE?
+    protocol: WMS
+  Carmen27-Cartographie_DI_AMIENS:
+    title: Carte Carmen - Cartographie des risques d'inondation du TRI d'AMIENS
+    class: DrealHautsDeFrance
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/27/Cartographie_DI_AMIENS?
+    protocol: WMS
+  Carmen27-Cartographie_DI_ABBEVILLE:
+    title: Carte Carmen - Cartographie des risques d'inondation du TRI d'ABBEVILLE
+    class: DrealHautsDeFrance
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/27/Cartographie_DI_ABBEVILLE?
+    protocol: WMS

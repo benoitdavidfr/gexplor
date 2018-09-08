@@ -1,0 +1,78 @@
+title: carte simple
+phpDoc:
+  name: carte.yaml
+  title: carte.yaml - carte de base grand public
+  doc: |
+    Carte avec les couches les plus connues et une localisation
+  journal: |
+    6/5/2017:
+      améliorations
+    19/4/2017:
+      première version
+center: 48, 3
+zoom: 8
+locate: true
+detectRetina: true
+baseLayers:
+  - title: vue aérienne
+    server: IGNFGP-WMTS
+    layer: ORTHOIMAGERY.ORTHOPHOTOS
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+  - title: Cartes IGN classiques
+    server: IGNFGP-WMTS
+    layer: GEOGRAPHICALGRIDSYSTEMS.MAPS
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+  - title: Cartes IGN Express
+    server: IGNFGP-WMTS
+    layer: GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    selected: true
+  - title: Cartes d'Etat-Major
+    server: IGNFGP-WMTS
+    layer: GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+  - server: IGNFGP-WMTS
+    layer: GEOGRAPHICALGRIDSYSTEMS.PLANIGN
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+  - title: Fond blanc
+    server: utilityserver
+    layer: whiteimg
+
+overlays:
+  - title: lim. subdi. fiscales (cadastre)
+    server: cadastre-tile
+    layer: SUBFISCAL
+    attribution: "&copy; <a href='http://www.cadastre.gouv.fr'>Cadastre</a>"
+  - server: cadastre-tile
+    layer: DETAIL_TOPO
+    attribution: "&copy; <a href='http://www.cadastre.gouv.fr'>Cadastre</a>"
+  - server: cadastre-tile
+    layer: HYDRO
+    attribution: "&copy; <a href='http://www.cadastre.gouv.fr'>Cadastre</a>"
+  - server: cadastre-tile
+    layer: VOIE_COMMUNICATION
+    attribution: "&copy; <a href='http://www.cadastre.gouv.fr'>Cadastre</a>"
+  - server: cadastre-tile
+    layer: BU.Building
+    attribution: "&copy; <a href='http://www.cadastre.gouv.fr'>Cadastre</a>"
+  - server: cadastre-tile
+    layer: CP.CadastralParcel
+    attribution: "&copy; <a href='http://www.cadastre.gouv.fr'>Cadastre</a>"
+  - server: cadastre-tile
+    layer: BORNE_REPERE
+    attribution: "&copy; <a href='http://www.cadastre.gouv.fr'>Cadastre</a>"
+  - server: cadastre-tile
+    layer: CLOTURE
+    attribution: "&copy; <a href='http://www.cadastre.gouv.fr'>Cadastre</a>"
+  - server: cadastre-tile
+    layer: LIEUDIT
+    attribution: "&copy; <a href='http://www.cadastre.gouv.fr'>Cadastre</a>"
+  - server: cadastre-tile
+    layer: AMORCES_CAD
+    attribution: "&copy; <a href='http://www.cadastre.gouv.fr'>Cadastre</a>"
+  - title: routes (IGN)
+    server: IGNFGP-WMTS
+    layer: TRANSPORTNETWORKS.ROADS
+  - title: toponymie (IGN)
+    server: IGNFGP-WMTS
+    layer: GEOGRAPHICALNAMES.NAMES

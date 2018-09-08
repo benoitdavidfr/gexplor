@@ -1,0 +1,71 @@
+phpDoc:
+  name: servers.yaml
+  title: servers.yaml - Liste de serveurs WMTS/WMS utilissés sur visu
+  doc: |
+    Contient:
+    - classification: un classement hiérarchique, chaque entrée définie par:
+        etiquette:
+          titre: titre de l'entrée à afficher
+          url?: URL optionnel d'une page d'info
+          children?: éventuellement une liste de sous-entrées
+    - servers: une liste de serveurs, chacun défini par:
+        etiquette:
+          titre: titre du serveur à afficher
+          class: une des étiquettes du classement hiérarchique
+          url: URL du serveur sans paramètres SERVICE ni REQUEST finissant sur ? ou &
+          protocol: WMTS|WMS
+  journal: |
+    2/11/2016
+      ajouts
+    30/10/2016
+      première version
+# 
+# classement hiérarchique des serveurs:
+# etiquette:
+#   title: titre du thème
+#   url?: page d'infos
+#   children?: sous-arborescence éventuelle
+classification:
+  IGNSHOM:
+    title: IGN & SHOM
+  MinEnv:
+    title: CLC, GéoRisques, GéoLittoral, GpU
+#  -> servers-minculture.yaml
+# détaillé dans serv-sandre.yaml
+  S:
+    title: S
+    children:
+      Sandre:
+        title: SIEau (SANDRE)
+  MNHN-INPN:
+    title: MNHN-INPN
+  Ifremer:
+    url: http://sextant.ifremer.fr/fr/nos-services
+    title: Ifremer - Sextant
+    children:
+      Ifremer-physique:
+        title: Océanographie physique, Biologie, Geosciences, bathymétrie, Photos anciennes
+      Ifremer-observation:
+        title: Surveillance littorale, Granulats marins, Référentiels du SIH, SISMER
+    
+# Structure:
+# etiquette:
+#   title: titre du serveur
+#   class: une des étiquettes du classement hiérarchique
+#   url: URL du serveur sans paramètres SERVICE ni REQUEST finissant sur ? ou &
+#   protocol: WMTS|WMS
+#
+servers:
+  IGNFGP-WMTS:
+    title: Géoportail IGN WM
+    class: IGNSHOM
+    url: http://gpp3-wxs.ign.fr/49qcg7rckqrk3og45nm5i4s3/wmts?
+    protocol: WMTS
+# Services du Sandre - Générés par gensandre.php
+# Sandre renvoie aux services définis dans serv-sandre.yaml
+# Ce noeud sera remplacé par la liste des serveurs définis dans le fichier
+  Sandre:
+    title: Services du Sandre
+    class: Sandre
+    url: serv-sandre.yaml
+    

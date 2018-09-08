@@ -1,0 +1,19 @@
+# Ministère de la culture en construction
+# voir: http://atlas.patrimoines.culture.fr/
+
+classification:
+  MinCulture:
+    title: Atlas des Patrimoines (Min. Culture)
+  
+servers:
+# Min. Culture
+  apat-MD_1638:
+    title: MD_1638
+    theme: MinCulture
+    url: http://atlas.patrimoines.culture.fr/cgi-bin/mapserv?map=/home/atlas-mapserver/production/var/data/MD_1638/MD_1638.map&
+    protocol: WMS
+  apat-referentiel-couvertures:
+    title: referentiel/couvertures
+    theme: MinCulture
+    url: http://atlas.patrimoines.culture.fr/cgi-bin/mapserv?map=/home/atlas-mapserver/production/var/data/referentiel/couvertures.map&
+    protocol: WMS

@@ -1,0 +1,87 @@
+title: carte exemple
+# Une documentation sur la carte
+phpDoc:
+  name: mapex.yaml
+  title: mapex.yaml - carte exemple
+  doc: |
+    Cette carte fournit différents exemples du format Yaml de définition de carte.
+    <a href='../visu/viewer.php?url=maps%2Fmapex.yaml' target='_blank'>Elle peut être visualisée avec viewer.php</a>
+  journal: |
+    15/11/2016:
+      ajout d'une géolocalisation
+    9/11/2016:
+      ajout d'une couche de base blanche
+    1/11/2016:
+      première version
+# le centre de la carte initiale
+center: 48, 3
+# le niveau de zoom initial de la carte
+zoom: 8
+# la géolocalisation
+locate: true
+# si l'affichage est effectué sur un écran Retina, la résolution est améliorée
+detectRetina: true
+# les couches de fond
+baseLayers:
+  - title: Fond blanc
+    server: utilityserver
+    layer: whiteimg
+  - title: Cartes IGN classiques
+    server: IGNFGP-WMTS
+    layer: GEOGRAPHICALGRIDSYSTEMS.MAPS
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    selected: true
+# Exemple sans attribution
+  - title: Ortho-images
+    server: IGNFGP-WMTS
+    layer: ORTHOIMAGERY.ORTHOPHOTOS
+# CLC-WMS
+  - title: CLC 2012 métropole (Raster 25m)
+    server: CLC-WMS
+    layer: clc:RCLC12
+    attribution: "&copy; SOES"
+    
+# les couches superposables
+overlays:
+# Exemple sans title
+  - server: IGNFGP-WMTS
+    layer: TRANSPORTNETWORKS.ROADS
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+# Exemple avec un style
+  - title: Parcelles cadastrales (orange)
+    server: IGNFGP-WMTS
+    layer: CADASTRALPARCELS.PARCELS
+    style: bdparcellaire_o
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+# Couche WMS GP
+  - title: SCAN littoral
+    server: IGNFGP-WMS-R
+    layer: SCANLITTO_PYR-JPEG_WLD_WM
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+# WMTS SHOM
+  - title: Limites de salure des eaux
+    server: SHOM-WMTS-WM
+    layer: LIMITES_SALURE_EAUX_WMTS
+    attribution: "&copy; SHOM"
+# WMTS SHOM
+  - title: zones de marée
+    server: SHOM-WMTS-WM
+    layer: ZONES_MAREE_PYR_PNG_3857_WMTS
+    attribution: "&copy; SHOM"
+# WMTS SHOM
+  - title: MNT de façade Atlantique
+    server: SHOM-WMTS-WM
+    layer: MNT_ATL100m_HOMONIM_PBMA_3857_WMTS
+    attribution: "&copy; SHOM"
+  - server: SHOM-WMTS-WM
+    layer: LITTO3D_EPARSES_2012_PYR_3857_WMTS
+  - server: SHOM-WMTS-WM
+    layer: TOPONYMIE_PYR_PNG_3857_WMTS
+# Couche WMS INPN
+  - title: Sites d'importance communautaire JOUE (ZSC,SIC)
+    server: MNHN-INPN-metropole
+    layer: Sites_d_importance_communautaire_JOUE__ZSC_SIC_
+    attribution: "&copy; <a href='http://www.ign.fr'>MNHN, DREAL</a>"
+# Couche Sandre
+  - server: Sandre-eth_FXX
+    layer: CoursEau1

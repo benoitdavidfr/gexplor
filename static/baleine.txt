@@ -1,0 +1,2 @@
+carte avec un bouton pour signaler une baleine
+http://danielmontague.com/projects/easyButton.js/v1/examples/

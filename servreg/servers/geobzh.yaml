@@ -1,0 +1,446 @@
+phpDoc:
+  name: geobzh.yaml
+  title: geobzh.yaml - Serveurs de GéoBretagne
+  doc: |
+  journal: |
+    15/4/2017
+      Suppression d'un serveur
+yamlSchema: yamlschema.yaml
+  
+classification:
+  GeoBretagne:
+    title: GéoBretagne
+    url: http://cms.geobretagne.fr/services
+    
+servers:
+  geobzh-photo:
+    title: Photographies aériennes en Bretagne
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/photo/ows?
+    protocol: WMS
+  geobzh-geob_loc:
+    title: données de localisation
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/geob_loc/ows?
+    protocol: WMS
+  geobzh-ign:
+    title: IGN
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/ign/ows?
+    protocol: WMS
+  geobzh-alti:
+    title: Altimétrie
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/alti/ows?
+    protocol: WMS
+  geobzh-cadastre:
+    title: Cadastre en Bretagne
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/cadastre/ows?
+    protocol: WMS
+  geobzh-ff:
+    title: fichiers fonciers
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/ff/ows?
+    protocol: WMS
+  geobzh-osm:
+    title: OpenStreetMap
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/osm/ows?
+    protocol: WMS
+  geobzh-onema:
+    title: ONEMA
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/onema/ows?
+    protocol: WMS
+  geobzh-rff:
+    title: RFF
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/rff/ows?
+    protocol: WMS
+  geobzh-asp:
+    title: ASP
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/asp/ows?
+    protocol: WMS
+  geobzh-insee:
+    title: INSEE
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/insee/ows?
+    protocol: WMS
+  geobzh-nasa:
+    title: NASA
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/nasa/ows?
+    protocol: WMS
+  geobzh-fma:
+    title: Forum des Marais Atlantique
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/fma/ows?
+    protocol: WMS
+  geobzh-zoneouest:
+    title: Zone Ouest
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/zoneouest/ows?
+    protocol: WMS
+  geobzh-dreal_b:
+    title: DREAL Bretagne
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/dreal_b/ows?
+    protocol: WMS
+  geobzh-dir_ouest:
+    title: Direction Interrégionale des Routes Ouest
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/dir_ouest/ows?
+    protocol: WMS
+  geobzh-draaf:
+    title: DRAAF Bretagne
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/draaf/ows?
+    protocol: WMS
+  geobzh-drac:
+    title: DRAC
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/drac/ows?
+    protocol: WMS
+  geobzh-direccte:
+    title: DIRECCTE
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/direccte/ows?
+    protocol: WMS
+  geobzh-rectorat:
+    title: rectorat Bretagne
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/rectorat/ows?
+    protocol: WMS
+  geobzh-otb:
+    title: Office de Tourisme de Bretagne
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/otb/ows?
+    protocol: WMS
+  geobzh-epfb:
+    title: EPF Bretagne
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/epfb/ows?
+    protocol: WMS
+  geobzh-chambreagriculture:
+    title: Chambre d'agriculture
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/chambreagriculture/ows?
+    protocol: WMS
+  geobzh-crpf:
+    title: CRPF
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/crpf/ows?
+    protocol: WMS
+  geobzh-bretagneenvironnement:
+    title: Bretagne Environnement
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/bretagneenvironnement/ows?
+    protocol: WMS
+  geobzh-bretagnevivante:
+    title: Bretagne Vivante
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/bretagnevivante/ows?
+    protocol: WMS
+  geobzh-bretagneromantique:
+    title: Bretagne Romantique
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/bretagneromantique/ows?
+    protocol: WMS
+  geobzh-ddtm22:
+    title: DDTM 22
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/ddtm22/ows?
+    protocol: WMS
+  geobzh-ddtm29:
+    title: DDTM 29
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/ddtm29/ows?
+    protocol: WMS
+  geobzh-ddtm35:
+    title: DDTM 35
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/ddtm35/ows?
+    protocol: WMS
+  geobzh-ddtm56:
+    title: DDTM 56
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/ddtm56/ows?
+    protocol: WMS
+  geobzh-cg22:
+    title: Conseil Départemental 22
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/cg22/ows?
+    protocol: WMS
+  geobzh-cg29:
+    title: Conseil Départemental 29
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/cg29/ows?
+    protocol: WMS
+  geobzh-cg35:
+    title: Conseil Départemental 35
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/cg35/ows?
+    protocol: WMS
+  geobzh-cg56:
+    title: Conseil Départemental 56
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/cg56/ows?
+    protocol: WMS
+  geobzh-sdis22:
+    title: SDIS22
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/sdis22/ows?
+    protocol: WMS
+  geobzh-sdis29:
+    title: SDIS29
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/sdis29/ows?
+    protocol: WMS
+  geobzh-sdis35:
+    title: SDIS35
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/sdis35/ows?
+    protocol: WMS
+  geobzh-sdis56:
+    title: SDIS56
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/sdis56/ows?
+    protocol: WMS
+  geobzh-smlj:
+    title: Syndicat Mixte du bassin versant du lac de Jugon
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/smlj/ows?
+    protocol: WMS
+  geobzh-crcbs:
+    title: Comité Régional de Conchyliculture Bretagne sud
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/crcbs/ows?
+    protocol: WMS
+  geobzh-adeupa:
+    title: Agence d'Urbanisme du Pays de Brest
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/adeupa/ows?
+    protocol: WMS
+  geobzh-anfr:
+    title: Agence Nationale des Fréquences
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/anfr/ows?
+    protocol: WMS
+  geobzh-audelor:
+    title: Agence d'Urbanisme et de Développement Economique du Pays de Lorient (AUDELOR)
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/audelor/ows?
+    protocol: WMS
+  geobzh-audiar:
+    title: Agence d'Urbanisme et de Développement Intercommunal de l'Agglomération Rennaise (AUDIAR)
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/audiar/ows?
+    protocol: WMS
+  geobzh-bassinelorn:
+    title: Syndicat de Bassin de l'Elorn
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/bassinelorn/ows?
+    protocol: WMS
+  geobzh-cciquimper:
+    title: CCI de Quimper
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/cciquimper/ows?
+    protocol: WMS
+  geobzh-cocopaq:
+    title: ComCom du Pays de Quimperlé
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/cocopaq/ows?
+    protocol: WMS
+  geobzh-concarneaucornouaille:
+    title: Concarneau Cornouaille Agglomération
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/concarneaucornouaille/ows?
+    protocol: WMS
+  geobzh-couesnon:
+    title: SAGE Couesnon
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/couesnon/ows?
+    protocol: WMS
+  geobzh-emeraude:
+    title: ComCom de la Côte d'Emeraude
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/emeraude/ows?
+    protocol: WMS
+  geobzh-glazik:
+    title: ComCom du pays Glazik
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/glazik/ows?
+    protocol: WMS
+  geobzh-hautecornouaille:
+    title: ComCom de Haute Cornouaille
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/hautecornouaille/ows?
+    protocol: WMS
+  geobzh-iav:
+    title: Institut d'Aménagement de la Vilaine
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/iav/ows?
+    protocol: WMS
+  geobzh-lorientagglo:
+    title: Lorient Agglomération
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/lorientagglo/ows?
+    protocol: WMS
+  geobzh-megalis:
+    title: Mégalis Bretagne
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/megalis/ows?
+    protocol: WMS
+  geobzh-montfortcommunaute:
+    title: Montfort Communauté
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/montfortcommunaute/ows?
+    protocol: WMS
+  geobzh-paimpolgoelo:
+    title: ComCom de Paimpol Goëlo
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/paimpolgoelo/ows?
+    protocol: WMS
+  geobzh-paysaubigne:
+    title: ComCom du Pays d'Aubigné
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/paysaubigne/ows?
+    protocol: WMS
+  geobzh-paysauray:
+    title: pays d'Auray
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/paysauray/ows?
+    protocol: WMS
+  geobzh-payschateaugiron:
+    title: ComCom du pays de Chateaugiron
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/payschateaugiron/ows?
+    protocol: WMS
+  geobzh-paysfouesnantais:
+    title: ComCom du pays Fouesnantais
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/paysfouesnantais/ows?
+    protocol: WMS
+  geobzh-paysploermel:
+    title: pays de Ploermel
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/paysploermel/ows?
+    protocol: WMS
+  geobzh-paysrennes:
+    title: pays de Rennes
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/paysrennes/ows?
+    protocol: WMS
+  geobzh-paysstbrieuc:
+    title: pays de Saint Brieuc
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/paysstbrieuc/ows?
+    protocol: WMS
+  geobzh-paysstmalo:
+    title: pays de Saint Malo
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/paysstmalo/ows?
+    protocol: WMS
+  geobzh-pnra:
+    title: Parc Naturel Régional d'Armorique
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/pnra/ows?
+    protocol: WMS
+  geobzh-pontivycommunaute:
+    title: Pontivy Communauté
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/pontivycommunaute/ows?
+    protocol: WMS
+# Mise à jour 15/4/2017 - le serveur semble avoir disparu
+#  geobzh-presquilerhuys:
+#    title: ComCom de la Presqu'île de Rhuys
+#    class: GeoBretagne
+#    url: http://geobretagne.fr/geoserver/presquilerhuys/ows?
+#    protocol: WMS
+  geobzh-qcd:
+    title: Quimper Cornouaille Développement
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/qcd/ows?
+    protocol: WMS
+  geobzh-quimpercommunaute:
+    title: Quimper Communauté
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/quimpercommunaute/ows?
+    protocol: WMS
+  geobzh-riaetel:
+    title: CC Ria d'Etel
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/riaetel/ows?
+    protocol: WMS
+  geobzh-rochefees:
+    title: CC de la Roche aux Fées
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/rochefees/ows?
+    protocol: WMS
+  geobzh-roimorvan:
+    title: Roi Morvan Communauté
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/roimorvan/ows?
+    protocol: WMS
+  geobzh-supaysvitre:
+    title: Syndicat d'Urbanisme du Pays de Vitré
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/supaysvitre/ows?
+    protocol: WMS
+  geobzh-valdille:
+    title: CC du Val d'Ille
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/valdille/ows?
+    protocol: WMS
+  geobzh-vannesagglo:
+    title: Vannes Agglomération
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/vannesagglo/ows?
+    protocol: WMS
+  geobzh-vitrecommunaute:
+    title: Vitré Communauté
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/vitrecommunaute/ows?
+    protocol: WMS
+  geobzh-coeuremeraude:
+    title: Coeur Emeraude
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/coeuremeraude/ows?
+    protocol: WMS
+  geobzh-paysredon:
+    title: pays de Redon
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/paysredon/ows?
+    protocol: WMS
+  geobzh-paysbroceliande:
+    title: pays de Brocéliande
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/paysbroceliande/ows?
+    protocol: WMS
+  geobzh-coglais:
+    title: Coglais Communauté
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/coglais/ows?
+    protocol: WMS
+  geobzh-smjgb:
+    title: Bassin Versant Jaudy-Guindy-Bizien
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/smjgb/ows?
+    protocol: WMS
+  geobzh-ccpbs:
+    title: ComCom Pays Bigouden Sud
+    class: GeoBretagne
+    url: http://geobretagne.fr/geoserver/ccpbs/ows?
+    protocol: WMS
+  geobzh-wmts-cartesphoto:
+    title: cartes et photographies
+    class: GeoBretagne
+    url: http://tile.geobretagne.fr/gwc02/service/wmts?
+    protocol: WMTS
+  geobzh-wmts-osm:
+    title: OSM
+    class: GeoBretagne
+    url: http://osm.geobretagne.fr/gwc01/service/wmts?
+    protocol: WMTS

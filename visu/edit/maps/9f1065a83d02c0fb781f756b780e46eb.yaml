@@ -1,0 +1,45 @@
+---
+title: "carte par d\xE9faut"
+phpDoc:
+  name: defaultmap.yaml
+  title: "defaultmap.yaml - carte par d\xE9faut"
+  doc: "Cette carte est utilis\xE9e par d\xE9faut par l'\xE9diteur de cartes.\n<a
+    href='../visu/viewer.php?url=edit%2Fdefaultmap.yaml' target='_blank'>Elle peut
+    \xEAtre visualis\xE9e avec viewer.php</a>\n"
+  journal: "1/11/2016:\n  premi\xE8re version\n"
+center: 48, 3
+zoom: 8
+detectRetina: true
+baseLayers:
+- title: Cartes IGN classiques
+  server: IGNFGP-WMTS-WM
+  layer: GEOGRAPHICALGRIDSYSTEMS.MAPS
+  attribution: '&copy; <a href=''http://www.ign.fr''>IGN</a>'
+- title: Cartes IGN Express
+  server: IGNFGP-WMTS-WM
+  layer: GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD
+  attribution: '&copy; <a href=''http://www.ign.fr''>IGN</a>'
+- server: IGNFGP-WMTS-WM
+  layer: GEOGRAPHICALGRIDSYSTEMS.PLANIGN
+  attribution: '&copy; <a href=''http://www.ign.fr''>IGN</a>'
+  selected: "true"
+- title: Ortho-images
+  server: IGNFGP-WMTS-WM
+  layer: ORTHOIMAGERY.ORTHOPHOTOS
+  attribution: '&copy; <a href=''http://www.ign.fr''>IGN</a>'
+overlays:
+  0:
+    server: IGNFGP-WMTS-WM
+    layer: GEOGRAPHICALNAMES.NAMES
+    attribution: '&copy; <a href=''http://www.ign.fr''>IGN</a>'
+  3:
+    server: core003-wms
+    layer: OI.Mosaic.NaturalColor.Feathering
+  4:
+    server: core003-wms
+    layer: OI.Mosaic.SourceFootprints
+  5:
+    server: core003-wmts
+    layer: core003_seamline_mixed
+    selected: "true"
+...

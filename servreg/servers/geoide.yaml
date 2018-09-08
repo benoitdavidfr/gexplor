@@ -1,0 +1,1396 @@
+phpDoc:
+  name: geoide.yaml
+  title: geoide.yaml - Liste de serveurs WMS Géo-IDE avec la classification des services déconcentrés
+  doc: |
+    La liste des serveurs est générée par extract-geoide.php
+      Extraction automatique du Sat, 25 Mar 2017 10:10:20 +0100 sur la moisson geoide20170226
+    La classification est générée par:
+      servetat.php
+classification:
+  FR:
+    title: nationales (FR)
+    abstract: couches diffusées par des acteurs français nationaux
+    children:
+      MinEnv:
+        title: "Ministère chargé de l'environnement"
+        children:
+          DIRM:
+            title: Directions inter-régionales de la mer
+            children:
+              DirmMemn:
+                title: 'DIRM Manche Est - Mer du Nord'
+              DirmNamo:
+                title: 'DIRM Nord-Atlantique - Manche Ouest'
+              DirmSa:
+                title: DIRM Sud-Atlantique
+              DirmMed:
+                title: DIRM Mer Méditerranée
+          DIR:
+            title: Directions inter-départementales des routes
+            children:
+              DirNo:
+                title: DIR Nord-Ouest
+              DirSo:
+                title: DIR Sud-Ouest
+              DirAtl:
+                title: DIR Atlantique
+              DirIdF:
+                title: DIR Île-de-France
+              DirCo:
+                title: DIR Centre-Ouest
+              DirOuest:
+                title: DIR Ouest
+              DirMed:
+                title: DIR Méditerranée
+              DirMc:
+                title: DIR Massif central
+              DirCe:
+                title: DIR Centre-Est
+              DirNord:
+                title: DIR Nord
+              DirEst:
+                title: DIR Est
+          divers:
+            title: Services divers
+            children:
+              CGDD:
+                title: CGDD
+              PNE IG:
+                title: PNE IG
+              FORMAIX3:
+                title: FORMAIX3 (Test EOLE 2.4)
+              CPII-DOIF:
+                title: CPII-DOIF
+  Regions:
+    title: régionales
+    abstract: couches diffusées par des acteurs régionaux
+    children:
+      HautsDeFrance:
+        title: Hauts-de-France
+        children:
+          DrealHautsDeFrance:
+            title: DREAL Hauts-de-France
+          DraafHautsDeFrance:
+            title: DRAAF Hauts-de-France
+          DDT02:
+            title: DDT Aisne (02)
+          DDT59:
+            title: DDTM Nord (59)
+          DDT60:
+            title: DDT Oise (60)
+          DDT62:
+            title: DDTM Pas-de-Calais (62)
+          DDT80:
+            title: DDTM Somme (80)
+      GrandEst:
+        title: Grand Est
+        children:
+          DrealGrandEst:
+            title: DREAL Grand Est
+          DraafGrandEst:
+            title: DRAAF Grand Est
+          DDT08:
+            title: DDT Ardennes (08)
+          DDT10:
+            title: DDT Aube (10)
+          DDT51:
+            title: DDT Marne (51)
+          DDT52:
+            title: DDT Haute-Marne (52)
+          DDT54:
+            title: DDT Meurthe-et-Moselle (54)
+          DDT55:
+            title: DDT Meuse (55)
+          DDT57:
+            title: DDT Moselle (57)
+          DDT67:
+            title: DDT Bas-Rhin (67)
+          DDT68:
+            title: DDT Haut-Rhin (68)
+          DDT88:
+            title: DDT Vosges (88)
+      BFC:
+        title: Bourgogne-Franche-Comté
+        children:
+          DrealBFC:
+            title: DREAL Bourgogne-Franche-Comté
+          DraafBFC:
+            title: DRAAF Bourgogne-Franche-Comté
+          DDT21:
+            title: "DDT Côte-d'Or (21)"
+          DDT25:
+            title: DDT Doubs (25)
+          DDT39:
+            title: DDT Jura (39)
+          DDT58:
+            title: DDT Nièvre (58)
+          DDT70:
+            title: DDT Haute-Saône (70)
+          DDT71:
+            title: DDT Saône-et-Loire (71)
+          DDT89:
+            title: DDT Yonne (89)
+          DDT90:
+            title: DDT Territoire de Belfort (90)
+      ARA:
+        title: Auvergne-Rhône-Alpes
+        children:
+          DrealARA:
+            title: DREAL Auvergne-Rhône-Alpes
+          DraafARA:
+            title: DRAAF Auvergne-Rhône-Alpes
+          DDT01:
+            title: DDT Ain (01)
+          DDT03:
+            title: DDT Allier (03)
+          DDT07:
+            title: DDT Ardèche (07)
+          DDT15:
+            title: DDT Cantal (15)
+          DDT26:
+            title: DDT Drôme (26)
+          DDT38:
+            title: DDT Isère (38)
+          DDT42:
+            title: DDT Loire (42)
+          DDT43:
+            title: DDT Haute-Loire (43)
+          DDT63:
+            title: DDT Puy-de-Dôme (63)
+          DDT69:
+            title: DDT Rhône (69)
+          DDT73:
+            title: DDT Savoie (73)
+          DDT74:
+            title: DDT Haute-Savoie (74)
+      PACA:
+        title: "Provence-Alpes-Côte d'Azur"
+        children:
+          DrealPACA:
+            title: "DREAL Provence-Alpes-Côte d'Azur"
+          DraafPACA:
+            title: "DRAAF Provence-Alpes-Côte d'Azur"
+          DDT04:
+            title: DDT Alpes-de-Haute-Provence (04)
+          DDT05:
+            title: DDT Hautes-Alpes (05)
+          DDT06:
+            title: DDTM Alpes-Maritimes (06)
+          DDT13:
+            title: DDTM Bouches-du-Rhône (13)
+          DDT83:
+            title: DDTM Var (83)
+          DDT84:
+            title: DDT Vaucluse (84)
+      Corse:
+        title: Corse
+        children:
+          DrealCorse:
+            title: DREAL Corse
+          DraafCorse:
+            title: DRAAF Corse
+          DDT2A:
+            title: DDTM Corse-du-Sud (2A)
+          DDT2B:
+            title: DDTM Haute-Corse (2B)
+      Occitanie:
+        title: Occitanie
+        children:
+          DrealOccitanie:
+            title: DREAL Occitanie
+          DraafOccitanie:
+            title: DRAAF Occitanie
+          DDT09:
+            title: DDT Ariège (09)
+          DDT11:
+            title: DDTM Aude (11)
+          DDT12:
+            title: DDT Aveyron (12)
+          DDT30:
+            title: DDTM Gard (30)
+          DDT31:
+            title: DDT Haute-Garonne (31)
+          DDT32:
+            title: DDT Gers (32)
+          DDT34:
+            title: DDTM Hérault (34)
+          DDT46:
+            title: DDT Lot (46)
+          DDT48:
+            title: DDT Lozère (48)
+          DDT65:
+            title: DDT Hautes-Pyrénées (65)
+          DDT66:
+            title: DDTM Pyrénées-Orientales (66)
+          DDT81:
+            title: DDT Tarn (81)
+          DDT82:
+            title: DDT Tarn-et-Garonne (82)
+      NAquitaine:
+        title: Nouvelle-Aquitaine
+        children:
+          DrealNAquitaine:
+            title: DREAL Nouvelle-Aquitaine
+          DraafNAquitaine:
+            title: DRAAF Nouvelle-Aquitaine
+          DDT16:
+            title: DDT Charente (16)
+          DDT17:
+            title: DDTM Charente-Maritime (17)
+          DDT19:
+            title: DDT Corrèze (19)
+          DDT23:
+            title: DDT Creuse (23)
+          DDT24:
+            title: DDT Dordogne (24)
+          DDT33:
+            title: DDTM Gironde (33)
+          DDT40:
+            title: DDTM Landes (40)
+          DDT47:
+            title: DDT Lot-et-Garonne (47)
+          DDT64:
+            title: DDTM Pyrénées-Atlantiques (64)
+          DDT79:
+            title: DDT Deux-Sèvres (79)
+          DDT86:
+            title: DDT Vienne (86)
+          DDT87:
+            title: DDT Haute-Vienne (87)
+      CentreVdL:
+        title: Centre-Val de Loire
+        children:
+          DrealCentreVdL:
+            title: DREAL Centre-Val de Loire
+          DraafCentreVdL:
+            title: DRAAF Centre-Val de Loire
+          DDT18:
+            title: DDT Cher (18)
+          DDT28:
+            title: DDT Eure-et-Loir (28)
+          DDT36:
+            title: DDT Indre (36)
+          DDT37:
+            title: DDT Indre-et-Loire (37)
+          DDT41:
+            title: DDT Loir-et-Cher (41)
+          DDT45:
+            title: DDT Loiret (45)
+      PdL:
+        title: Pays de la Loire
+        children:
+          DrealPdL:
+            title: DREAL Pays de la Loire
+          DraafPdL:
+            title: DRAAF Pays de la Loire
+          DDT44:
+            title: DDTM Loire-Atlantique (44)
+          DDT49:
+            title: DDT Maine-et-Loire (49)
+          DDT53:
+            title: DDT Mayenne (53)
+          DDT72:
+            title: DDT Sarthe (72)
+          DDT85:
+            title: DDTM Vendée (85)
+      Bretagne:
+        title: Bretagne
+        children:
+          DrealBretagne:
+            title: DREAL Bretagne
+          DraafBretagne:
+            title: DRAAF Bretagne
+          DDT22:
+            title: "DDTM Côtes-d'Armor (22)"
+          DDT29:
+            title: DDTM Finistère (29)
+          DDT35:
+            title: DDTM Ille-et-Vilaine (35)
+          DDT56:
+            title: DDTM Morbihan (56)
+      Normandie:
+        title: Normandie
+        children:
+          DrealNormandie:
+            title: DREAL Normandie
+          DraafNormandie:
+            title: DRAAF Normandie
+          DDT14:
+            title: DDTM Calvados (14)
+          DDT27:
+            title: DDTM Eure (27)
+          DDT50:
+            title: DDTM Manche (50)
+          DDT61:
+            title: DDT Orne (61)
+          DDT76:
+            title: DDTM Seine-Maritime (76)
+      IleDeFrance:
+        title: Île-de-France
+        children:
+          DrieaIleDeFrance:
+            title: DRIEA Île-de-France
+            children:
+              DrieaIleDeFrance/UTEA75:
+                title: DRIEA IF/UTEA75
+              DrieaIleDeFrance/UTEA92:
+                title: DRIEA IF/UTEA92
+              DrieaIleDeFrance/UD93:
+                title: DRIEA IF/UD93 (Unité départementale de Seine-Saint-Denis)
+              DrieaIleDeFrance/UTEA94:
+                title: DRIEA IF/UTEA94
+          DrieeIleDeFrance:
+            title: DRIEE Île-de-France
+          DriaafIleDeFrance:
+            title: DRIAAF Île-de-France
+          DDT77:
+            title: DDT Seine-et-Marne (77)
+          DDT78:
+            title: DDT Yvelines (78)
+          DDT91:
+            title: DDT Essonne (91)
+          DDT95:
+            title: "DDT Val-d'Oise (95)"
+      Glp:
+        title: Guadeloupe
+        children:
+          DealGlp:
+            title: DEAL Guadeloupe
+          DaafGlp:
+            title: DAAF Guadeloupe
+          DmGlp:
+            title: Direction de la Mer de Guadeloupe
+      Mtq:
+        title: Martinique
+        children:
+          DealMtq:
+            title: DEAL Martinique
+          DaafMtq:
+            title: DAAF Martinique
+          DmMtq:
+            title: Direction de la Mer de Martinique
+      Guf:
+        title: Guyane
+        children:
+          DealGuf:
+            title: DEAL Guyane
+          DaafGuf:
+            title: DAAF Guyane
+          DmGuf:
+            title: Direction de la Mer de Guyane
+      Reu:
+        title: La Réunion
+        children:
+          DealReu:
+            title: DEAL La Réunion
+          DaafReu:
+            title: DAAF La Réunion
+          DmReu:
+            title: Direction de la Mer Sud océan Indien
+      Myt:
+        title: Mayotte
+        children:
+          DealMyt:
+            title: DEAL Mayotte
+          DaafMyt:
+            title: DAAF Mayotte
+      Spm:
+        title: Saint-Pierre-et-Miquelon
+        children:
+          DtamSpm:
+            title: DTAM 975
+servers:
+# IGN
+  IGNFGP-tile-WM:
+    title: GP IGN WM
+    class: IGN
+    url: http://igngp.geoapi.fr/tile.php
+    protocol: tile
+  IGNFGP-WMTS:
+    title: GP IGN
+    class: IGN
+    url: http://gpp3-wxs.ign.fr/49qcg7rckqrk3og45nm5i4s3/wmts?
+    protocol: WMTS
+  IGNFGP-WMS-R:
+    title: GP IGN WMS raster 
+    class: IGN
+    url: http://gpp3-wxs.ign.fr/49qcg7rckqrk3og45nm5i4s3/geoportail/r/wms?
+    protocol: WMS
+  IGNFGP-WMS-V:
+    title: GP IGN WMS vecteur
+    class: IGN
+    url: http://gpp3-wxs.ign.fr/49qcg7rckqrk3og45nm5i4s3/geoportail/v/wms?
+    protocol: WMS
+  IGNFGP-WMS-Inspire-R:
+    title: GP IGN WMS Inspire raster 
+    class: IGN
+    url: http://gpp3-wxs.ign.fr/0czlrp8frromgao3lyk9eyje/inspire/r/wms?
+    protocol: WMS
+  IGNFGP-WMS-Inspire-V:
+    title: GP IGN WMS Inspire vecteur
+    class: IGN
+    url: http://gpp3-wxs.ign.fr/0czlrp8frromgao3lyk9eyje/inspire/v/wms?
+    protocol: WMS
+    
+# SHOM
+  SHOM-WMTS-WM:
+    title: SHOM WM
+    class: SHOM
+    url: http://services.data.shom.fr/INSPIRE/wmts?
+    protocol: WMTS
+  SHOM-WMS-R:
+    title: SHOM WMS raster
+    class: SHOM
+    url: http://services.data.shom.fr/INSPIRE/wms/r?
+    protocol: WMS
+  SHOM-WMS-V:
+    title: SHOM WMS vecteur
+    class: SHOM
+    url: http://services.data.shom.fr/INSPIRE/wms/v?
+    protocol: WMS
+    
+  geoide-DEPT001A-JDD:
+    title: JdD de DDT 01 (Ain)
+    class: DDT01
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT001A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT001A-LDD:
+    title: LdD de DDT 01 (Ain)
+    class: DDT01
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT001A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT004A-JDD:
+    title: JdD de DDT 04 (Alpes de Haute-Provence)
+    class: DDT04
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT004A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT004A-LDD:
+    title: LdD de DDT 04 (Alpes de Haute-Provence)
+    class: DDT04
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT004A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT005A-JDD:
+    title: JdD de DDT 05 (Hautes-Alpes)
+    class: DDT05
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT005A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT005A-LDD:
+    title: LdD de DDT 05 (Hautes-Alpes)
+    class: DDT05
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT005A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT006A-JDD:
+    title: JdD de DDTM 06 (Alpes-Maritimes)
+    class: DDT06
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT006A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT007A-JDD:
+    title: JdD de DDT 07 (Ardèche)
+    class: DDT07
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT007A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT008A-JDD:
+    title: JdD de DDT 08 (Ardennes)
+    class: DDT08
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT008A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT009A-JDD:
+    title: JdD de DDT 09 (Ariège)
+    class: DDT09
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT009A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT009A-LDD:
+    title: LdD de DDT 09 (Ariège)
+    class: DDT09
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT009A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT010A-JDD:
+    title: JdD de DDT 10 (Aube)
+    class: DDT10
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT010A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT010A-LDD:
+    title: LdD de DDT 10 (Aube)
+    class: DDT10
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT010A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT011A-JDD:
+    title: JdD de DDTM 11 (Aude)
+    class: DDT11
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT011A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT012A-JDD:
+    title: JdD de DDT 12 (Aveyron)
+    class: DDT12
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT012A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT012A-LDD:
+    title: LdD de DDT 12 (Aveyron)
+    class: DDT12
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT012A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT013A-JDD:
+    title: JdD de DDTM 13 (Bouches-du-Rhône)
+    class: DDT13
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT013A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT013A-LDD:
+    title: LdD de DDTM 13 (Bouches-du-Rhône)
+    class: DDT13
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT013A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT014A-JDD:
+    title: JdD de DDTM 14 (Calvados)
+    class: DDT14
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT014A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT015A-JDD:
+    title: JdD de DDT 15 (Cantal)
+    class: DDT15
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT015A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT016A-JDD:
+    title: JdD de DDT 16 (Charente)
+    class: DDT16
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT016A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT016A-LDD:
+    title: LdD de DDT 16 (Charente)
+    class: DDT16
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT016A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT017A-JDD:
+    title: JdD de DDTM 17 (Charente-Maritime)
+    class: DDT17
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT017A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT017A-LDD:
+    title: LdD de DDTM 17 (Charente-Maritime)
+    class: DDT17
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT017A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT018A-JDD:
+    title: JdD de DDT 18 (Cher)
+    class: DDT18
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT018A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT018A-LDD:
+    title: LdD de DDT 18 (Cher)
+    class: DDT18
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT018A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT019A-JDD:
+    title: JdD de DDT 19 (Corrèze)
+    class: DDT19
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT019A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT019A-LDD:
+    title: LdD de DDT 19 (Corrèze)
+    class: DDT19
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT019A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT021A-JDD:
+    title: "JdD de DDT 21 (Côte-d'Or)"
+    class: DDT21
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT021A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT021A-LDD:
+    title: "LdD de DDT 21 (Côte-d'Or)"
+    class: DDT21
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT021A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT022A-JDD:
+    title: "JdD de DDTM 22 (Côtes-d'Armor)"
+    class: DDT22
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT022A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT023A-JDD:
+    title: JdD de DDT 23 (Creuse)
+    class: DDT23
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT023A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT023A-LDD:
+    title: LdD de DDT 23 (Creuse)
+    class: DDT23
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT023A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT024A-JDD:
+    title: JdD de DDT de la Dordogne
+    class: DDT24
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT024A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT024A-LDD:
+    title: LdD de DDT de la Dordogne
+    class: DDT24
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT024A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT025A-JDD:
+    title: JdD de DDT 25 (Doubs)
+    class: DDT25
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT025A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT026A-JDD:
+    title: JdD de DDT 26 (Drôme)
+    class: DDT26
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT026A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT026A-LDD:
+    title: LdD de DDT 26 (Drôme)
+    class: DDT26
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT026A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT027A-JDD:
+    title: JdD de DDTM 27 (Eure)
+    class: DDT27
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT027A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT027A-LDD:
+    title: LdD de DDTM 27 (Eure)
+    class: DDT27
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT027A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT028A-JDD:
+    title: JdD de DDT 28 (Eure-et-Loir)
+    class: DDT28
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT028A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT02AA-JDD:
+    title: JdD de DDTM 2A (Corse-du-Sud)
+    class: DDT2A
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT02AA/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT02AA-LDD:
+    title: LdD de DDTM 2A (Corse-du-Sud)
+    class: DDT2A
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT02AA/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT02BA-JDD:
+    title: JdD de DDTM 2B (Haute-Corse)
+    class: DDT2B
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT02BA/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT02BA-LDD:
+    title: LdD de DDTM 2B (Haute-Corse)
+    class: DDT2B
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT02BA/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT030A-JDD:
+    title: JdD de DDTM 30 (Gard)
+    class: DDT30
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT030A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT030A-LDD:
+    title: LdD de DDTM 30 (Gard)
+    class: DDT30
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT030A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT031A-JDD:
+    title: JdD de DDT 31 (Haute-Garonne)
+    class: DDT31
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT031A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT031A-LDD:
+    title: LdD de DDT 31 (Haute-Garonne)
+    class: DDT31
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT031A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT032A-JDD:
+    title: JdD de DDT du Gers
+    class: DDT32
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT032A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT032A-LDD:
+    title: LdD de DDT du Gers
+    class: DDT32
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT032A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT034A-JDD:
+    title: "JdD de DDTM de l'Hérault"
+    class: DDT34
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT034A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT034A-LDD:
+    title: "LdD de DDTM de l'Hérault"
+    class: DDT34
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT034A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT035A-JDD:
+    title: JdD de DDTM 35 (Ille-et-Vilaine)
+    class: DDT35
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT035A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT036A-JDD:
+    title: JdD de DDT 36 (Indre)
+    class: DDT36
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT036A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT036A-LDD:
+    title: LdD de DDT 36 (Indre)
+    class: DDT36
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT036A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT037A-JDD:
+    title: 'JdD de  DDT 37 (Indre-et-Loire)'
+    class: DDT37
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT037A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT037A-LDD:
+    title: 'LdD de  DDT 37 (Indre-et-Loire)'
+    class: DDT37
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT037A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT038A-JDD:
+    title: JdD de DDT 38 (Isère)
+    class: DDT38
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT038A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT038A-LDD:
+    title: LdD de DDT 38 (Isère)
+    class: DDT38
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT038A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT039A-JDD:
+    title: JdD de DDT du Jura
+    class: DDT39
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT039A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT040A-JDD:
+    title: JdD de DDTM 40 (Landes)
+    class: DDT40
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT040A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT040A-LDD:
+    title: LdD de DDTM 40 (Landes)
+    class: DDT40
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT040A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT041A-JDD:
+    title: JdD de DDT 41 (Loir-et-Cher)
+    class: DDT41
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT041A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT041A-LDD:
+    title: LdD de DDT 41 (Loir-et-Cher)
+    class: DDT41
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT041A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT043A-JDD:
+    title: JdD de DDT 43 (Haute-Loire)
+    class: DDT43
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT043A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT044A-JDD:
+    title: JdD de DDTM 44 (Loire-Atlantique)
+    class: DDT44
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT044A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT044A-LDD:
+    title: LdD de DDTM 44 (Loire-Atlantique)
+    class: DDT44
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT044A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT045A-JDD:
+    title: JdD de DDT 45 (Loiret)
+    class: DDT45
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT045A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT045A-LDD:
+    title: LdD de DDT 45 (Loiret)
+    class: DDT45
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT045A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT046A-JDD:
+    title: JdD de DDT 46 (Lot)
+    class: DDT46
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT046A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT046A-LDD:
+    title: LdD de DDT 46 (Lot)
+    class: DDT46
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT046A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT047A-JDD:
+    title: JdD de DDT 47 (Lot-et-Garonne)
+    class: DDT47
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT047A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT048A-JDD:
+    title: JdD de DDT 48 (Lozère)
+    class: DDT48
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT048A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT048A-LDD:
+    title: LdD de DDT 48 (Lozère)
+    class: DDT48
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT048A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT050A-JDD:
+    title: JdD de DDTM de la Manche
+    class: DDT50
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT050A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT050A-LDD:
+    title: LdD de DDTM de la Manche
+    class: DDT50
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT050A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT051A-JDD:
+    title: JdD de DDT 51 (Marne)
+    class: DDT51
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT051A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT051A-LDD:
+    title: LdD de DDT 51 (Marne)
+    class: DDT51
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT051A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT053A-JDD:
+    title: JdD de DDT 53 (Mayenne)
+    class: DDT53
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT053A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT054A-JDD:
+    title: JdD de DDT 54 (Meurthe-et-Moselle)
+    class: DDT54
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT054A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT054A-LDD:
+    title: LdD de DDT 54 (Meurthe-et-Moselle)
+    class: DDT54
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT054A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT055A-JDD:
+    title: JdD de DDT 55 (Meuse)
+    class: DDT55
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT055A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT055A-LDD:
+    title: LdD de DDT 55 (Meuse)
+    class: DDT55
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT055A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT056A-JDD:
+    title: JdD de DDTM 56 (Morbihan)
+    class: DDT56
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT056A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT056A-LDD:
+    title: LdD de DDTM 56 (Morbihan)
+    class: DDT56
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT056A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT057A-JDD:
+    title: JdD de DDT de la Moselle
+    class: DDT57
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT057A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT058A-JDD:
+    title: JdD de DDT 58 (Nièvre)
+    class: DDT58
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT058A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT058A-LDD:
+    title: LdD de DDT 58 (Nièvre)
+    class: DDT58
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT058A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT059A-JDD:
+    title: JdD de DDTM du Nord
+    class: DDT59
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT059A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT059A-LDD:
+    title: LdD de DDTM du Nord
+    class: DDT59
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT059A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT060A-JDD:
+    title: "JdD de DDT de l'Oise"
+    class: DDT60
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT060A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT061A-JDD:
+    title: "JdD de DDT de l'Orne"
+    class: DDT61
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT061A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT061A-LDD:
+    title: "LdD de DDT de l'Orne"
+    class: DDT61
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT061A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT062A-JDD:
+    title: JdD de DDTM 62 (Pas-de-Calais)
+    class: DDT62
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT062A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT062A-LDD:
+    title: LdD de DDTM 62 (Pas-de-Calais)
+    class: DDT62
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT062A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT063A-JDD:
+    title: JdD de DDT 63 (Puy-de-dôme)
+    class: DDT63
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT063A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT064A-JDD:
+    title: JdD de DDTM 64 (Pyrénées-Atlantiques)
+    class: DDT64
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT064A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT064A-LDD:
+    title: LdD de DDTM 64 (Pyrénées-Atlantiques)
+    class: DDT64
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT064A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT065A-JDD:
+    title: JdD de DDT 65 (Hautes-Pyrénées)
+    class: DDT65
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT065A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT065A-LDD:
+    title: LdD de DDT 65 (Hautes-Pyrénées)
+    class: DDT65
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT065A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT066A-JDD:
+    title: JdD de DDTM 66 (Pyrénées-Orientales)
+    class: DDT66
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT066A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT066A-LDD:
+    title: LdD de DDTM 66 (Pyrénées-Orientales)
+    class: DDT66
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT066A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT067A-JDD:
+    title: JdD de DDT du Bas-Rhin
+    class: DDT67
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT067A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT068A-JDD:
+    title: JdD de DDT 68 (Haut-Rhin)
+    class: DDT68
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT068A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT069A-JDD:
+    title: JdD de DDT 69 (Rhône)
+    class: DDT69
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT069A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT069A-LDD:
+    title: LdD de DDT 69 (Rhône)
+    class: DDT69
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT069A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT070A-JDD:
+    title: JdD de DDT 70 (Haute-Saône)
+    class: DDT70
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT070A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT070A-LDD:
+    title: LdD de DDT 70 (Haute-Saône)
+    class: DDT70
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT070A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT071A-JDD:
+    title: 'JdD de DDT 71 - Saône-et-Loire'
+    class: DDT71
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT071A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT071A-LDD:
+    title: 'LdD de DDT 71 - Saône-et-Loire'
+    class: DDT71
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT071A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT072A-JDD:
+    title: JdD de DDT 72 (Sarthe)
+    class: DDT72
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT072A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT072A-LDD:
+    title: LdD de DDT 72 (Sarthe)
+    class: DDT72
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT072A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT073A-JDD:
+    title: JdD de DDT 73 (Savoie)
+    class: DDT73
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT073A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT074A-JDD:
+    title: JdD de DDT 74 (Haute-Savoie)
+    class: DDT74
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT074A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT074A-LDD:
+    title: LdD de DDT 74 (Haute-Savoie)
+    class: DDT74
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT074A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT075A-JDD:
+    title: "JdD de DRIEA IF/UD 75 (Unité départementale de l'équipement et de l'aménagement de Paris)"
+    class: DrieaIleDeFrance/UTEA75
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT075A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT075A-LDD:
+    title: "LdD de DRIEA IF/UD 75 (Unité départementale de l'équipement et de l'aménagement de Paris)"
+    class: DrieaIleDeFrance/UTEA75
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT075A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT076A-JDD:
+    title: JdD de DDTM de Seine-Maritime
+    class: DDT76
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT076A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT077A-JDD:
+    title: JdD de DDT 77 (Seine-et-Marne)
+    class: DDT77
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT077A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT077A-LDD:
+    title: LdD de DDT 77 (Seine-et-Marne)
+    class: DDT77
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT077A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT078A-JDD:
+    title: JdD de DDT des Yvelines
+    class: DDT78
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT078A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT079A-JDD:
+    title: JdD de DDT 79 (Deux-Sèvres)
+    class: DDT79
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT079A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT079A-LDD:
+    title: LdD de DDT 79 (Deux-Sèvres)
+    class: DDT79
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT079A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT080A-JDD:
+    title: JdD de DDTM 80 (Somme)
+    class: DDT80
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT080A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT080A-LDD:
+    title: LdD de DDTM 80 (Somme)
+    class: DDT80
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT080A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT081A-JDD:
+    title: JdD de DDT 81 (Tarn)
+    class: DDT81
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT081A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT081A-LDD:
+    title: LdD de DDT 81 (Tarn)
+    class: DDT81
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT081A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT082A-JDD:
+    title: JdD de DDT 82 (Tarn-et-Garonne)
+    class: DDT82
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT082A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT083A-JDD:
+    title: JdD de DDTM 83 (Var)
+    class: DDT83
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT083A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT083A-LDD:
+    title: LdD de DDTM 83 (Var)
+    class: DDT83
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT083A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT085A-JDD:
+    title: JdD de DDTM 85 (Vendée)
+    class: DDT85
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT085A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT086A-JDD:
+    title: JdD de DDT 86 (Vienne)
+    class: DDT86
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT086A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT086A-LDD:
+    title: LdD de DDT 86 (Vienne)
+    class: DDT86
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT086A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT087A-JDD:
+    title: JdD de DDT de la Haute-Vienne
+    class: DDT87
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT087A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT088A-JDD:
+    title: JdD de DDT 88 (Vosges)
+    class: DDT88
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT088A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT088A-LDD:
+    title: LdD de DDT 88 (Vosges)
+    class: DDT88
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT088A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT089A-JDD:
+    title: "JdD de DDT de l'Yonne"
+    class: DDT89
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT089A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT091A-JDD:
+    title: JdD de DDT 91 (Essonne)
+    class: DDT91
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT091A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT091A-LDD:
+    title: LdD de DDT 91 (Essonne)
+    class: DDT91
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT091A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT092A-JDD:
+    title: JdD de UD92 (Unité départementale des Hauts-de-Seine)
+    class: DrieaIleDeFrance/UTEA92
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT092A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT093A-JDD:
+    title: JdD de UD93 (Unité départementale de Seine-Saint-Denis)
+    class: DrieaIleDeFrance/UD93
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT093A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT094A-JDD:
+    title: JdD de UD94 (Unité départementale du Val de Marne)
+    class: DrieaIleDeFrance/UTEA94
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT094A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT094A-LDD:
+    title: LdD de UD94 (Unité départementale du Val de Marne)
+    class: DrieaIleDeFrance/UTEA94
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT094A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT095A-JDD:
+    title: "JdD de DDT 95 (Val d'Oise)"
+    class: DDT95
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT095A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT095A-LDD:
+    title: "LdD de DDT 95 (Val d'Oise)"
+    class: DDT95
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT095A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT972A-JDD:
+    title: JdD de DAAF 972 (Martinique)
+    class: DaafMtq
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT972A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-DEPT975A-JDD:
+    title: JdD de DTAM Saint Pierre et Miquelon
+    class: DtamSpm
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/DEPT975A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-FORMAIX2-JDD:
+    title: JdD de CPII-DOIF
+    class: CPII-DOIF
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/FORMAIX2/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-FORMAIX3-JDD:
+    title: JdD de FORMAIX3 (Test EOLE 2.4)
+    class: FORMAIX3
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/FORMAIX3/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-LOC006-JDD:
+    title: "JdD de DIRE (Direction Interdépartementale des Routes de l'Est)"
+    class: DirEst
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/LOC006/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-LOC012-JDD:
+    title: JdD de DIRM Sud Atlantique
+    class: DirmSa
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/LOC012/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-LOC013-JDD:
+    title: JdD de DIRM Nord Atlantique Manche Ouest
+    class: DirmNamo
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/LOC013/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-LOC016-JDD:
+    title: 'JdD de DIRM MEMN (Manche Est - Mer du Nord)'
+    class: DirmMemn
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/LOC016/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-LOC016-LDD:
+    title: 'LdD de DIRM MEMN (Manche Est - Mer du Nord)'
+    class: DirmMemn
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/LOC016/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG011A-JDD:
+    title: JdD de DRIAAF Ile-de-France
+    class: DriaafIleDeFrance
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG011A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG011B-JDD:
+    title: JdD de DRIEA IF
+    class: DrieaIleDeFrance
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG011B/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG011B-LDD:
+    title: LdD de DRIEA IF
+    class: DrieaIleDeFrance
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG011B/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG021B-JDD:
+    title: JdD de DREAL Champagne-Ardenne
+    class: DrealGrandEst
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG021B/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG021B-LDD:
+    title: LdD de DREAL Champagne-Ardenne
+    class: DrealGrandEst
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG021B/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG022A-JDD:
+    title: JdD de DRAAF Picardie
+    class: DraafHautsDeFrance
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG022A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG023A-JDD:
+    title: JdD de DRAAF Haute-Normandie
+    class: DraafNormandie
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG023A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG023B-JDD:
+    title: JdD de DREAL Haute-Normandie
+    class: DrealNormandie
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG023B/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG024A-JDD:
+    title: JdD de DRAAF Centre
+    class: DraafCentreVdL
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG024A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG025A-JDD:
+    title: JdD de DRAAF Basse-Normandie
+    class: DraafNormandie
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG025A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG026A-JDD:
+    title: JdD de DRAAF Bourgogne
+    class: DraafBFC
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG026A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG031B-JDD:
+    title: 'JdD de DREAL Nord - Pas de Calais'
+    class: DrealHautsDeFrance
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG031B/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG031B-LDD:
+    title: 'LdD de DREAL Nord - Pas de Calais'
+    class: DrealHautsDeFrance
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG031B/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG041A-JDD:
+    title: JdD de DRAAF Lorraine
+    class: DraafGrandEst
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG041A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG041B-JDD:
+    title: JdD de DREAL Lorraine
+    class: DrealGrandEst
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG041B/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG041B-LDD:
+    title: LdD de DREAL Lorraine
+    class: DrealGrandEst
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG041B/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG042A-JDD:
+    title: JdD de DRAAF Alsace
+    class: DraafGrandEst
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG042A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG042B-JDD:
+    title: JdD de DREAL Alsace
+    class: DrealGrandEst
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG042B/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG043A-JDD:
+    title: JdD de DRAAF Franche-Comté
+    class: DraafBFC
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG043A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG043B-JDD:
+    title: JdD de DREAL Franche-Comté
+    class: DrealBFC
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG043B/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG043B-LDD:
+    title: LdD de DREAL Franche-Comté
+    class: DrealBFC
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG043B/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG053A-JDD:
+    title: JdD de DRAAF Bretagne
+    class: DraafBretagne
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG053A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG053B-JDD:
+    title: JdD de DREAL Bretagne
+    class: DrealBretagne
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG053B/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG072A-JDD:
+    title: JdD de DRAAF Aquitaine Limousin Poitou Charentes
+    class: DraafNAquitaine
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG072A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG072A-LDD:
+    title: LdD de DRAAF Aquitaine Limousin Poitou Charentes
+    class: DraafNAquitaine
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG072A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG072B-JDD:
+    title: JdD de DREAL Aquitaine
+    class: DrealNAquitaine
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG072B/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG072B-LDD:
+    title: LdD de DREAL Aquitaine
+    class: DrealNAquitaine
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG072B/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG073A-JDD:
+    title: JdD de DRAAF Midi-Pyrénées
+    class: DraafOccitanie
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG073A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG073A-LDD:
+    title: LdD de DRAAF Midi-Pyrénées
+    class: DraafOccitanie
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG073A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG091A-JDD:
+    title: JdD de DRAAF Languedoc-Roussillon Midi-Pyrénées
+    class: DraafOccitanie
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG091A/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG091A-LDD:
+    title: LdD de DRAAF Languedoc-Roussillon Midi-Pyrénées
+    class: DraafOccitanie
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG091A/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG091B-JDD:
+    title: JdD de DREAL Languedoc-Roussillon
+    class: DrealOccitanie
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG091B/JDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG091B-LDD:
+    title: LdD de DREAL Languedoc-Roussillon
+    class: DrealOccitanie
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG091B/LDD.www.map&service=WMS&'
+    protocol: WMS
+  geoide-REG094A-JDD:
+    title: JdD de DRAAF de Corse
+    class: DraafCorse
+    url: 'http://ogc.geo-ide.developpement-durable.gouv.fr/cartes/mapserv?map=/opt/data/carto/geoide-catalogue/REG094A/JDD.www.map&service=WMS&'
+    protocol: WMS

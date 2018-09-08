@@ -1,0 +1,47 @@
+title: visu/edit - Outil d'édition de carte
+path: /gexplor/visu/edit
+doc: |
+  Affiche:
+  - en colonne à gauche: un arbre indiquant la liste des actions possibles:
+    - ajout/suppression d'une des couches des serveurs
+    - modification du point de vue
+    - enregistrement, ...
+  - à droite la carte en construction
+  Au début part soit d'une carte par défaut, soit d'une carte existante enregistrée dans un fichier
+  Les actions modifient au fur et à mesure la carte en session
+  Le résultat peut être enregistré dans un fichier
+  Voir la <a href='../visu/doc.html'>doc utilisateur</a>
+  
+  A FAIRE:
+  - lors de l'ajout d'une nouvelle couche, si son extension est plus limitée que l'affichage, zoomer sur cette extension
+  
+journal: |
+  21/11/2016:
+  - refonte de la gestion de l'arbre FancyTree pour accélérer l'initialisation de la page.
+    Utilisation du mode lazy:
+    initialement, seul l'arbre des outils et des serveurs est chargé
+    l'arbre de couches de chaque serveur est uniquement chargé à la demande
+    les arbres sont définis en JSON et plus en HTML
+  - en + des serveurs, ajout de couches préférées
+  - lors de l'ajout d'une couche:
+    si la couche existe en fond alors la supprimer
+    si c'est une couche WMTS et si son format est jpeg alors l'ajouter en fond
+  17/11/2016:
+    renvoi vers le serveur des infos de pan&zoom courantes de la carte ce qui permet de réafficher la carte sans revenir
+    à la localisation initiale, utilise leaflet.uGeoJSON
+  1/11/2016
+    amélioration
+  31/10/2016
+    première version
+
+htmlFiles:
+  - /gexplor/visu/edit/nav.html
+  - /gexplor/visu/edit/defaultmap.yaml
+  - /gexplor/visu/edit/fancytree.js
+  - /gexplor/visu/edit/nav.css
+phpScripts:
+  - /gexplor/visu/edit/index.php
+  - /gexplor/visu/edit/main-tree.php
+  - /gexplor/visu/edit/server-tree.php
+  - /gexplor/visu/edit/edit.php
+  - /gexplor/visu/edit/nav.php

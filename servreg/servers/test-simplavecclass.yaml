@@ -1,0 +1,20 @@
+phpDoc:
+  name: test-simplavecclass.yaml
+  title: test-simplavecclass.yaml - Fichier de test de registre de serveurs simple avec classe
+  doc: |
+    Le registre contient un seul serveur et une seule classe
+  journal: |
+    24/3/2017
+      création
+yamlSchema: yamlschema.yaml
+classification:
+  IGN:
+    title: IGN
+    abstract: couches référentielles diffusées par l'IGN
+servers:
+# IGN
+  IGNFGP-tile-WM:
+    title: GP IGN WM
+    class: IGN
+    url: http://igngp.geoapi.fr/tile.php
+    protocol: tile

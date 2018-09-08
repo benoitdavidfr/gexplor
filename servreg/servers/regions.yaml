@@ -1,0 +1,333 @@
+phpDoc:
+  name: regions.yaml
+  title: regions.yaml - Fichier des serveurs des régions
+  doc: |
+  journal: |
+    14-15/3/2017
+      ajout des 41 cartes Carmen comme serveurs (il y en avait 2 en double dans  http://localhost/gexplor/servreg/csw/extract.php?class=carmen
+      C'est très décevant car la plupart des cartes ne sont pas visualisables en WebMercator
+    13/3/2017
+      Ajout du schema et mise en conformité par rapport au schema
+yamlSchema: yamlschema.yaml
+classification:
+  HautsDeFrance:
+    title: Hauts-de-France
+    children:
+      geo-nord:
+        title: "Géo-Nord: le portail du Nord"
+        url: http://www.geo-nord.fr/
+      DrealHautsDeFrance:
+        title: DREAL Hauts-de-France
+  GrandEst:
+    title: Grand Est
+  BFC:
+    title: Bourgogne-Franche-Comté
+    children:
+      Sigogne:
+        title: "Sigogne : Plateau patrimoine naturel de la maison de l'environnement de Franche-Comté"
+  ARA:
+    title: Auvergne-Rhône-Alpes
+  PACA:
+    title: PACA
+  Corse:
+    title: Corse
+  Occitanie:
+    title: Occitanie
+    children:
+      SIGLR:
+        title: SIG Languedoc-Roussillon
+  NAquitaine:
+    title: Nouvelle-Aquitaine
+    children:
+      Pigma:
+        title: Pigma
+  CentreVdL:
+    title: Centre-Val de Loire
+    children:
+      DrealCentreVdL:
+        title: DREAL Centre-Val de Loire
+  PdL:
+    title: Pays-de-la-Loire
+    children:
+      GeoMayenne:
+        title: GéoMayenne
+        url: https://www.geomayenne.fr/
+  Bretagne:
+    title: Bretagne
+  Normandie:
+    title: Normandie
+    children:
+      DrealNormandie:
+        title: DREAL Normandie
+  IleDeFrance:
+    title: Ile-de-France
+  Glp:
+    title: Guadeloupe
+  Mtq:
+    title: Martinique
+  Guf:
+    title: Guyane
+  Reu:
+    title: La Réunion
+  Myt:
+    title: Mayotte
+
+servers:
+# Hauts-de-France
+  ppige:
+    title: PPIGE
+    class: HautsDeFrance
+    url: https://www.ppige-npdc.fr/geoserver/wms?
+    protocol: WMS
+    
+  GeoPicardie: { title: GéoPicardie, class: HautsDeFrance, subfile: gpicardie.yaml }
+
+  nordpasdecalais:
+    title: Région Hauts-de-France
+    class: HautsDeFrance
+    url: http://carto.nordpasdecalais.fr/wms?
+    protocol: WMS
+
+# Dreal Hauts-de-France
+  DrealHautsDeFrance: { title: "Dreal Hauts-de-France", class: "DrealHautsDeFrance", subfile: dreal-hautsdefr.yaml }
+
+  GeoNord: { title: Géo-Nord, class: geo-nord, subfile: geo-nord.yaml }
+
+  compiegnois:
+    title: GéoCompiégnois
+    class: HautsDeFrance
+    url: http://geo.compiegnois.fr/geoserver/wms?
+    protocol: WMS
+  
+# Grand Est
+  cigalsace:
+    title: CIGAL (l'Alsace à la carte)
+    class: GrandEst
+    url: https://www.cigalsace.org/geoserver/CRA/wms?
+    protocol: WMS
+    
+# Bourgogne-Franche-Comté
+  ideobfc:
+    title: IDéO BFC
+    class: BFC
+    url: http://datacarto.ideobfc.fr/WMS/wms.php?
+    protocol: WMS
+    
+  cd90: { title: CD90, class: BFC, subfile: cd90.yaml }
+
+  sigogne-espro:
+    title: Quelles sont les communes les plus riches en espèces protégées ?
+    class: Sigogne
+    url: http://ws.sigogne.org/wms/espro?
+    protocol: WMS
+  sigogne-esptous:
+    title: Quelles sont les communes les plus riches en espèces ?
+    class: Sigogne
+    url: http://ws.sigogne.org/wms/esptous?
+    protocol: WMS
+  sigogne-espmen:
+    title: Quelles sont les communes les plus riches en espèces menacées ?
+    class: Sigogne
+    url: http://ws.sigogne.org/wms/espmen?
+    protocol: WMS
+  sigogne-pctzoh:
+    title: Quelles sont les communes les plus riches en milieux humides ?
+    class: Sigogne
+    url: http://ws.sigogne.org/wms/pctzoh?
+    protocol: WMS
+  sigogne-espmare:
+    title: Quelles sont les communes les plus riches en mares ?
+    class: Sigogne
+    url: http://ws.sigogne.org/wms/espmare?
+    protocol: WMS
+  
+# Auvergne-Rhône-Alpes
+  georhonealpes:
+    title: GéoRhôneAlpes
+    class: ARA
+    url: http://carto.georhonealpes.fr/cgi-bin/mapserv?
+    protocol: WMS
+    
+  craig-ortho:
+    title: Orthophotographies du CRAIG - PVA 2009/2010 et 2013
+    class: ARA
+    url: http://wms.craig.fr/ortho?
+    protocol: WMS
+  craig-mnt:
+    title: Modèles Numériques de Terrain du CRAIG - 2009/2010
+    class: ARA
+    url: http://wms.craig.fr/mnt?
+    protocol: WMS
+  
+# PACA
+  CRIGE-PACA: { title: "CRIGE PACA", class: PACA, subfile: crigepaca.yaml }
+
+# Corse
+
+# Occitanie
+  mipygeo:
+    title: MiPyGéo
+    class: Occitanie
+    url: http://carto.mipygeo.fr/cgi-bin/mapserv?
+    protocol: WMS
+    
+  siglr-wmsopendata:
+    title: SIG LR wmsopendata
+    class: SIGLR
+    url: http://geoservice.siglr.org/wmsopendata?
+    protocol: WMS
+    
+# NAquitaine
+  pigma: { title: Pigma, class: Pigma, subfile: pigma.yaml}
+   
+  geolimousin:
+    title: GéoLimousin
+    class: NAquitaine
+    url: http://carto.geolimousin.fr/cgi-bin/mapserv?
+    protocol: WMS
+    
+  pegase:
+    title: Pégase Poitou-Charentes
+    class: NAquitaine
+    url: http://carto.pegase-poitou-charentes.fr/cgi-bin/mapserv?
+    protocol: WMS
+
+  siglr-wmsbdsol:
+    title: SIG LR BD SOL
+    class: SIGLR
+    url: http://geoservice.siglr.org/wmsbdsol?
+    protocol: WMS
+        
+  siglr-wmsccgpsl:
+    title: SIG LR CC Grand Pic Saint-Loup
+    class: SIGLR
+    url: http://geoservice.siglr.org/wmsccgpsl?
+    protocol: WMS
+    
+  siglr-wmscagn:
+    title: SIG LR CA Gd Narbonne
+    class: SIGLR
+    url: http://geoservice.siglr.org/wmscagn?
+    protocol: WMS
+       
+# Centre-Val de Loire
+  geo-centre:
+    title: Géo-Centre
+    class: CentreVdL
+    url: http://carto.geo-centre.fr/cgi-bin/mapserv?
+    protocol: WMS
+    
+# DREAL Centre-Val de Loire
+  DrealCentreVdL: { title: "Dreal Centre-Val de Loire", class: DrealCentreVdL, subfile: dreal-centrevdl.yaml }
+
+# Pays-de-la-Loire
+  geopal:
+    title: GéoPAL
+    class: PdL
+    url: http://carto.geopal.org/cgi-bin/mapserv?
+    protocol: WMS
+  sigloire:
+    title: SIG Loire
+    class: PdL
+    url: http://carto.sigloire.fr/cgi-bin/mapserv?
+    protocol: WMS
+
+  geomayenne-D53_Environnement:
+    title: Données d'environnement du Département de la Mayenne
+    class: GeoMayenne
+    url: https://www.geomayenne.fr/arcgis/services/D53_Environnement/MapServer/WMSServer?
+    protocol: WMS
+  geomayenne-D53_ROUTES:
+    title: Données des réseaux routiers du Département de la Mayenne
+    class: GeoMayenne
+    url: https://www.geomayenne.fr/arcgis/services/D53_ROUTES/MapServer/WMSServer?
+    protocol: WMS
+  geomayenne-SDIS:
+    title: Données du SDIS de la Mayenne
+    class: GeoMayenne
+    url: https://www.geomayenne.fr/arcgis/services/SDIS_GrandPublic/MapServer/WMSServer?
+    protocol: WMS
+  geomayenne-D53_Pedologie:
+    title: Données de pédologie du Département de la Mayenne
+    class: GeoMayenne
+    url: https://www.geomayenne.fr/arcgis/services/D53_Pedologie/MapServer/WMSServer?
+    protocol: WMS
+  geomayenne-D53_Referentiels:
+    title: Données référentielles dans le département de la Mayenne
+    class: GeoMayenne
+    url: https://www.geomayenne.fr/arcgis/services/D53_Referentiels/MapServer/WmsServer?
+    protocol: WMS
+  
+# Bretagne
+  geobzh: { title: GéoBretagne, class: Bretagne, subfile: geobzh.yaml }
+    
+  region-bretagne:
+    title: Région Bretagne
+    class: Bretagne
+    url: http://ows.region-bretagne.fr/geoserver/rb/wms?
+    protocol: WMS
+    
+  geobzh-paysdinan:
+    title: pays de Dinan
+    class: Bretagne
+    url: http://ns238809.ovh.net/cgi-bin/wmsmap?
+    protocol: WMS
+    
+  airbreizh:
+    title: Air Breizh
+    class: Bretagne
+    url: http://sig.airbreizh.asso.fr/geoserver/wms?
+    protocol: WMS
+  
+# Normandie
+  geonormandie:
+    title: GéoNormandie
+    class: Normandie
+    url: http://carto.geonormandie.fr/cgi-bin/mapserv?
+    protocol: WMS
+    
+# Dreal Normandie
+  DrealNormandie: { title: "Dreal Normandie", class: DrealNormandie, subfile: dreal-normandie.yaml }
+
+# Ile-de-France
+  Carmen18-donnees_publiques_IDF:
+    title: Carte Carmen - Données publiques produites par la DRIEE sur le territoire de l'Île-de-France
+    class: IleDeFrance
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/18/donnees_publiques_IDF?
+    protocol: WMS
+  
+# Guadeloupe
+  karugeo:
+    title: KaruGéo 
+    class: Glp
+    url: http://carto.karugeo.fr/cgi-bin/mapserv?
+    protocol: WMS
+
+# Martinique
+  geomartinique:
+    title: Géomartinique
+    class: Mtq
+    url: http://carto.geomartinique.fr/cgi-bin/mapserv?
+    protocol: WMS
+  
+# Guyane
+  geoguyane:
+    title: GéoGuyane
+    class: Guf
+    url: http://carto.geoguyane.fr/cgi-bin/mapserv?
+    protocol: WMS
+  
+# La Réunion
+  peigeo:
+    title: Peigeo 
+    class: Reu
+    url: http://carto.peigeo.re/cgi-bin/mapserv?
+    protocol: WMS
+
+# Mayotte
+  geomayotte:
+    title: GéoMayotte 
+    class: Myt
+    url: http://carto.geomayotte.fr/cgi-bin/mapserv?
+    protocol: WMS
+  

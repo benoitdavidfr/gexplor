@@ -1,0 +1,15 @@
+title: visu/maps - Cartothèque de visu
+path: /gexplor/visu/maps
+doc: |
+journal: |
+  6/11/2016
+    première version
+htmlFiles:
+  - /gexplor/visu/maps/mapex.yaml
+  - /gexplor/visu/maps/ignfgp.yaml
+  - /gexplor/visu/maps/ignfgpwtools.yaml
+  - /gexplor/visu/maps/igngp2.yaml
+  - /gexplor/visu/maps/locate.yaml
+  - /gexplor/visu/maps/carte.yaml
+  - /gexplor/visu/maps/simple.yaml
+  - /gexplor/visu/maps/filmreunion.yaml

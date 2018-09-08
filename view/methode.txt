@@ -1,0 +1,141 @@
+Définition de la méthode:
+=========================
+
+Idée:
+afin de les retrouver facilement les couches, les publier dans Google dans le formaliseme Schema.org + JSON-LD
+
+Pb:
+il y a très peu d'info associée aux couches. Pourquoi ne pas indexer les dataset ?
+
+Solution:
+Publier les dataset représentés par les couches et y associer les couches.
+
+Questions:
+- quels champs remplir ?
+- comment associer Dataset et Layer ?
+
+property: Type
+  Description
+  
+http://schema.org/Dataset
+name: Text
+  The name of the item.
+alternateName: Text
+  An alias for the item.
+distribution: DataDownload
+  A downloadable form of this dataset, at a specific location, in a specific format.
+  Lien vers un téléchargement
+creator: Organization or Person
+  The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
+dateCreated: Date or DateTime
+  The date on which the CreativeWork was created or the item was added to a DataFeed.
+dateModified: Date or DateTime
+  The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+datePublished: Date
+  Date of first broadcast/publication
+encoding: MediaObject
+  A media object that encodes this CreativeWork. This property is a synonym for associatedMedia. Supersedes encodings.
+description: Text
+  A description of the item.
+identifier: PropertyValue or Text or URL
+  The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See background notes for more details.
+keywords: Text
+  Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.
+license: CreativeWork  or URL
+  A license document that applies to this content, typically indicated by URL.
+provider: Organization or Person
+  The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller. Supersedes carrier.
+spatialCoverage: Place
+  The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York. Supersedes spatial.
+temporalCoverage: DateTime or Text or URL
+  The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in ISO 8601 time interval format. In the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL. Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945". Supersedes datasetTimeInterval, temporal.
+  
+Lien MigCat3 -> Schema.org
+--------------------------
+title: string // Intitulé
+  -> name
+abstract?: string // Résumé
+  -> comment
+type: (dataset|series) // Type de ressource
+  -> additionalType: http://inspire.ec.europa.eu/metadata-codelist/ResourceType/dataset
+locator*: string // Localisateur
+identifier+: string // IRU
+  -> identifier: PropertyValue or Text or URL
+language*: (fre|eng|deu|ita|spa|por) // Langue
+  -> inLanguage: ISO-639-1 
+inspireTheme: URI // Thème Inspire
+  -> about
+subject*:
+  label: string // étiquette
+  identifier?: string // IRU
+  -> about ou keywords
+bbox+: BBox (Rectangle de délimitation géographique)
+  -> spatialCoverage: Place
+issued*: date // Date de publication
+  -> datePublished
+modified?: date // Date de dernière révision
+  -> dateModified
+created?: date // Date de création
+  -> dateCreated
+description: htmlText // Généalogie
+  -> description
+spatialRes*: string // Résolution spatiale, exprimée soit par une échelle équivalente représentée par le dénominateur de l'échelle, soit par une résolution exprimée par un nombre associé à une unité de longueur.
+  -> ???
+conformsTo+:  // Conformité à des spécifications
+  identifier: conceptOf(http://registry.migcat.fr/specif) // spécifications
+  degree: [ notEvaluated, conformant, notConformant ] // Degré de conformité
+  -> ???
+rights+: conceptOf(http://inspire.ec.europa.eu/metadata-codelist/ConditionsApplyingToAccessAndUse) // Conditions applicables à l'accès et à l'utilisation
+ -> license
+accessRights+: conceptOf(http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess) // Restrictions concernant l’accès public
+  -> ???
+publisher+: // Partie responsable
+  contact: ref(contact)
+  role: 
+        'pointOfContact' => ['fr'=>"Point de contact"],
+        'resourceProvider' => ['fr'=>"Fournisseur de la ressource"],
+        'custodian' => ['fr'=>"Gestionnaire"],
+        'owner' => ['fr'=>"Propriétaire"],
+        'author' => ['fr'=>"Auteur"],
+  -> pointOfContact -> ???
+  -> resourceProvider -> provider
+  -> custodian -> ???
+  -> owner -> ???
+  -> author -> creator
+mdContact+: ref(contact)
+mdLanguage: (fre|eng|deu|ita|spa|por) // Langue des métadonnées
+  
+Description d'un Dataset dans MigCat3:
+--------------------------------------
+title: string // Intitulé
+abstract?: string // Résumé
+type: (dataset|series) // Type de ressource
+locator*: string // Localisateur
+identifier+: string // IRU
+language*: (fre|eng|deu|ita|spa|por) // Langue
+inspireTheme: URI // Thème Inspire
+subject*:
+  label: string // étiquette
+  identifier?: string // IRU
+bbox+: BBox (Rectangle de délimitation géographique)
+issued*: date // Date de publication
+modified?: date // Date de dernière révision
+created?: date // Date de création
+description: htmlText // Généalogie
+spatialRes*: string // Résolution spatiale, exprimée soit par une échelle équivalente représentée par le dénominateur de l'échelle, soit par une résolution exprimée par un nombre associé à une unité de longueur.
+conformsTo+:  // Conformité à des spécifications
+  identifier: conceptOf(http://registry.migcat.fr/specif) // spécifications
+  degree: [ notEvaluated, conformant, notConformant ] // Degré de conformité
+rights+: conceptOf(http://inspire.ec.europa.eu/metadata-codelist/ConditionsApplyingToAccessAndUse) // Conditions applicables à l'accès et à l'utilisation
+accessRights+: conceptOf(http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess) // Restrictions concernant l’accès public
+publisher+: // Partie responsable
+  contact: ref(contact)
+  role: 
+        'pointOfContact' => ['fr'=>"Point de contact"],
+        'resourceProvider' => ['fr'=>"Fournisseur de la ressource"],
+        'custodian' => ['fr'=>"Gestionnaire"],
+        'owner' => ['fr'=>"Propriétaire"],
+        'author' => ['fr'=>"Auteur"],
+mdContact+: ref(contact)
+mdLanguage: (fre|eng|deu|ita|spa|por) // Langue des métadonnées
+  

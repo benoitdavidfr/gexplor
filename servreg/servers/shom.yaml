@@ -1,0 +1,64 @@
+phpDoc:
+  name: shom.yaml
+  title: shom.yaml - Fichier des serveurs Shom
+  doc: |
+    Permet de visualiser avec gp les serveurs Shom officieux cad:
+      - le hack du WMTS du Shom
+      - les GéoTIFF du Shom
+    http://localhost/~benoit/gexplor/gp/gp.php?register=shom.yaml&baseLayers=IGNFGP-tile-WM,plan-ign,v&overlays=SHOM-tile-WM,RASTER_MARINE_3857_WMTS,v
+  journal: |
+    25/5/2017
+      création
+yamlSchema: yamlschema.yaml
+classification:
+  IGN:
+    title: geoportail
+    abstract: couches référentielles diffusées par l'IGN avec la clé Ministère
+  SHOM:
+    title: Shom
+    abstract: couches référentielles diffusées par le Shom
+servers:
+# IGN
+  IGNFGP-tile-WM:
+    title: GP IGN WM
+    class: IGN
+    url: http://igngp.geoapi.fr/tile.php
+    protocol: tile
+  IGNFGP-WMTS:
+    title: GP IGN
+    class: IGN
+    url: http://wxs.ign.fr/49qcg7rckqrk3og45nm5i4s3/wmts?
+    protocol: WMTS
+  IGNFGP-WMS-R:
+    title: GP IGN WMS raster 
+    class: IGN
+    url: http://wxs.ign.fr/49qcg7rckqrk3og45nm5i4s3/geoportail/r/wms?
+    protocol: WMS
+  IGNFGP-WMS-V:
+    title: GP IGN WMS vecteur
+    class: IGN
+    url: http://wxs.ign.fr/49qcg7rckqrk3og45nm5i4s3/geoportail/v/wms?
+    protocol: WMS
+# Serveurs stds du SHOM
+  SHOM-WMTS-WM:
+    title: SHOM WM
+    class: SHOM
+    url: http://services.data.shom.fr/INSPIRE/wmts?
+    protocol: WMTS
+  SHOM-WMS-R:
+    title: SHOM WMS raster
+    class: SHOM
+    url: http://services.data.shom.fr/INSPIRE/wms/r?
+    protocol: WMS
+  SHOM-WMS-V:
+    title: SHOM WMS vecteur
+    class: SHOM
+    url: http://services.data.shom.fr/INSPIRE/wms/v?
+    protocol: WMS
+# Serveurs officieux
+  SHOM-tile-GeoTIFF:
+    title: GéoTIFF Shom
+    class: SHOM
+    url: http://geoapi.fr/shom/tile.php
+    protocol: tile
+

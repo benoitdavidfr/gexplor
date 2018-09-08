@@ -1,0 +1,272 @@
+<html>
+  <head>
+    <title>carte GP</title>
+    <meta charset="UTF-8">
+<!-- meta nécessaire pour le mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<!-- styles nécessaires pour le mobile -->
+    <link rel="stylesheet" href="https://visu.gexplor.fr/viewer.css">
+<!-- styles et src de Leaflet 1.0 -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0/dist/leaflet.js"></script>
+<!-- Include the edgebuffer plugin -->
+    <script src="https://visu.gexplor.fr/lib/leaflet.edgebuffer.js"></script>
+  </head>
+  <body>
+    <div id="map" style="height: 100%; width: 100%"></div>
+    <script>
+var map = L.map('map').setView([48, 3], 8); // view pour la zone
+L.control.scale({position:'bottomleft', metric:true, imperial:false}).addTo(map);
+//var gpkey = 'jdq2jhltkhnf2lnsohgp8jjx';
+var gpkey = '49qcg7rckqrk3og45nm5i4s3';
+//var gpkey = 'decouverte';
+var wmtsurl = 'https://wxs.ign.fr/'+gpkey+'/geoportail/wmts?'
+            + 'service=WMTS&version=1.0.0&request=GetTile&tilematrixSet=PM&height=256&width=256&'
+            + 'tilematrix={z}&tilecol={x}&tilerow={y}';
+var base0 = new L.TileLayer(
+    wmtsurl + '&layer=ORTHOIMAGERY.ORTHOPHOTOS&format=image/jpeg&style=normal',
+    { format: 'image/jpeg', minZoom: 0, maxZoom: 20, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var base1 = new L.TileLayer(
+    wmtsurl + '&layer=ORTHOIMAGERY.ORTHOPHOTOS2006-2010&format=image/jpeg&style=normal',
+    { format: 'image/jpeg', minZoom: 0, maxZoom: 18, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var base2 = new L.TileLayer(
+    wmtsurl + '&layer=ORTHOIMAGERY.ORTHOPHOTOS2000-2005&format=image/jpeg&style=normal',
+    { format: 'image/jpeg', minZoom: 0, maxZoom: 18, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var base3 = new L.TileLayer(
+    wmtsurl + '&layer=ORTHOIMAGERY.ORTHOPHOTOS.1950-1965&format=image/png&style=normal',
+    { format: 'image/png', minZoom: 0, maxZoom: 18, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var base4 = new L.TileLayer(
+    wmtsurl + '&layer=ORTHOIMAGERY.ORTHO-SAT.SPOT.2015&format=image/jpeg&style=normal',
+    { format: 'image/jpeg', minZoom: 0, maxZoom: 17, detectRetina: true,
+      attribution: "&copy; CIRAD, CNES, CNRS, <a href='http://www.ign.fr'>IGN</a>, IRD, Irstea, GEOSUD"
+    }
+);
+var base5 = new L.TileLayer(
+    wmtsurl + '&layer=ORTHOIMAGERY.ORTHO-SAT.SPOT.2014&format=image/jpeg&style=normal',
+    { format: 'image/jpeg', minZoom: 0, maxZoom: 17, detectRetina: true,
+      attribution: "&copy; CNES, <a href='http://www.ign.fr'>IGN</a>, GEOSUD"
+    }
+);
+var base6 = new L.TileLayer(
+    wmtsurl + '&layer=ELEVATION.SLOPES&format=image/jpeg&style=normal',
+    { format: 'image/jpeg', minZoom: 6, maxZoom: 14, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var base7 = new L.TileLayer(
+    wmtsurl + '&layer=GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD&format=image/jpeg&style=normal',
+    { format: 'image/jpeg', minZoom: 6, maxZoom: 18, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var base8 = new L.TileLayer(
+    wmtsurl + '&layer=GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.CLASSIQUE&format=image/jpeg&style=normal',
+    { format: 'image/jpeg', minZoom: 6, maxZoom: 18, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var base9 = new L.TileLayer(
+    wmtsurl + '&layer=GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.NIVEAUXGRIS&format=image/png&style=normal',
+    { format: 'image/png', minZoom: 6, maxZoom: 18, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var base10 = new L.TileLayer(
+    wmtsurl + '&layer=GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.ROUTIER&format=image/jpeg&style=normal',
+    { format: 'image/jpeg', minZoom: 6, maxZoom: 18, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var base11 = new L.TileLayer(
+    wmtsurl + '&layer=GEOGRAPHICALGRIDSYSTEMS.MAPS&format=image/jpeg&style=normal',
+    { format: 'image/jpeg', minZoom: 0, maxZoom: 18, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var base12 = new L.TileLayer(
+    wmtsurl + '&layer=GEOGRAPHICALGRIDSYSTEMS.PLANIGN&format=image/jpeg&style=normal',
+    { format: 'image/jpeg', minZoom: 6, maxZoom: 18, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var base13 = new L.TileLayer(
+    wmtsurl + '&layer=GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN50.1950&format=image/jpeg&style=normal',
+    { format: 'image/jpeg', minZoom: 3, maxZoom: 15, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var base14 = new L.TileLayer(
+    wmtsurl + '&layer=GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40&format=image/jpeg&style=normal',
+    { format: 'image/jpeg', minZoom: 6, maxZoom: 15, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var base15 = new L.TileLayer(
+    wmtsurl + '&layer=CADASTRALPARCELS.PARCELS&format=image/png&style=normal',
+    { format: 'image/png', minZoom: 0, maxZoom: 20, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var overlay0 = new L.TileLayer(
+    wmtsurl + '&layer=ORTHOIMAGERY.ORTHO-SAT.PLEIADES.2015&format=image/png&style=normal',
+    { format: 'image/png', minZoom: 0, maxZoom: 18, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var overlay1 = new L.TileLayer(
+    wmtsurl + '&layer=ORTHOIMAGERY.ORTHO-SAT.PLEIADES.2014&format=image/png&style=normal',
+    { format: 'image/png', minZoom: 0, maxZoom: 18, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var overlay2 = new L.TileLayer(
+    wmtsurl + '&layer=ORTHOIMAGERY.ORTHO-SAT.PLEIADES.2013&format=image/png&style=normal',
+    { format: 'image/png', minZoom: 0, maxZoom: 18, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var overlay3 = new L.TileLayer(
+    wmtsurl + '&layer=ORTHOIMAGERY.ORTHOPHOTOS.COAST2000&format=image/png&style=normal',
+    { format: 'image/png', minZoom: 6, maxZoom: 18, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var overlay4 = new L.TileLayer(
+    wmtsurl + '&layer=OCSGE.CONSTRUCTIONS&format=image/png&style=normal',
+    { format: 'image/png', minZoom: 6, maxZoom: 16, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var overlay5 = new L.TileLayer(
+    wmtsurl + '&layer=OCSGE.COUVERTURE&format=image/png&style=normal',
+    { format: 'image/png', minZoom: 6, maxZoom: 16, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var overlay6 = new L.TileLayer(
+    wmtsurl + '&layer=OCSGE.USAGE&format=image/png&style=normal',
+    { format: 'image/png', minZoom: 6, maxZoom: 16, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var overlay7 = new L.TileLayer(
+    wmtsurl + '&layer=CADASTRALPARCELS.PARCELS&format=image/png&style=bdparcellaire_o',
+    { format: 'image/png', minZoom: 0, maxZoom: 20, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var overlay8 = new L.TileLayer(
+    wmtsurl + '&layer=CADASTRALPARCELS.PARCELS&format=image/png&style=bdparcellaire_b',
+    { format: 'image/png', minZoom: 0, maxZoom: 20, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var overlay9 = new L.TileLayer(
+    wmtsurl + '&layer=TRANSPORTNETWORKS.RUNWAYS&format=image/png&style=normal',
+    { format: 'image/png', minZoom: 6, maxZoom: 18, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var overlay10 = new L.TileLayer(
+    wmtsurl + '&layer=HYDROGRAPHY.HYDROGRAPHY&format=image/png&style=normal',
+    { format: 'image/png', minZoom: 6, maxZoom: 18, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var overlay11 = new L.TileLayer(
+    wmtsurl + '&layer=ELEVATION.LEVEL0&format=image/png&style=normal',
+    { format: 'image/png', minZoom: 6, maxZoom: 18, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var overlay12 = new L.TileLayer(
+    wmtsurl + '&layer=TRANSPORTNETWORKS.RAILWAYS&format=image/png&style=normal',
+    { format: 'image/png', minZoom: 6, maxZoom: 18, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var overlay13 = new L.TileLayer(
+    wmtsurl + '&layer=BUILDINGS.BUILDINGS&format=image/png&style=normal',
+    { format: 'image/png', minZoom: 6, maxZoom: 18, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var overlay14 = new L.TileLayer(
+    wmtsurl + '&layer=TRANSPORTNETWORKS.ROADS&format=image/png&style=normal',
+    { format: 'image/png', minZoom: 6, maxZoom: 18, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var overlay15 = new L.TileLayer(
+    wmtsurl + '&layer=UTILITYANDGOVERNMENTALSERVICES.ALL&format=image/png&style=normal',
+    { format: 'image/png', minZoom: 6, maxZoom: 18, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var overlay16 = new L.TileLayer(
+    wmtsurl + '&layer=ADMINISTRATIVEUNITS.BOUNDARIES&format=image/png&style=normal',
+    { format: 'image/png', minZoom: 6, maxZoom: 18, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+var overlay17 = new L.TileLayer(
+    wmtsurl + '&layer=GEOGRAPHICALNAMES.NAMES&format=image/png&style=normal',
+    { format: 'image/png', minZoom: 6, maxZoom: 18, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+);
+map.addLayer(base7);
+
+<!-- ajout de l outil de sélection de couche -->
+L.control.layers({
+  "<b>Ortho-images</b>" : base0,
+  "Ortho-images 2006-2010" : base1,
+  "Ortho-images 2000-2005" : base2,
+  "Ortho-images 1950-1965" : base3,
+  "SPOT 2015" : base4,
+  "SPOT 2014" : base5,
+  "Altitude" : base6,
+  "SCAN Express Standard" : base7,
+  "SCAN Express Classique" : base8,
+  "SCAN Express Noir & Blanc" : base9,
+  "SCAN Express Routier" : base10,
+  "<b>Cartes IGN classiques</b>" : base11,
+  "Plan IGN" : base12,
+  "SCAN 50 Historique 1950" : base13,
+  "Etat-Major 1:40K (1820-1866)" : base14,
+  "Parcelles cadastrales" : base15
+}, {
+  "Pléiades 2015" : overlay0,
+  "Pléiades 2014" : overlay1,
+  "Pléiades 2013" : overlay2,
+  "Ortholittorale 2000" : overlay3,
+  "OCSGE - zones contruites" : overlay4,
+  "OCSGE - couverture" : overlay5,
+  "OCSGE - usage" : overlay6,
+  "Parcelles cadastrales (orange)" : overlay7,
+  "Parcelles cadastrales (blanc)" : overlay8,
+  "Pistes d aéroport et aérodromes" : overlay9,
+  "Réseaux hydrographiques" : overlay10,
+  "Trait de côte" : overlay11,
+  "Réseaux ferroviaires" : overlay12,
+  "Bâtiments" : overlay13,
+  "Réseaux routiers" : overlay14,
+  "Lignes électriques" : overlay15,
+  "Limites administratives" : overlay16,
+  "Dénominations géographiques" : overlay17
+}).addTo(map);
+      </script>
+    </body>
+</html>

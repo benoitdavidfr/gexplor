@@ -1,0 +1,56 @@
+---
+title: "carte par d\xE9faut"
+phpDoc:
+  name: defaultmap.yaml
+  title: "defaultmap.yaml - carte par d\xE9faut"
+  doc: "Cette carte est utilis\xE9e par d\xE9faut par l'\xE9diteur de cartes.\n<a
+    href='../visu/viewer.php?url=edit%2Fdefaultmap.yaml' target='_blank'>Elle peut
+    \xEAtre visualis\xE9e avec viewer.php</a>\n"
+  journal: "1/11/2016:\n  premi\xE8re version\n"
+center: 48, 3
+zoom: 8
+detectRetina: true
+baseLayers:
+- title: Cartes IGN classiques
+  server: IGNFGP-WMTS-WM
+  layer: GEOGRAPHICALGRIDSYSTEMS.MAPS
+  attribution: '&copy; <a href=''http://www.ign.fr''>IGN</a>'
+- title: Cartes IGN Express
+  server: IGNFGP-WMTS-WM
+  layer: GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD
+  attribution: '&copy; <a href=''http://www.ign.fr''>IGN</a>'
+- server: IGNFGP-WMTS-WM
+  layer: GEOGRAPHICALGRIDSYSTEMS.PLANIGN
+  attribution: '&copy; <a href=''http://www.ign.fr''>IGN</a>'
+  selected: "true"
+- title: Ortho-images
+  server: IGNFGP-WMTS-WM
+  layer: ORTHOIMAGERY.ORTHOPHOTOS
+  attribution: '&copy; <a href=''http://www.ign.fr''>IGN</a>'
+overlays:
+- server: IGNFGP-WMTS-WM
+  layer: GEOGRAPHICALNAMES.NAMES
+  attribution: '&copy; <a href=''http://www.ign.fr''>IGN</a>'
+- server: proxy-cadastre
+  layer: AMORCES_CAD
+- server: proxy-cadastre
+  layer: LIEUDIT
+- server: proxy-cadastre
+  layer: CP.CadastralParcel
+- server: proxy-cadastre
+  layer: SUBFISCAL
+- server: proxy-cadastre
+  layer: CLOTURE
+- server: proxy-cadastre
+  layer: DETAIL_TOPO
+- server: proxy-cadastre
+  layer: HYDRO
+- server: proxy-cadastre
+  layer: VOIE_COMMUNICATION
+- server: proxy-cadastre
+  layer: BU.Building
+- server: proxy-cadastre
+  layer: BORNE_REPERE
+  selected: "true"
+uniqid: map5826e28781b322.63107986
+...

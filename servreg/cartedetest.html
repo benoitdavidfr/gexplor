@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <title>cartede test</title>
+    <meta charset="UTF-8">
+<!-- meta nécessaire pour le mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<!-- styles nécessaires pour le mobile -->
+    <link rel="stylesheet" href="http://visu.gexplor.fr/viewer.css">
+<!-- styles et src de Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0/dist/leaflet.js"></script>
+<!-- Include the edgebuffer plugin -->
+    <script src="http://visu.gexplor.fr/lib/leaflet.edgebuffer.js"></script>
+  </head>
+  <body>
+    <div id="map" style="height: 100%; width: 100%"></div>
+    <script>
+var map = L.map('map').setView([48, 3], 8); // view pour la zone
+L.control.scale({position:'bottomleft', metric:true, imperial:false}).addTo(map);
+
+var base0 = new L.TileLayer(
+  'http://igngp.geoapi.fr/tile.php/cartes/{z}/{x}/{y}.jpg',
+  { format: 'image/jpeg', minZoom: 0, maxZoom: 18, detectRetina: true,
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+  }
+);
+map.addLayer(base0);
+
+L.control.layers({
+  "Cartes" : base0,
+  "Ortho-images" : new L.TileLayer(
+    'http://igngp.geoapi.fr/tile.php/orthos/{z}/{x}/{y}.jpg',
+    { format: 'image/jpeg', minZoom: 0, maxZoom: 20, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    }
+  ),
+  "carte georef" : new L.TileLayer(
+    'http://georef.application.i2/cache/service/wmts?service=WMTS&version=1.0.0&request=GetTile&tilematrixSet=GoogleMapsCompatible&height=256&width=256&tilematrix=GoogleMapsCompatible:{z}&tilecol={x}&tilerow={y}&layer=georefmonde:GoogleMapsCompatible&format=image/jpeg&style=_null',
+    { format: 'image/jpeg', minZoom: 0, maxZoom: 20, detectRetina: true
+    }
+  )
+}, {
+  "ZNIEFF_continentales_de_type_II en local" : new L.TileLayer(
+    'http://localhost/gexplor/servreg/servreg.php/Carmen8-nature/ZNIEFF_continentales_de_type_II/{z}/{x}/{y}.png',
+    { format: 'image/png', minZoom: 0, maxZoom: 20, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>DREAL</a>"
+    }
+  ),
+  "ZNIEFF_continentales_de_type_II sur bdavid" : new L.TileLayer(
+    'http://bdavid.alwaysdata.net/gexplor/servreg/servreg.php/Carmen8-nature/ZNIEFF_continentales_de_type_II/{z}/{x}/{y}.png',
+    { format: 'image/png', minZoom: 0, maxZoom: 20, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>DREAL</a>"
+    }
+  ),
+  "ZNIEFF_continentales_de_type_II sur gexplor" : new L.TileLayer(
+    'http://gexplor.fr/servreg/servreg.php/Carmen8-nature/ZNIEFF_continentales_de_type_II/{z}/{x}/{y}.png',
+    { format: 'image/png', minZoom: 0, maxZoom: 20, detectRetina: true,
+      attribution: "&copy; <a href='http://www.ign.fr'>DREAL</a>"
+    }
+  ),
+  "WMS" : L.tileLayer.wms(
+    'http://ws.carmen.developpement-durable.gouv.fr/WMS/8/nature?version=1.3.0&',
+    { version: '1.3.0', layers: 'ZNIEFF_continentales_de_type_II', format: 'image/png',
+      crs: L.CRS.EPSG4326,
+      transparent: true, attribution: "&copy; DREAL"
+    }
+  ),
+  "Cartélie" : L.tileLayer.wms(
+    'http://mapserveur.application.developpement-durable.gouv.fr/map/mapserv?map=/opt/data/carto/cartelie/prod/DDT_10/PLU_10031.www.map&',
+    { version: '1.1.1', layers: 'c_N_PRESCRIPTION_SURF_10031_010_Valeurs_LIBELLE', format: 'image/png',
+      crs: L.CRS.EPSG4326,
+      transparent: true,
+    }
+  )
+}).addTo(map);
+      </script>
+    </body>
+</html>

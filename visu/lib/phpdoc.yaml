@@ -1,0 +1,12 @@
+title: visu/lib - Bibliothèque JS utilisée par visu
+path: /gexplor/visu/lib
+doc: |
+ 
+journal: |
+  1/11/2016
+    première version
+
+htmlFiles:
+  - /gexplor/visu/lib/leaflet.edgebuffer.js
+  - /gexplor/visu/lib/jquery.js
+  - /gexplor/visu/lib/jquery-ui.custom.js

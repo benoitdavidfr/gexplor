@@ -1,0 +1,35 @@
+Bonjour,
+
+J'ai exploité le serveurs WMS pour réaliser la carte:
+http://visu.gexplor.fr/viewer.php?url=http%3A%2F%2Fvisu.gexplor.fr%2Fgen%2Fgpu.php%3Faction%3DgenMap
+J'ai aussi construit une légende de cette carte:
+http://visu.gexplor.fr/legend.php?url=http%3A%2F%2Fvisu.gexplor.fr%2Fgen%2Fgpu.php%3Faction%3DgenMap
+
+Pour cela, j'ai regardé de près le serveur WMS du GpU et voici quelques remarques :
+- il manque de nombreuses informations de base dans la configuration du serveur comme:
+  - le titre du service: Service/Title
+  - le résumé du service : Service/Abstract
+  - le contact : Service/ContactInformation
+  - le titre de la couche racine : Capability/Layer/Title
+- l'organisation et la présentation de la liste des couches rend leur utilisation très difficile
+- il est dommage de ne pas avoir rempli la légende associée à chaque couche ce qui aurrait été une plus-value importante
+- je n'ai pas trouvé dans les couches les 2 catégories de SUP suivantes:
+    EL5 : Servitude de visibilité sur les voies publiques
+    PM6 : Servitude autour des installations nucléaires de base
+  Est-ce normal ?
+- la description de plusieurs couches dans le résumé associé semble erronée, par exemple:
+  - la couche ayant pour nom 'forets' a pour résumé: Servitude d'Utilité Publique de catégories A1 et A7
+    alors que dans la légende du GpU pour Forêts, on trouve: les catégories A1, A7, A8
+  - la couche ayant pour nom 'historique' a pour résumé: Servitude d'Utilité Publique de catégories AC1, AC2 et AC4
+    alors que dans la légende du GpU pour 'Monuments historiques', on trouve: les catégories AC1 et AC4
+  - la couche ayant pour nom 'naturel' a pour résumé: Servitude d'Utilité Publique de catégorie PM2
+    alors que dans la légende du GpU pour 'Monuments naturels et sites', on trouve: la catégorie AC2
+  - ...
+    
+En conclusion, sauf erreur de ma part, j'estime que ce serveur est quasiment inutilisable en l'état.
+
+J'ai aussi été ammené à regarder le site GpU et les légendes.
+Je suis étonné par l'image:
+http://www.geoportail-urbanisme.gouv.fr/bundles/igngpu/images/map_legend/reserves.png?v2.0.30
+La SUP AC3 devrait correspondre à "Réserve naturelle"
+La SUP EL10 devrait correspondre à "Parcs nationaux"

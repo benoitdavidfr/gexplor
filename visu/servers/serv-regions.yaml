@@ -1,0 +1,139 @@
+phpDoc:
+  name: serv-regions.yaml
+  title: serv-regions.yaml - Liste des serveurs régionaux
+  doc: |
+  journal: |
+    4/11/2016
+      première version
+# 
+# classement hiérarchique des serveurs:
+# etiquette:
+#   title: titre du thème
+#   url?: page d'infos
+#   children?: sous-arborescence éventuelle
+# sous-classification rattachée à Regions
+classification:
+  AuvergneRhôneAlpes:
+    title: Auvergne-Rhône-Alpes
+  BourgogneFrancheComté:
+    title: Bourgogne-Franche-Comté
+  Bretagne:
+    url: http://cms.geobretagne.fr/services
+    title: Bretagne
+  GrandEst:
+    title: Grand Est
+  NouvelleAquitaine:
+    title: Nouvelle Aquitaine
+    children:
+      Pigma:
+        title: Pigma
+  Occitanie:
+    title: Occitanie
+    children:
+      SIGLR:
+        title: SIG Languedoc-Roussillon
+  PdL:
+    title: Pays-de-la-Loire
+
+# Structure:
+# etiquette:
+#   title: titre du serveur
+#   class: une des étiquettes du classement hiérarchique
+#   url: URL du serveur sans paramètres SERVICE ni REQUEST finissant sur ? ou &
+#   protocol: WMTS|WMS
+#
+servers:
+# Régions
+# Auvergne-Rhône-Alpes
+  georhonealpes:
+    title: GéoRhôneAlpes
+    class: AuvergneRhôneAlpes
+    url: http://carto.georhonealpes.fr/cgi-bin/mapserv?
+    protocol: WMS
+    
+# Bourgogne-Franche-Comté
+  ideobfc:
+    title: IDéO BFC
+    class: BourgogneFrancheComté
+    url: http://datacarto.ideobfc.fr/WMS/wms.php?
+    protocol: WMS
+
+# Bretagne
+  geobzh-servers:
+    title: Serveurs de GéoBretagne
+    class: Bretagne
+    url: http://visu.gexplor.fr/gen/geobzh.php
+  geobzh-regionbretagne:
+    title: Région Bretagne
+    class: Bretagne
+    url: http://ows.region-bretagne.fr/geoserver/rb/wms?
+    protocol: WMS
+  geobzh-paysdinan:
+    title: pays de Dinan
+    class: Bretagne
+    url: http://ns238809.ovh.net/cgi-bin/wmsmap?
+    protocol: WMS
+#  geobzh-paysguigamp:
+#    title: pays de Guingamp
+#    class: Bretagne
+#    url: http://178.33.232.108/cgi-bin/wms?
+#    protocol: WMS
+  geobzh-wmts-cartesphoto:
+    title: cartes et photographies
+    class: Bretagne
+    url: http://tile.geobretagne.fr/gwc02/service/wmts?
+    protocol: WMTS
+  geobzh-wmts-osm:
+    title: OSM
+    class: Bretagne
+    url: http://osm.geobretagne.fr/gwc01/service/wmts?
+    protocol: WMTS
+    
+# Grand Est
+  cigalsace:
+    title: CIGAL (l'Alsace à la carte)
+    class: GrandEst
+    url: https://www.cigalsace.org/geoserver/CRA/wms?
+    protocol: WMS
+    
+# NouvelleAquitaine
+  pigma-servers:
+    title: Serveurs de Pigma
+    class: Pigma
+    url: http://visu.gexplor.fr/gen/pigma.php
+    
+  geolimousin:
+    title: GéoLimousin
+    class: NouvelleAquitaine
+    url: http://carto.geolimousin.fr/cgi-bin/mapserv?
+    protocol: WMS
+    
+  pegase:
+    title: Pégase Poitou-Charentes
+    class: NouvelleAquitaine
+    url: http://carto.pegase-poitou-charentes.fr/cgi-bin/mapserv?
+    protocol: WMS
+
+# Occitanie
+  mipygeo:
+    title: MiPyGéo
+    class: Occitanie
+    url: http://carto.mipygeo.fr/cgi-bin/mapserv?
+    protocol: WMS
+    
+  siglr-servers:
+    title: SIG LR
+    class: SIGLR
+    url: serv-siglr.yaml
+    
+# Pays-de-la-Loire
+  geopal:
+    title: GéoPAL
+    class: PdL
+    url: http://carto.geopal.org/cgi-bin/mapserv?
+    protocol: WMS
+  sigloire:
+    title: SIG Loire
+    class: PdL
+    url: http://carto.sigloire.fr/cgi-bin/mapserv?
+    protocol: WMS

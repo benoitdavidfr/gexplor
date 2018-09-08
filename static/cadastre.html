@@ -1,0 +1,172 @@
+<html>
+  <head>
+    <title>cadastre</title>
+    <meta charset="UTF-8">
+<!-- meta nécessaire pour le mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<!-- styles nécessaires pour le mobile -->
+    <link rel="stylesheet" href="http://visu.gexplor.fr/viewer.css">
+<!-- styles et src de Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0/dist/leaflet.js"></script>
+<!-- Include the edgebuffer plugin -->
+    <script src="http://visu.gexplor.fr/lib/leaflet.edgebuffer.js"></script>
+  </head>
+  <body>
+    <div id="map" style="height: 100%; width: 100%"></div>
+    <script>
+var map = L.map('map').setView([47, 3], 8); // view pour la zone
+map.locate({setView: true, maxZoom: 16});
+L.control.scale({position:'bottomleft', metric:true, imperial:false}).addTo(map);
+
+var base0 = new L.TileLayer(
+    'http://visu.gexplor.fr/utilityserver.php/whiteimg/{z}/{x}/{y}.jpg',
+    { format: 'image/jpeg', minZoom: 0, maxZoom: 21, detectRetina: true,
+      attribution: ""
+    }
+);
+var base1 = new L.TileLayer(
+    'http://gpp3-wxs.ign.fr/49qcg7rckqrk3og45nm5i4s3/wmts?service=WMTS&version=1.0.0&request=GetTile&tilematrixSet=PM&height=256&width=256&tilematrix={z}&tilecol={x}&tilerow={y}&layer=GEOGRAPHICALGRIDSYSTEMS.MAPS&format=image/jpeg&style=normal',
+    {"format":"image/jpeg","minZoom":0,"maxZoom":18,"detectRetina":true,"attribution":"&copy; <a href='http://www.ign.fr'>IGN</a>"}
+);
+
+var base2 = new L.TileLayer(
+    'http://gpp3-wxs.ign.fr/49qcg7rckqrk3og45nm5i4s3/wmts?service=WMTS&version=1.0.0&request=GetTile&tilematrixSet=PM&height=256&width=256&tilematrix={z}&tilecol={x}&tilerow={y}&layer=GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD&format=image/jpeg&style=normal',
+    {"format":"image/jpeg","minZoom":6,"maxZoom":18,"detectRetina":true,"attribution":"&copy; <a href='http://www.ign.fr'>IGN</a>"}
+);
+
+var base3 = new L.TileLayer(
+    'http://gpp3-wxs.ign.fr/49qcg7rckqrk3og45nm5i4s3/wmts?service=WMTS&version=1.0.0&request=GetTile&tilematrixSet=PM&height=256&width=256&tilematrix={z}&tilecol={x}&tilerow={y}&layer=GEOGRAPHICALGRIDSYSTEMS.PLANIGN&format=image/jpeg&style=normal',
+    {"format":"image/jpeg","minZoom":0,"maxZoom":18,"detectRetina":true,"attribution":"&copy; <a href='http://www.ign.fr'>IGN</a>"}
+);
+
+var base4 = new L.TileLayer(
+    'http://gpp3-wxs.ign.fr/49qcg7rckqrk3og45nm5i4s3/wmts?service=WMTS&version=1.0.0&request=GetTile&tilematrixSet=PM&height=256&width=256&tilematrix={z}&tilecol={x}&tilerow={y}&layer=ORTHOIMAGERY.ORTHOPHOTOS&format=image/jpeg&style=normal',
+    {"format":"image/jpeg","minZoom":0,"maxZoom":20,"detectRetina":true,"attribution":"&copy; <a href='http://www.ign.fr'>IGN</a>"}
+);
+
+var overlay0 = new L.TileLayer(
+    'http://cadastre.geoapi.fr/tile.php/SUBFISCAL/{z}/{x}/{y}.png',
+    { format: 'image/png', minZoom: 15, maxZoom: 21, detectRetina: true,
+      attribution: "&copy; <a href='http://www.cadastre.gouv.fr'>Cadastre</a>"
+    }
+);
+var overlay1 = new L.TileLayer(
+    'http://cadastre.geoapi.fr/tile.php/DETAIL_TOPO/{z}/{x}/{y}.png',
+    { format: 'image/png', minZoom: 15, maxZoom: 21, detectRetina: true,
+      attribution: "&copy; <a href='http://www.cadastre.gouv.fr'>Cadastre</a>"
+    }
+);
+var overlay2 = new L.TileLayer(
+    'http://cadastre.geoapi.fr/tile.php/HYDRO/{z}/{x}/{y}.png',
+    { format: 'image/png', minZoom: 15, maxZoom: 21, detectRetina: true,
+      attribution: "&copy; <a href='http://www.cadastre.gouv.fr'>Cadastre</a>"
+    }
+);
+var overlay3 = new L.TileLayer(
+    'http://cadastre.geoapi.fr/tile.php/VOIE_COMMUNICATION/{z}/{x}/{y}.png',
+    { format: 'image/png', minZoom: 15, maxZoom: 21, detectRetina: true,
+      attribution: "&copy; <a href='http://www.cadastre.gouv.fr'>Cadastre</a>"
+    }
+);
+var overlay4 = new L.TileLayer(
+    'http://cadastre.geoapi.fr/tile.php/BU.Building/{z}/{x}/{y}.png',
+    { format: 'image/png', minZoom: 16, maxZoom: 21, detectRetina: true,
+      attribution: "&copy; <a href='http://www.cadastre.gouv.fr'>Cadastre</a>"
+    }
+);
+var overlay5 = new L.TileLayer(
+    'http://cadastre.geoapi.fr/tile.php/CP.CadastralParcel/{z}/{x}/{y}.png',
+    { format: 'image/png', minZoom: 16, maxZoom: 21, detectRetina: true,
+      attribution: "&copy; <a href='http://www.cadastre.gouv.fr'>Cadastre</a>"
+    }
+);
+var overlay6 = new L.TileLayer(
+    'http://cadastre.geoapi.fr/tile.php/BORNE_REPERE/{z}/{x}/{y}.png',
+    { format: 'image/png', minZoom: 15, maxZoom: 21, detectRetina: true,
+      attribution: "&copy; <a href='http://www.cadastre.gouv.fr'>Cadastre</a>"
+    }
+);
+var overlay7 = new L.TileLayer(
+    'http://cadastre.geoapi.fr/tile.php/CLOTURE/{z}/{x}/{y}.png',
+    { format: 'image/png', minZoom: 15, maxZoom: 21, detectRetina: true,
+      attribution: "&copy; <a href='http://www.cadastre.gouv.fr'>Cadastre</a>"
+    }
+);
+var overlay8 = new L.TileLayer(
+    'http://cadastre.geoapi.fr/tile.php/LIEUDIT/{z}/{x}/{y}.png',
+    { format: 'image/png', minZoom: 15, maxZoom: 21, detectRetina: true,
+      attribution: "&copy; <a href='http://www.cadastre.gouv.fr'>Cadastre</a>"
+    }
+);
+var overlay9 = new L.TileLayer(
+    'http://gpp3-wxs.ign.fr/49qcg7rckqrk3og45nm5i4s3/wmts?service=WMTS&version=1.0.0&request=GetTile&tilematrixSet=PM&height=256&width=256&tilematrix={z}&tilecol={x}&tilerow={y}&layer=TRANSPORTNETWORKS.RAILWAYS&format=image/png&style=normal',
+    {"format":"image/png","minZoom":6,"maxZoom":18,"detectRetina":true}
+);
+
+var overlay10 = new L.TileLayer(
+    'http://gpp3-wxs.ign.fr/49qcg7rckqrk3og45nm5i4s3/wmts?service=WMTS&version=1.0.0&request=GetTile&tilematrixSet=PM&height=256&width=256&tilematrix={z}&tilecol={x}&tilerow={y}&layer=BUILDINGS.BUILDINGS&format=image/png&style=normal',
+    {"format":"image/png","minZoom":6,"maxZoom":18,"detectRetina":true}
+);
+
+var overlay11 = new L.TileLayer(
+    'http://gpp3-wxs.ign.fr/49qcg7rckqrk3og45nm5i4s3/wmts?service=WMTS&version=1.0.0&request=GetTile&tilematrixSet=PM&height=256&width=256&tilematrix={z}&tilecol={x}&tilerow={y}&layer=TRANSPORTNETWORKS.ROADS&format=image/png&style=normal',
+    {"format":"image/png","minZoom":6,"maxZoom":18,"detectRetina":true}
+);
+
+var overlay12 = new L.TileLayer(
+    'http://cadastre.geoapi.fr/tile.php/AMORCES_CAD/{z}/{x}/{y}.png',
+    { format: 'image/png', minZoom: 15, maxZoom: 21, detectRetina: true,
+      attribution: "&copy; <a href='http://www.cadastre.gouv.fr'>Cadastre</a>"
+    }
+);
+var overlay13 = new L.TileLayer(
+    'http://gpp3-wxs.ign.fr/49qcg7rckqrk3og45nm5i4s3/wmts?service=WMTS&version=1.0.0&request=GetTile&tilematrixSet=PM&height=256&width=256&tilematrix={z}&tilecol={x}&tilerow={y}&layer=CADASTRALPARCELS.PARCELS&format=image/png&style=bdparcellaire_o',
+    {"format":"image/png","minZoom":0,"maxZoom":20,"detectRetina":true}
+);
+
+var overlay14 = new L.TileLayer(
+    'http://gpp3-wxs.ign.fr/49qcg7rckqrk3og45nm5i4s3/wmts?service=WMTS&version=1.0.0&request=GetTile&tilematrixSet=PM&height=256&width=256&tilematrix={z}&tilecol={x}&tilerow={y}&layer=ADMINISTRATIVEUNITS.BOUNDARIES&format=image/png&style=normal',
+    {"format":"image/png","minZoom":6,"maxZoom":18,"detectRetina":true,"attribution":"&copy; <a href='http://www.ign.fr'>IGN</a>"}
+);
+
+var overlay15 = new L.TileLayer(
+    'http://gpp3-wxs.ign.fr/49qcg7rckqrk3og45nm5i4s3/wmts?service=WMTS&version=1.0.0&request=GetTile&tilematrixSet=PM&height=256&width=256&tilematrix={z}&tilecol={x}&tilerow={y}&layer=GEOGRAPHICALNAMES.NAMES&format=image/png&style=normal',
+    {"format":"image/png","minZoom":6,"maxZoom":18,"detectRetina":true,"attribution":"&copy; <a href='http://www.ign.fr'>IGN</a>"}
+);
+
+map.addLayer(base3);
+
+map.addLayer(overlay4);
+
+map.addLayer(overlay5);
+
+<!-- ajout de l outil de sélection de couche -->
+L.control.layers({
+  "Fond blanc" : base0,
+  "Cartes IGN classiques" : base1,
+  "Cartes IGN Express" : base2,
+  "Plan IGN" : base3,
+  "Ortho-images" : base4
+}, {
+  "Subdivision fiscale" : overlay0,
+  "Détails topographiques" : overlay1,
+  "Eléments hydrographiques" : overlay2,
+  "Petites voies de communication" : overlay3,
+  "Bâtiments" : overlay4,
+  "Parcelle" : overlay5,
+  "Bornes et repères" : overlay6,
+  "Clôture" : overlay7,
+  "Lieu-dit" : overlay8,
+  "Réseau ferroviaire (IGN)" : overlay9,
+  "Batiments (IGN)" : overlay10,
+  "Réseau routier (IGN)" : overlay11,
+  "Amorces cadastrales" : overlay12,
+  "BDParcellaire IGN (orange)" : overlay13,
+  "Limites administratives (IGN)" : overlay14,
+  "Dénominations géo. (IGN)" : overlay15
+}).addTo(map);
+
+      </script>
+    </body>
+</html>

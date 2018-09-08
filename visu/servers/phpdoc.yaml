@@ -1,0 +1,12 @@
+title: visu/servers - Liste des serveurs
+path: /gexplor/visu/servers
+doc: |
+ 
+journal: |
+  6/11/2016
+    première version
+
+htmlFiles:
+  - /gexplor/visu/servers/servers.yaml
+  - /gexplor/visu/servers/serv-sandre.yaml
+  - /gexplor/visu/servers/serv-ifremer.yaml

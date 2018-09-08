@@ -1,0 +1,48 @@
+title: carte simple
+phpDoc:
+  name: simple.yaml
+  title: simple.yaml - carte simple
+  doc: |
+  journal: |
+    12/11/2016:
+      première version
+center: 48, 3
+zoom: 8
+detectRetina: true
+baseLayers:
+  - title: Ortho-images
+    server: IGNFGP-WMTS
+    layer: ORTHOIMAGERY.ORTHOPHOTOS
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+  - title: Cartes IGN classiques
+    server: IGNFGP-WMTS
+    layer: GEOGRAPHICALGRIDSYSTEMS.MAPS
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+  - title: Cartes IGN Express
+    server: IGNFGP-WMTS
+    layer: GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    selected: true
+  - title: Cartes IGN Express N&amp;B
+    server: IGNFGP-WMTS
+    layer: GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.NIVEAUXGRIS
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+  - server: IGNFGP-WMTS
+    layer: GEOGRAPHICALGRIDSYSTEMS.PLANIGN
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+
+overlays:
+  - server: IGNFGP-WMTS
+    layer: TRANSPORTNETWORKS.RAILWAYS
+  - server: IGNFGP-WMTS
+    layer: BUILDINGS.BUILDINGS
+  - server: IGNFGP-WMTS
+    layer: TRANSPORTNETWORKS.ROADS
+  - server: IGNFGP-WMTS
+    layer: ADMINISTRATIVEUNITS.BOUNDARIES
+  - title: Parcelles cadastrales (orange)
+    server: IGNFGP-WMTS
+    layer: CADASTRALPARCELS.PARCELS
+    style: bdparcellaire_o
+  - server: IGNFGP-WMTS
+    layer: GEOGRAPHICALNAMES.NAMES

@@ -1,0 +1,41 @@
+phpDoc:
+  name: serv-europe.yaml
+  title: serv-europe.yaml - Liste des serveurs européens
+  doc: |
+  journal: |
+    8/11/2016
+      première version
+# 
+# classement hiérarchique des serveurs:
+# etiquette:
+#   title: titre du thème
+#   url?: page d'infos
+#   children?: sous-arborescence éventuelle
+# sous-classification rattachée à Europe
+classification:
+  Copernicus:
+    title: Copernicus
+
+# Structure:
+# etiquette:
+#   title: titre du serveur
+#   class: une des étiquettes du classement hiérarchique
+#   url: URL du serveur sans paramètres SERVICE ni REQUEST finissant sur ? ou &
+#   protocol: WMTS|WMS
+#
+servers:
+# Europe
+# Copernicus
+# http://cidportal.jrc.ec.europa.eu/home/data-services/copernicus-core003-view
+  core003-wmts:
+    title: core003
+    class: Copernicus
+    url: http://cidportal.jrc.ec.europa.eu/copernicus/services/tile/wmts?
+    protocol: WMTS
+  core003-wms:
+    title: core003
+    class: Copernicus
+    url: http://cidportal.jrc.ec.europa.eu/copernicus/services/ows/wms/public/core003?
+    protocol: WMS
+# http://www.sentinel-hub.com/apps/wms
+

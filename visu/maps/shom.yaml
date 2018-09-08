@@ -1,0 +1,53 @@
+title: carte de test
+# Une documentation sur la carte
+phpDoc:
+  name: shom.yaml
+  title: shom.yaml - carte de test Shom
+  doc: |
+    Affichage de test de la couche Shom GéoTIFF
+    http://localhost/~benoit/gexplor/visu/viewer.php/shom.yaml
+  journal: |
+# le centre de la carte initiale
+center: 43, 5
+# le niveau de zoom initial de la carte
+zoom: 10
+# si l'affichage est effectué sur un écran Retina, la résolution est améliorée
+detectRetina: true
+# les couches de fond
+baseLayers:
+  - title: Cartes IGN Express
+    server: IGNFGP-WMTS
+    layer: GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+    selected: true
+  - title: Plan IGN
+    server: IGNFGP-WMTS
+    layer: GEOGRAPHICALGRIDSYSTEMS.PLANIGN
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+  - title: SCAN littoral
+    server: IGNFGP-WMS-R
+    layer: SCANLITTO_PYR-JPEG_WLD_WM
+    attribution: "&copy; <a href='http://www.ign.fr'>IGN</a>"
+  - title: Fond blanc
+    server: utilityserver
+    layer: whiteimg
+  - title: Debug
+    server: utilityserver
+    layer: debug
+    
+# les couches superposables
+overlays:
+#  - title: GeoTIFF Shom sur localhost
+#    server: SHOM-tile-WM-localhost
+#    layer: geotiff
+  - server: SHOM-tile-WM
+    layer: gtpyr
+  - server: SHOM-tile-WM
+    layer: gt250k
+  - server: SHOM-tile-WM
+    layer: gt150k
+  - server: SHOM-tile-WM
+    layer: gt50k
+  - title: Debug
+    server: utilityserver
+    layer: debug

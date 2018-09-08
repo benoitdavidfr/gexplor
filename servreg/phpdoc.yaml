@@ -1,0 +1,108 @@
+title: gexplor.fr/servreg - registre de serveurs organisé selon une classification hiérarchique
+path: /gexplor/servreg
+doc: |
+  Fonctionnel
+  ===========
+  Servreg met en oeuvre un registre de serveurs correspondant à des services de données géographiques au sens de la directive
+  Inspire.
+  Chaque serveur est défini au moins par un titre le désignant pour un humain, un URL et un protocole, et est identifié par
+  un identifiant interne. Dans un premiers temps seuls les services de consultation Inspire sont gérés et les protocoles 
+  reconnus sont les suivants: WMS, WMTS, tile et OSM.
+  Des informations complémentaires peuvent être associées à chaque serveur, notamment:
+  - des informations sur les couches exposées par le serveur qu'il est utile de rajouter aux caractéristiques exposées par le
+    serveur.
+  Les serveurs sont organisés dans le registre selon un plan de classement hiérarchique s'appuyant sur le référentiel 
+  administratif.
+  
+  Un registre par défaut est défini et d'autres registres secondaires peuvent aussi être utilisés.
+    
+  L'utilisation du registre peut se faire de 3 manières:
+  - au travers d'une IHM HTML proposée par servreg.php
+  - au travers d'une API en mode web proposée par servreg.php
+  - au travers d'une API Php proposée par servreg.inc.php et définie par de 2 fonctions (servreg() et newServer())
+    et 2 interfaces (Server et Layer) + le mécanisme d'optimisation capsummaries.inc.php pour le moment mal intégré
+  
+  Les capacités des serveurs WMS et WMTS sont gérées en cache et <b>l'utilitaire getcap.php doit être régulièrement utilisé
+  pour les actualiser</b>.
+  
+  <b>A chaque modification du registre, le fichier de bufférisation servreg.phpser doit être effacé.</b>
+  
+  Implémentation
+  ==============
+  Les serveurs sont définis dans des fichiers Yaml stockés dans le sous-répertoire servers.
+  Les capacités des serveurs WMS et WMTS sont stockées dans le répertoire ../capabilities
+  
+  Le registre par défaut est stocké dans le fichier default.yaml qui inclut d'autres fichiers.
+  Certains fichiers Yaml sont conçs pour correspondre à des registres secondaires, comme par exemple:
+  - georefgeoportail.yaml utilisé pour covisualiser les services de géoref et ceux du Géoportail en interne au RIE
+  D'autres fichiers Yaml sont intégrés dans default.yaml et peuvent aussi être utilisés comme registre secondaire:
+  - ifremer.yaml qui contient la liste des serveurs de l'Ifremer
+  getcap.php doit être exécuté avec chacun des registres utilisés qui ne sont pas inclus dans le register par défaut.
+  Cela permet (i) de récupérer les capacités et (ii) de renseigner capsummaries
+  
+  Le registre par défaut étant volumineux, une bufférisation est effectuée dans servreg.phpser
+  Lorsque ce fichier existe, il est utilisé par servreg.inc.php au lieu de relire les fichiers Yaml.
+  Pour relire les fichiers Yaml, par ex. après leur mise à jour, il faut effacer le fichier servreg.phpser.
+  
+  Pour accélérer ../gp/main-tree.php un mécanisme d'optimisation a été mis en place.
+  Lors du getcap.php un fichier capsummaries.phpser est créé ou mis à jour avec certaines informations issues des capacités
+  des serveurs qui sont exploitées par ../gp/main-tree.php. La création, la mise à jour et la lecture de capsummaries.phpser
+  est effectué au travers d'une classe définie dans capsummaries.inc.php.
+  Le fichier capsummaries.phpser n'a pas besoin d'être effacé. S'il l'est, par exemple pour une sauvegarde, il sera recréé 
+  par un getcap.php.
+  Il serait utile de mieux intégrer ce macanisme dans l'API Php.
+  
+  Un mécanisme de schema Yaml a été défini pour vérifier que les fichiers du registre contiennent certains champs.
+  L'utilitaire check.php que la définition des serveurs est conforme au schema
+  
+journal: |
+  28/3/2017 :
+    ajout de la possibilité de choisir le registre en le passant en paramètre
+    copie sur dev & prod
+  25/3/2017 :
+    ajout d'un mécanisme (capsummaries.inc.php) qui enregistre lors du getcap des informations nécessaires au main-tree.php de gp
+    Cela accélère de manière importante main-tree.php
+  18-19/3/2017 :
+    Evol de Server::availableInWM() en Server::availableInWmOrGeo()
+    Remplacement de Layer::availableInWM() par Layer::availableInWmOrGeo() et Layer::availableInCrs()
+    Gestion pour les serveurs WMS des systèmes de coordonnées EPSG:4326 (WGS84), EPSG:4171 (RGF93) et EPSG:4258 (ETRS89).
+    Génération pour Leaflet d'un paramètre crs en fonction des CRS exposés.
+    Gestion des serveurs WMS en version 1.1.1
+    publication sur le serveur de recette et le serveur de prod
+    archivage
+  17/3/2017 :
+    ajout de l'interface tile.php pour un serveur WMS quelconque afin d'utiliser en WM un serveur WMS qui n'offre que EPSG:4326
+      servreg.php/{server}/{layer}/{z}/{x}/{y}.[png|jpg]
+    synchronisé sur le serveur de recette et sur le serveur de prod
+  13/3/2017 :
+    définition d'une méthode pour vérifier le contenu d'un fichier Yaml au travers de schema Yaml
+    définition du schema Yaml des serveurs et ajout dans les fichiers Yaml de définition
+  11/3/2017:
+    chgt de nom -> servreg
+    modification de l'interface servreg()
+  10/3/2017:
+    chgt de nom -> servreg.php + servreg.inc.php
+    modification de l'interface pour Layer::leafletJS($options=[])
+  7-9/3/2017 :
+    création
+submodules:
+  - /gexplor/servreg/servers
+  - /gexplor/servreg/csw
+  - /gexplor/servreg/gen
+phpScripts:
+  - /gexplor/servreg/servreg.php
+  - /gexplor/servreg/check.php
+  - /gexplor/servreg/getcap.php
+phpIncludes:
+  - /gexplor/servreg/servreg.inc.php
+  - /gexplor/servreg/proxydef.inc.php
+  - /gexplor/servreg/capsummaries.inc.php
+  - /gexplor/servreg/ogcserver.inc.php
+  - /gexplor/servreg/wmsserver.inc.php
+  - /gexplor/servreg/wmslayer.inc.php
+  - /gexplor/servreg/wmtsserver.inc.php
+  - /gexplor/servreg/wmtslayer.inc.php
+  - /gexplor/servreg/tileserver.inc.php
+  - /gexplor/servreg/tilelayer.inc.php
+  - /gexplor/servreg/osmserver.inc.php
+htmlFiles:

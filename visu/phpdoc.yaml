@@ -1,0 +1,106 @@
+title: visu - visualisation de cartes
+path: /gexplor/visu
+doc: |
+  visu propose la visualisation des cartes définies sous la forme d'un contexte en Yaml <a href='../gexplor/visu/maps/mapex.yaml'>illustré par l'exemple ici</a>
+  La <a href='../gexplor/visu/servers/servers.yaml'>liste des serveurs (définie en Yaml) est visible ici</a>.
+  getcap.php va chercher les capacités de ces serveurs et les stocke localement
+  server.php permet de consulter les capacités des serveurs
+  viewer.php permet de générer le code HTML/javascript correspondant à un contexte de carte
+  Les <a href='../gexplor/visu/maps'>principales cartes sont listées ici</a>.
+  Une <a href='../gexplor/visu/doc.php'>doc est disponible ici</a>.
+  
+  Remarques 19/4/2016:
+    Le registre de serveurs n'est pas fusionné avec ../servreg
+    Les capabilities sont fusionnées dans ../capabilities mais le code n'en tient pas compte
+    Attention, les noms des serveurs doit être synchronisés
+    
+  A FAIRE (15/11/2016):
+  - ajouter OSM et ESRI
+  - couches composites
+  - supprimer de l'arbre des couches les serveurs qui n'ont pas de couche affichage dans la projection de la carte
+  - supprimer dans la liste des couches d'un serveur celles qui ne peuvent s'afficher dans al projection de la carte
+  - permettre d'éditer en texte une carte temporaire
+  - ajouter dans server.php la possibilité de générer une carte mono-couche pour chaque couche WMS
+  - permettre d'organiser les couches de certains serveurs comme ceux de l'IGN
+  - faire 3 états dans edit: inséré visible, inséré non visible, supprimé
+  - améliorer le Yaml sortant d'edit
+  - ajouter des serveurs initiaux: Min. Culture, PF régionales, Géo-IDE, ...
+  - peut-on utiliser dans Leaflet des échelles min-max pour un WMS ?
+  - ajouter les serveurs Météo-France
+    https://donneespubliques.meteofrance.fr/?fond=geoservices&id_dossier=14
+    -> en cours
+  - demander à l'IGN de remplir le champ attribution dans leurs serveurs WMS
+  - permettre aux internautes de définir leur propre serveur WMTS/WMS
+  - permettre de définir des cartes en projection <> WM
+      
+journal: |
+  6/5/2017:
+    - correction d'un bug introduit par la simplif d'URL
+  19/4/2017:
+    - Qqs corrections liées au transfert vers /gexplor/visu et au passage sur MacBook
+    - ajout d'une carte carte.yaml "gd public" et simplification de l'URL d'appel d'une carte
+  12-13/2/2017:
+    transfert dans /gexplor/visu
+    passage des capacités des serveurs de tuiles (tile) en JSON
+    Ces capacités sont interrogées à la volée et ne sont pas stockées
+  21/11/2016:
+    - accélération du chargement initial d'edit
+    - en + des serveurs, ajout de couches préférées
+  15/11/2016
+    ajout de la géolocalisation
+  13/11/2016
+    ajout du cadastre
+    publicaion des sources
+  9/11/2016
+    ajout d'un fond blanc
+    publication des sources, version du 7/11/2016 9:44
+  8/11/2016
+    ajout de des serveurs Copernicus et NASA
+  6/11/2016
+    Je n'ai pas réussi à utiliser les serveurs Météo-France
+    Beaucoup de modifications
+  5/11/2016
+    Définition du serveur et de la carte GpU avec utilisation des légendes
+  4/11/2016
+    Ajout des légendes
+    Affichage des légendes présentes dans les capacités
+    Une page légende est associée à chaque carte avec toutes les couches présentes dans la carte
+    Restructuration du code de wmtsserver.inc.php et wmsserver.inc.php avec les layer correspondants
+  3/11/2016
+    définition de sous-fichiers de définition des serveurs ayant la même structure que le fichier racine
+    Ces entrées sont dans la liste des serveurs et se distinguent par l'absence du champ protocole
+    La sous-classification est insérée dans la classification sous la classe définie par l'entrée
+    L'entrée server est remplacée par la liste des serveurs du sous-fichier
+  30/10/2016
+    première version
+
+submodules:
+  - /gexplor/visu/edit
+  - /gexplor/visu/gen
+  - /gexplor/visu/servers
+  - /gexplor/visu/maps
+  - /gexplor/visu/lib
+  - /gexplor/visu/filmreunion
+  - /gexplor/visu/filmloire
+  
+htmlFiles:
+  - /gexplor/visu/viewer.css
+phpScripts:
+  - /gexplor/visu/index.php
+  - /gexplor/visu/doc.php
+  - /gexplor/visu/server.php
+  - /gexplor/visu/viewer.php
+  - /gexplor/visu/legend.php
+  - /gexplor/visu/gensandre.php
+  - /gexplor/visu/gennav.php
+  - /gexplor/visu/utilityserver.php
+phpIncludes:
+  - /gexplor/visu/ogcserver.inc.php
+  - /gexplor/visu/wmsserver.inc.php
+  - /gexplor/visu/wmslayer.inc.php
+  - /gexplor/visu/wmtsserver.inc.php
+  - /gexplor/visu/wmtslayer.inc.php
+  - /gexplor/visu/tileserver.inc.php
+  - /gexplor/visu/tilelayer.inc.php
+  - /gexplor/visu/newserver.inc.php
+  - /gexplor/visu/genmapjs.inc.php

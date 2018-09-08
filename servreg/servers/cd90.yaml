@@ -1,0 +1,52 @@
+phpDoc:
+  name: cd90.yaml
+  title: cd90.yaml - Serveurs du CD 90
+yamlSchema: yamlschema.yaml
+
+classification:
+  territoiredebelfort:
+    title: Département du Territoire de Belfort (90)
+    url: http://www.territoiredebelfort.fr/
+
+servers:
+  territoiredebelfort-ran_Sentiers_equestresbis:
+    title: Randonnée équestres
+    class: territoiredebelfort
+    url: http://carto.territoiredebelfort.fr/arcgis/services/Randonnee/ran_Sentiers_equestresbis/MapServer/WMSServer?
+    protocol: WMS
+  territoiredebelfort-ran_Sentiers_VTTbis:
+    title: Randonnée VTT
+    class: territoiredebelfort
+    url: http://carto.territoiredebelfort.fr/arcgis/services/Randonnee/ran_Sentiers_VTTbis/MapServer/WMSServer?
+    protocol: WMS
+  territoiredebelfort-ran_Sentiers_pedestresbis:
+    title: Randonnée pédestre
+    class: territoiredebelfort
+    url: http://carto.territoiredebelfort.fr/arcgis/services/Randonnee/ran_Sentiers_pedestresbis/MapServer/WMSServer?
+    protocol: WMS
+  territoiredebelfort-ran_Balisage_ponctuel:
+    title: Balisage randonnée
+    class: territoiredebelfort
+    url: http://carto.territoiredebelfort.fr/arcgis/services/Randonnee/ran_Balisage_ponctuel/MapServer/WMSServer?
+    protocol: WMS
+    
+  cg90-FG_fond_hydrochimique:
+    title: Fond géochimique
+    class: territoiredebelfort
+    url: http://carto.cg90.fr/arcgis/services/Eau/FG_fond_hydrochimique/MapServer/WmsServer?
+    protocol: WMS
+  cg90-Env_ens_zpens_2012:
+    title: Espaces naturels sensibles (ENS) et zones de préemption ENS (ZPENS)
+    class: territoiredebelfort
+    url: http://carto.cg90.fr/arcgis/services/Environnement/Env_ens_zpens_2012/MapServer/WmsServer?
+    protocol: WMS
+  cg90-rou_fond:
+    title: Fond de carte routier
+    class: territoiredebelfort
+    url: http://carto.cg90.fr/arcgis/services/Route/rou_fond/MapServer/WmsServer?
+    protocol: WMS
+  cg90-Canton_wgs84:
+    title: Redécoupage des cantons 2014
+    class: territoiredebelfort
+    url: https://carto.cg90.fr/arcgis/services/LimAdministrative/Canton_wgs84/MapServer/wmsServer?
+    protocol: WMS

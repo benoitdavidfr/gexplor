@@ -1,0 +1,39 @@
+phpDoc:
+  name: serv-usa-noaa.yaml
+  title: serv-usa-noaa.yaml - Liste des serveurs WMS de la NOAA (USA)
+  journal: |
+    7/11/2016
+      première version
+# 
+# classement hiérarchique des serveurs:
+# etiquette:
+#   title: titre du thème
+#   url?: page d'infos
+#   children?: sous-arborescence éventuelle
+# sous-classification rattachée à USA-NOAA
+classification:
+
+# Structure:
+# etiquette:
+#   title: titre du serveur
+#   class: une des étiquettes du classement hiérarchique
+#   url: URL du serveur sans paramètres SERVICE ni REQUEST finissant sur ? ou &
+#   protocol: WMTS|WMS
+#
+servers:
+# USA-NOAA
+  USA-NOAA-gebco08_hillshade:
+    title: Global Relief Model (GEBCO08) - Shaded-Relief Visualization
+    class: USA-NOAA
+    url: http://maps.ngdc.noaa.gov/arcgis/services/gebco08_hillshade/MapServer/WMSServer?
+    protocol: WMS
+  USA-NOAA-etopo1_hillshade:
+    title: Global Relief Model (ETOPO1) - Shaded-Relief Visualization (Web Mercator projection)
+    class: USA-NOAA
+    url: http://maps.ngdc.noaa.gov/arcgis/services/web_mercator/etopo1_hillshade/MapServer/WMSServer?
+    protocol: WMS
+  USA-NOAA-undersea_features:
+    title: Undersea Feature Names (Web Mercator projection)
+    class: USA-NOAA
+    url: http://maps.ngdc.noaa.gov/arcgis/services/web_mercator/undersea_features/MapServer/WMSServer?
+    protocol: WMS

@@ -1,0 +1,53 @@
+phpDoc:
+  name: georef.yaml
+  title: georef.yaml - Fichier des serveurs georef
+  doc: |
+    Le schema du fichier est défini dans yamlschema.yaml
+  journal: |
+    27/3/2017
+      création
+yamlSchema: yamlschema.yaml
+classification:
+  Georef:
+    title: Géoref
+servers:
+  minenv-georef-WMTS:
+    title: Géoref glissant métropole
+    class: Georef
+    url: http://georef.application.i2/cache/service/wmts?
+    protocol: WMTS
+  minenv-georef-metro:
+    title: Géoref glissant métropole
+    class: Georef
+    url: http://georef.application.i2/cartes/mapserv?
+    protocol: WMS
+  minenv-georef-glp:
+    title: Géoref glissant Guadeloupe
+    class: Georef
+    url: http://georef.application.i2/cartes_971/mapserv?
+    protocol: WMS
+  minenv-georef-mtq:
+    title: Géoref glissant Martinique
+    class: Georef
+    url: http://georef.application.i2/cartes_972/mapserv?
+    protocol: WMS
+  minenv-georef-guf:
+    title: Géoref glissant Guyane
+    class: Georef
+    url: http://georef.application.i2/cartes_973/mapserv?
+    protocol: WMS
+  minenv-georef-reu:
+    title: Géoref glissant Réunion
+    class: Georef
+    url: http://georef.application.i2/cartes_974/mapserv?
+    protocol: WMS
+  minenv-georef-spm:
+    title: Géoref glissant Saint-Pierre et Miquelon
+    class: Georef
+    url: http://georef.application.i2/cartes_975/mapserv?
+    protocol: WMS
+  minenv-georef-myt:
+    title: Géoref glissant Mayotte
+    class: Georef
+    url: http://georef.application.i2/cartes_976/mapserv?
+    protocol: WMS

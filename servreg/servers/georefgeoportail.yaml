@@ -1,0 +1,71 @@
+phpDoc:
+  name: georefgeoportail.yaml
+  title: georefgeoportail.yaml - Fichier des serveurs comparés georef et géoportail
+  doc: |
+    Le schema du fichier est défini dans yamlschema.yaml
+  journal: |
+    27/3/2017
+      création
+yamlSchema: yamlschema.yaml
+classification:
+  Georef:
+    title: Géoref
+  IGN:
+    title: geoportail
+    abstract: couches référentielles diffusées par l'IGN avec la clé Ministère
+servers:
+  minenv-georef-WMTS:
+    title: Géoref glissant métropole
+    class: Georef
+    url: http://georef.application.i2/cache/service/wmts?
+    protocol: WMTS
+  minenv-georef-metro:
+    title: Géoref glissant métropole
+    class: Georef
+    url: http://georef.application.i2/cartes/mapserv?
+    protocol: WMS
+  minenv-georef-glp:
+    title: Géoref glissant Guadeloupe
+    class: Georef
+    url: http://georef.application.i2/cartes_971/mapserv?
+    protocol: WMS
+  minenv-georef-mtq:
+    title: Géoref glissant Martinique
+    class: Georef
+    url: http://georef.application.i2/cartes_972/mapserv?
+    protocol: WMS
+  minenv-georef-guf:
+    title: Géoref glissant Guyane
+    class: Georef
+    url: http://georef.application.i2/cartes_973/mapserv?
+    protocol: WMS
+  minenv-georef-reu:
+    title: Géoref glissant Réunion
+    class: Georef
+    url: http://georef.application.i2/cartes_974/mapserv?
+    protocol: WMS
+  minenv-georef-spm:
+    title: Géoref glissant Saint-Pierre et Miquelon
+    class: Georef
+    url: http://georef.application.i2/cartes_975/mapserv?
+    protocol: WMS
+  minenv-georef-myt:
+    title: Géoref glissant Mayotte
+    class: Georef
+    url: http://georef.application.i2/cartes_976/mapserv?
+    protocol: WMS
+  IGNFGP-WMTS-cleMinEnv:
+    title: GP IGN WM
+    class: IGN
+    url: http://wxs.ign.fr/2pidjvd3oh54bqfml4x5b4km/wmts?
+    protocol: WMTS
+  IGNFGP-WMS-R-cleMinEnv:
+    title: GP IGN WMS raster 
+    class: IGN
+    url: http://wxs.ign.fr/2pidjvd3oh54bqfml4x5b4km/geoportail/r/wms?
+    protocol: WMS
+  IGNFGP-WMS-V-cleMinEnv:
+    title: GP IGN WMS vecteur
+    class: IGN
+    url: http://wxs.ign.fr/2pidjvd3oh54bqfml4x5b4km/geoportail/v/wms?
+    protocol: WMS

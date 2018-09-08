@@ -1,0 +1,125 @@
+phpDoc:
+  name: dreal-normandie.yaml
+  title: dreal-normandie.yaml - Serveurs de la DREAL Normandie
+  doc: |
+    Pour éviter le pb d'ordre des coordonnées, les serveurs Carmen sont utulisées en version 1.1.1
+  journal: |
+    19/3/2017
+      url des serveurs Carmen en version 1.1.1
+yamlSchema: yamlschema.yaml
+
+classification:
+
+servers:
+  Carmen8-nature:
+    title: Carte Carmen - Nature, Biodiversité et Geodiversité (Basse-Normandie)
+    class: DrealNormandie
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/8/nature?
+    protocol: WMS
+  Carmen8-nature_donnees:
+    title: Carte Carmen - Donnees Nature, Biodiversité et Geodiversité (Basse-Normandie)
+    class: DrealNormandie
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/8/nature_donnees?
+    protocol: WMS
+  Carmen8-sites_paysages:
+    title: Carte Carmen - Les Sites et Paysages de Normandie
+    class: DrealNormandie
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/8/sites_paysages?
+    protocol: WMS
+# Serveur en erreur et manifestement à exclure
+#  Carmen8-srce_test:
+#    title: Carte Carmen TEST - Schéma Régional de Cohérence Ecologique de Basse-Normandie
+#    class: DrealNormandie
+#    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/8/srce_test?
+#    protocol: WMS
+  Carmen8-bocage:
+    title: Carte Carmen - Analyse statistique de la dynamique bocagère en Basse-Normandie
+    class: DrealNormandie
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/8/bocage?
+    protocol: WMS
+  Carmen8-faune_route:
+    title: Carte Carmen - Faune et Route en Normandie
+    class: DrealNormandie
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/8/faune_route?
+    protocol: WMS
+  Carmen8-zh:
+    class: carmen
+    title: Carte Carmen - Zones humides (Basse-Normandie)
+    class: DrealNormandie
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/8/zh?
+    protocol: WMS
+  Carmen8-carto_cours_eau_61:
+    title: Carte Carmen - Cartographie des Cours d'eau dans l'Orne
+    class: DrealNormandie
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/8/carto_cours_eau_61?
+    protocol: WMS
+  Carmen8-carto_cours_eau_14:
+    title: Carte Carmen - Cartographie des Cours d'eau en Basse-Normandie
+    class: DrealNormandie
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/8/carto_cours_eau_14?
+    protocol: WMS
+  Carmen8-carto_cours_eau_50:
+    title: Carte Carmen - Cartographie des Cours d'eau dans la Manche
+    class: DrealNormandie
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/8/carto_cours_eau_50?
+    protocol: WMS
+  Carmen8-piezometrie:
+    title: Carte Carmen - Isopièzes en Basse-Normandie
+    class: DrealNormandie
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/8/piezometrie?
+    protocol: WMS
+  Carmen8-gestion_eau:
+    title: Carte Carmen - Gestion de l'eau en Normandie
+    class: DrealNormandie
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/8/gestion_eau?
+    protocol: WMS
+  Carmen8-etat_chimique_ce:
+    title: Carte Carmen - Etat chimique des cours d'eau dans le Calvados, la Manche et l'Orne
+    class: DrealNormandie
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/8/etat_chimique_ce?
+    protocol: WMS
+  Carmen8-hydrologie:
+    title: Carte Carmen - Hydrologie en Normandie
+    class: DrealNormandie
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/8/hydrologie?
+    protocol: WMS
+  Carmen8-risques_naturels:
+    title: Carte Carmen - Prédispositions aux Risques Naturels (Basse-Normandie)
+    class: DrealNormandie
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/8/risques_naturels?
+    protocol: WMS
+  Carmen8-carto_di:
+    title: Carte Carmen - Cartographie de la Directive Inondation (Basse-Normandie)
+    class: DrealNormandie
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/8/carto_di?
+    protocol: WMS
+  Carmen8-risques_littoraux:
+    title: Carte Carmen - Risques littoraux (Basse-Normandie)
+    class: DrealNormandie
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/8/risques_littoraux?
+    protocol: WMS
+  Carmen8-risques_technologiques:
+    title: Carte Carmen - Risques Technologiques (Basse-Normandie)
+    class: DrealNormandie
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/8/risques_technologiques?
+    protocol: WMS
+  Carmen8-EolienTerre:
+    title: Carte Carmen - L'éolien terrestre en Basse-Normandie
+    class: DrealNormandie
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/8/EolienTerre?
+    protocol: WMS
+  Carmen8-ressources_minerales:
+    title: Carte Carmen - Ressources minérales de Normandie
+    class: DrealNormandie
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/8/ressources_minerales?
+    protocol: WMS
+  Carmen8-Tache_urbaine:
+    title: Carte Carmen - L'occupation urbaine en Normandie
+    class: DrealNormandie
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/8/Tache_urbaine?
+    protocol: WMS
+  Carmen8-interco:
+    title: Carte Carmen - L'intercommunalité en Normandie - vision actuelle et future
+    class: DrealNormandie
+    url: http://ws.carmen.developpement-durable.gouv.fr/WMS/8/interco?
+    protocol: WMS

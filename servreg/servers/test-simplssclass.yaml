@@ -1,0 +1,16 @@
+phpDoc:
+  name: test-simplssclass.yaml
+  title: test-simplssclass.yaml - Fichier de test de registre de serveurs simple sans classe
+  doc: |
+    Le registre contient un seul serveur et aucune classe n'est définie
+  journal: |
+    24/3/2017
+      création
+yamlSchema: yamlschema.yaml
+classification:
+servers:
+# IGN
+  IGNFGP-tile-WM:
+    title: GP IGN WM
+    url: http://igngp.geoapi.fr/tile.php
+    protocol: tile

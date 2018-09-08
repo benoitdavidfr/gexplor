@@ -1,0 +1,32 @@
+-------- Message transféré --------
+Sujet :	Re: [T#15388] [support.inspire] demande d'un compte pour accéder aux web services Inspire
+Date :	Fri, 4 Nov 2016 10:51:44 +0000
+De :	> Support Inspire (par Internet) <support.inspire@meteo.fr>
+Répondre à :	Support Inspire <support.inspire@meteo.fr>
+Organisation :	Météo France DPSERV/FDP
+Pour :	Benoit.David@developpement-durable.gouv.fr
+
+Notre référence : T#15388
+
+Bonjour,
+
+Suite à votre demande, votre compte a été créé. 
+
+Identifiant : benoit.david
+Mot de passe : 2$JobC5H
+Vous pouvez requêter votre token grâce à la requête suivante :
+
+ https://geoservices.meteofrance.fr/services/GetAPIKey?username=benoit.david&password=2$JobC5H
+Vous pouvez requêter une carte de températures à 850 hPa avec la requête suivante :
+
+ https://geoservices.meteofrance.fr/inspire/services/MF-NWP-GLOBAL-ARPEGE-05-GLOBE-WMS?request=GetMap&service=WMS&version=1.3.0&LAYERS=TEMPERATURE__ISOBARIC_SURFACE&CRS=EPSG:4326&styles=T__ISOBARIC__SHADING&format=image/png&width=550&height=400&BBOX=10,-50,80,50&ELEVATION=850&token=__S_hdJcN4qjsK_bD4CvAqdjELtNY_qG0A__
+
+Cordialement,
+Virginie Gorjux
+Support Inspire
+https://donneespubliques.meteofrance.fr
+
+==
+
+<Token xmlns="http://ws.apache.org/ns/synapse">__S_hdJcN4qjsK_bD4CvAqdjELtNY_qG0A__</Token>
+

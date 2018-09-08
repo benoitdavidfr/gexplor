@@ -1,0 +1,207 @@
+title: gp.gexplor.fr - Portail de consultation Inspire
+path: /gexplor/gp
+doc: |
+  L'application gp propose la consultation des services de consultation Inspire (serveurs) recensé dans  /gexplor/servreg.
+  Fonctionnalités:
+    L'application est composée d'un affichage Leaflet et d'un menu.
+    Le menu (Fancytree) :
+    - permet de naviguer dans les serveurs issus de servreg
+      - un click sur l'icone du serveur affiche ses capacités de manière amicale
+      - l'ouverture d'un serveur affiche les couches qu'il expose
+      - un click sur une couche l'ajoute au contrôle de couche et la rend visible, un nouveau click la retire
+      - un shift-click sur une couche permet de modifier le comportement d'ajout au contrôle de couches
+      - un shift-control-click sur une couche affiche des informations sur la couche (à améliorer)
+    - permet de choisir un des points de vue pré-définis
+    - propose quelques outils globaux sur la carte construite pour :
+      - produire un géo-signet permettant d'enregistrer la carte
+      - afficher la légende de la carte
+      - afficher un dump du contexte de la carte (pour le déverminage)
+      
+    L'appel de gp peut s'effectuer avec les paramètres suivants tous optionnels utilisés notamment pour les géo-signets :
+    - register: définit le registre de serveurs à utiliser, 'default.yaml' par défaut
+    - baseLayers: définit la liste de couches initialement en couches de base,
+        baseLayers et overlays sont définis sous la forme {server},{layer},{v|n} ou:
+          {server} est le nom informatique du serveur qui doit être défini dans le registre
+          {layer} est le nom informatique de la couche qui doit être définie dans le serveur
+          {v|n} vaut v pour visible, n pour non visible
+        par défaut vide sauf pour le registre par défaut pour lequel la liste suivante est définie:
+          IGNFGP-tile-WM,cartes,v,IGNFGP-tile-WM,orthos,n,OSM,OSM,n,utilityserver,whiteimg,n
+    - overlays: définit la liste de couches initialement en couches superposables, par défaut vide
+    - center: définit le centre de l'affichage initial sous la forme latitude,longitude, '48,3' par défaut
+    - zoom: définit le niveau de zoom de l'affichage initial sous la forme d'un entier, '5' par défaut
+    - minZoom: définit le niveau de zoom minimum de l'affichage sous la forme d'un entier, '0' par défaut
+    - maxZoom: définit le niveau de zoom maximum de l'affichage sous la forme d'un entier, '18' par défaut
+    
+  Conception:
+    L'application utilise 3 composants principaux:
+    1) le registre des serveurs (servreg) utilisé au travers (i) de son API Php et (ii) de son IHM Html
+    2) le composant JavaScript FancyTree (https://github.com/mar10/fancytree)
+    3) le composant javaScript Leaflet (http://leafletjs.com/) augmenté de quelques plug-in notamment
+      3.1) SlideMenu (https://github.com/unbam/Leaflet.SlideMenu)
+    
+    L'application construit un arbre FancyTree qui contient les informations pour interagir avec Leaflet
+    L'arbre FancyTree définit au premier niveau:
+    - une feuille Outils qui permet d'appeler les outils globaux sur la carte
+    - un sous-arbre des points de vue
+    - un sous-arbre des couches qui est construit en exploitant la classification hiérarchique du registre des serveurs.
+    Chaque serveur est un noeud qui contient le sous-arbre de ses couches qui sont issues de servreg.
+    
+    L'application définit et utilise un objet JS mapContext qui mémorise les couches de la carte afin:
+    - de piloter le contrôle de couches de Leaflet
+    - de générer un contexte à partir duquel seront générés le géosignet ou la légende
+    Il utilise la carte map comme variable globale.
+    
+    Au lancement de l'application (gp.php):
+    - l'objet mapContext est défini (mapcontext.js)
+    - Leaflet est initialisé par (gp-leaflet.js) et les couches initiales sont créées au travers de mapContext
+    - le menu FancyTree est initialisé dans un SlideMenu Leaflet (gp-fancytree.js).
+    Lors de l'ouverture du SlideMenu, un appel AJAX à main-tree.php génère la structure JSON initialisant le Fancytree.
+    Chaque classe de la classification est représentée dans le FancyTree par un folder.
+    Chaque serveur est représenté par un folder lazy dont la définition contient l'id du serveur.
+    L'ouverture d'un serveur génère un appel AJAX à server-tree.php avec l'id du serveur en paramètre qui génère la structure 
+    JSON des couches du serveur.
+    L'information associée à chaque couche dans le Fancytree permet d'effectuer son ajout dans Leaflet.
+    
+  Pbs de projection:
+    La carte Leaflet de Gp est en projection WM (EPSG:3857) mais certaines couches ne sont pas exposées en WM.
+    Leaflet permet de covisualiser des couches dans d'autres projections, notamment en EPSG:4326.
+    Certaines couches sont exposées ni en WM ni en EPSG:4326, par ex. des cartes Carmen exposent leurs couches en EPSG:4171 
+    (RGF93) ou en EPSG:4258 (ETRS89).
+    Ces 3 CRS soulèvent un problème d'ordre entre coordonnées.
+    La définition de ces 3 CRS (http://www.epsg-registry.org/) prévoit que les coordonnées sont fournies dans l'ordre
+    latitude (North), longitude (East).
+    Cet ordre est bien respecté en WMS 1.3.0 mais ne l'a pas été en WMS 1.1.1
+    Leaflet gère bien cet ordre des coordonnées pour EPSG:4326 mais pas pour les 2 autres en WMS 1.3.0.
+    Afin de contourner ce bug de Leaflet, je choisis d'utiliser dans ce cas WMS 1.1.1
+    Dans le registre, les URL sont définies afin que ce soit les capacités 1.1.1 qui soient récupérées.
+    Dans WmsLayer::leafletJS(), l'option crs est définie en fonction de l'exposition de la couche par le serveur.
+    En JavaScript, les CRS EPSG:4171 et EPSG:4258 sont définis dans mapcontext.js.
+    L'objet mapcontext détecte le CRS transmis et le transmet à Leaflet.
+    Un exemple de test est la carte Carmen http://gexplor.fr/servreg/servreg.php/Carmen8-EolienTerre
+    La couche Zones_favorables_a_l_eolien n'est définie ni en WM ni en EPSG:4326 mais en EPSG:4258 et en EPSG:4171.
+    Un affichage correct de la couche indique que le mécanisme décrit fonctionne correctement.
+    
+  Le site de dev est dans /home/bdavid/www/gexplor/gp et accessible sur http://bdavid.alwaysdata.net/gexplor/gp/
+  <a href='http://localhost/synchro.php?remote=http://bdavid.alwaysdata.net&dir=gexplor/gp' target='_blank'>synchro local -> dev</a>
+  Le site de prod est dans /home/bdavid/gexplor/gp et accessible sur http://gp.gexplor.fr/
+  <a href='http://localhost/gexplor/synchro.php?remote=http://gexplor.fr/&dir=gp' target='_blank'>synchro local -> prod</a>
+  <a href='http://bdavid.alwaysdata.net/gexplor/synchro.php?remote=http://gexplor.fr/&dir=gp' target='_blank'>synchro dev -> prod</a>
+  
+  A FAIRE:
+  - ajouter dans l'affichage d'une couche WMS les zoom min et max correspondants
+  - faire évoluer la page de diagnostic d'une couche pour ajouter des fonctionnalités, notamment:
+    - pour gérer la projection
+    - affichage de la couche sans passer par Leaflet afin de détecter les erreurs WMS/WMTS (ce qu'il y a actuellement)
+    - lien vers les caractéristique de la couche
+    - lien éventuel vers les métadonnées de série de données associées à la couche
+  - dans csw lister les services qui sont dans le Géocatalogue mais pas dans servreg
+  - ajouter un mécanisme pour définir le champ attribution dans Leaflet
+  - ctrl+click sur une couche permet de déplacer la zone de visu sur un endroit adapté pour la couche
+    pour cela ajouter dans server-tree.php center et zoom sur les couches
+  - ajouter des icones distinctes pour:
+    - serveur WMS/WMTS/Tile
+  Retours Michel 27/3
+  - mettre +/- à droite au dessus du gestionnaire de couches
+  - gérer la molette entre les 2 fenêtres
+  - mettre une icone différente pour les serveurs
+  - rappeller le serveur en bulle d'aide dans le gestionnaire de couches
+  - ajouter la possibilité de supprimer une couche dans le gestionnaire de couches
+  
+  
+journal: |
+  31/3/2017
+    Le WMTS de georef ne fonctionne pas car les niveaux de zoom sont nommés différemment.
+    Je pourrais tester le premier niveau pour voir comment il est défini.
+		Le driver Wmts a été dapaté.
+  28-29/3/2017
+    amélioration de la possibilité d'utiliser un registre différent
+  25/3/2017
+    Organisation des serveurs Géo-IDE des DDT dans les régions en s'appuyant sur le référentiel administratif
+    utilisation du mécanisme (../servreg/capsummaries.inc.php) qui enregistre lors du getcap des informations nécessaires à main-tree.php
+    Cela accélère de manière importante main-tree.php
+  24/3/2017
+    ajout de la possibilité d'utiliser un registre différent
+  18-19/3/2017
+    Possibilité d'afficher des couches WMS qui ne sont pas exposées en WM mais en EPSG:4326, EPSG:4171 (RGF93) ou 
+    EPSG:4258 (ETRS89). C'est le cas de la plupart des couches Carmen et Cartélie.
+    Pour Carmen et Cartélie, utilisation du serveur WMS en 1.1.1 en raison de bugs pour 1.3.0
+    publication sur le serveur de recette et le serveur de prod
+    archivage
+    script tools.php pour fabriquer un géo-signet ou afficher la légende de la carte
+  9-11/3/2017
+    Migration vers servreg
+  5-6/3/2017:
+    Extension et restructuration de la liste des serveurs:
+    - listage des MD des services WMS du Géocatalogue (Inspire)
+    - création d'un répertoire servers contenant différents fichiers de définition des serveurs
+    - définition d'une fonction file_get_servers() qui réintègre les fichiers de servers en un seul Yaml
+    - création de différents serveurs WMS à partir de leur définition dans le Géocatalogue
+    - j'ai recopié le répertoire gp/servers dans visu/servers pour effectuer le getcap
+      - l'ancien répertoire visu/servers est sauvegardé dans servers.tgz
+  4/3/2017:
+    initialisation du contexte dans gp-leaflet.js qui devient gp-leaflet-js.php
+    Je ne comprends pas comment je peux m'assurer que les overlays soit au-dessus des baseLayers !!!
+  3/3/2017:
+    fabrication d'une URL de signets par context.php
+    L'utilisation des signets remet en cause profondément la gestion des couches
+    Il faut que l'affichage de l'arbre tienne compte des couches présentes dans le signet
+    La solution proposée est la suivante:
+    1) j'ajoute dans server-tree.php un champ lyrname qui identifie chaque layer dans son serveur
+    2) quand une couche de l'arbre Fancytree est référencée dans le contexte, elle comprend un champ lyrid qui contient
+       un identifiant global de la couche contituée par concaténation de l'id du serveur et de celui de la couche séparés par /
+       l'objet LL représentant une couche n'a plus à être stocké dans l'arbre Fancytree mais uniquement dans le contexte
+    3) lors du démarrage de l'application, il y a un contexte initial qui provient soit de la définition du signet
+       soit d'un contexte initial par défaut
+       Ce contexte est utilisé:
+       - dans server-tree.php pour:
+         - initialiser lyrid
+         - mettre en gras le titre et en faire une copie dans origTitle
+         server-tree.php est appelé par gp-fancytree.js lui-même appelé par gp.php
+         je change gp-fancytree.js en gp-fancytree-js.php pour transmettre le contexte
+       - dans gp-leaflet.js pour initialiser le contexte --------------  A FAIRE ---------------
+  2/3/2017:
+    création d'un objet mapContext pour mémoriser les couches du contrôle de couche
+  28/2/2017:
+  - si main-tree.json existe main-tree.php se contente de l'envoyer, sinon il le génère et l'envoie
+  - ctrl+shift+click sur une couche génère une page de showlayer.php avec l'affichage de la couche de manière à pouvoir
+    voir les appels Tile/WMS/WMTS et surtout d'éventuels messages d'erreurs
+  26/2/2017:
+    Ajout de l'utilisation de la touche controle pour l'ajout d'une couche Tile en couche de base ou superposable
+  24/2/2017 :
+  - ajout dans visu/ogcserver.inc.php d'un traitement pour lire les capacités de 'Ifremer-MNT' qui utilise un espace de noms
+    wms
+  - possibilité d'ajouter une couche WMS en couche de base en utilisant la touche control
+  21/2/2017 :
+    Le style WMS étant parfois mal implémenté comme au BRGM,
+    de manière générique je supprime le style dans l'utilisation des serveurs WMS
+  19-20/2/2017 :
+    Test de la disponibilité des ressources en WM
+  15/2/2017 :
+    publi en dev sur http://bdavid.alwaysdata.net/gexplor/gp/
+    lors de l'activation d'un serveur affichage dans l'onglet capacites des capacités du serveur
+    lors de l'activation d'une classe, si une page lui est associée alors  affichage dans l'onglet capacites de cette page
+    affichage d'une bulle d'aide (tooltip) contenant le résumé associé à un serveur ou à une couche
+  14/2/2017 :
+    intégration du Fancytree dans un SlideMenu (https://github.com/unbam/Leaflet.SlideMenu)
+  13/2/2017 :
+    gp commence à marcher
+    publication sur http://gp.gexplor.fr/
+  12/2/2017 :
+    écriture de server-tree.php
+    modification de /visu/wmsserver.inc.php et /visu/wmtsserver.inc.php
+  11/2/2017 :
+    création & validation du concept
+submodules:
+phpScripts:
+  - /gexplor/gp/gp.php
+  - /gexplor/gp/gp-leaflet-js.php
+  - /gexplor/gp/gp-fancytree-js.php
+  - /gexplor/gp/main-tree.php
+  - /gexplor/gp/server-tree.php
+  - /gexplor/gp/showlayer.php
+  - /gexplor/gp/tools.php
+phpIncludes:
+htmlFiles:
+  - /gexplor/gp/index.html
+  - /gexplor/gp/mapcontext.js
+

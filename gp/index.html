@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--PhpDoc:
+name: index.html
+title: index.html - page d'accueil de gp
+hrefs: [gp.php]
+doc: |
+journal: |
+  2/3/2017 :
+    remplacement de gp.html par gp.php
+  1/3/2017 :
+    améliorations pour publication
+  13/2/2017 :
+    création
+-->
+<html><head><meta charset='UTF-8'><title>gp - accueil</title></head><body>
+<h2>gp.gexplor.fr</h2>
+<a href='gp.php'>gp est un outil de consultation de couches géographiques</a>
+développé de manière itérative par Benoît DAVID (MEDDE/CGDD/DRI/MIG).<br>
+
+Il permet :<ul>
+<li>de choisir un point de vue (métropole, DOM, ...),
+<li>d'afficher interactivement des couches exposées par un ensemble prédéfini de serveurs WMS/WMTS/Tile.
+</ul>
+
+Depuis le 26 mars 2017, les services WMS de Géo-IDE Catalogue, de Carmen et de Cartélie décrits dans le Géocatalogue sont consultables.
+Ainsi 46541 couches sont consultables.
+
+<h3>Utilisation simple</h3>
+
+Pour utiliser les fonctionnalités, cliquer sur le boutton en dessous du contrôle de zoom
+qui affiche un arbre contenant :<ul>
+<li>une liste des points de vue prédéfinis,
+<li>une liste de serveurs WMS/WMTS/<a href='tile-protocol.html' target='_blank'>Tile</a>
+  organisés selon un classement hiérarchique géographique donnant accès à leurs couches.
+</ul>
+
+Pour se déplacer dans l'arbre, cliquer sur l'icone à gauche des dossiers (<img src='img/flechefermee.png'>)
+afin d'ouvrir ou fermer le dossier.<br>
+Dans le sous-arbre des points de vue, chaque point de vue est représenté par un document (<img src='img/doc.png'>)
+qui peut être activé (en cliquant sur son titre) afin de déplacer la fenêtre principale Leaflet
+sur la zone correspondant au point de vue.</p>
+
+Dans le sous-arbre des couches, les premiers niveaux de dossiers (<img src='img/dossier.png'>) correspondent au classement hiérarchique des serveurs.<br>
+Chaque serveur est affiché comme un dossier avec un titre post-fixé entre parenthèses par son protocole (tile, WMS ou WMTS).
+En activant le dossier représentant un serveur (cad en cliquant sur son titre),
+une page décrivant les capacités du serveur est affichée.<br>
+
+En ouvrant le dossier représentant un serveur (cad en cliquant sur l'icône à gauche du dossier
+<img src='img/flechefermee.png'>), la liste des couches du serveur est affichée
+ou, si les couches sont organisées hiérarchiquement dans le serveur, l'arbre des couches.</p>
+
+Chaque couche est affichée dans l'arbre comme un  document (<img src='img/doc.png'>) ;
+en cliquant dessus, la couche est affichée dans la fenêtre principale Leaflet,
+elle est ajoutée dans le contrôle de couches Leaflet et son <b>titre dans l'arbre passe en gras</b>.
+En cliquant à nouveau  dessus, l'affichage Leaflet est supprimé, elle est retirée du contrôle de couches
+et son titre repasse en mode normal dans l'arbre.<br>
+Une couche d'un serveur WMS est ajoutée comme couche superposable en PNG ;
+une couche d'un serveur tuilé est ajoutée comme couche superposable si son format est PNG et en couche de base
+si son format est JPEG.<br>
+
+
+<h3>Utilisation plus avancée</h3>
+
+Certains serveurs apparaissent dans l'arbre avec un titre barré. Cela signifie qu'a priori leurs couches ne peuvent pas
+être affichées en raison d'une incompatibilité des systèmes de projection.
+En effet, dans cette application l'affichage est effectuée en projection Web Mercator, très courante sur le Web,
+ou dans l'un des 3 systèmes de coordonnées suivants : WGS84 (EPSG:4326), RGF93 (EPSG:4171), ETRS89 (EPSG:4258) ;
+les serveurs ne proposant aucun de ces systèmes de coordonnées ne peuvent pas être utilisés.
+De même, lorsqu'un titre de couche apparait barré, cela signfie que la couche n'est pas exposée dans l'un des
+4 systèmes de coordonnées ci-dessus.</p>
+
+Le comportement d'ajout de couche présenté ci-dessus peut être inversé en gardant la touche <b>Shift</b> appuyée
+lors de l'ajout de la couche.
+Dans ce cas, une couche WMS est ajoutée comme couche de base en JPEG, une couche tuilée PNG est ajoutée comme couche de base
+et une couche tuilée JPEG est ajoutée comme couche superposable.</p>
+
+Lorsqu'une couche ne s'affiche pas dans Leaflet, il n'est pas aisé d'en diagnostiquer la raison.
+Un tel diagnostic peut être facilité en cliquant sur le nom de la couche en laissant appuyées simultanément les touches Shift et Cntrl.
+Cette commande ouvre une fenêtre qui appelle directement l'affichage de la couche à partir du serveur sans passer par Leaflet.</p>
+
+Le menu <b>Outils</b> permet de générer un géo-signet.
+
+<h3>Feuille de route</h3>
+Les améliorations suivantes sont envisagées :<ul>
+<li>proposer la possibilité de déplacer la fenêtre de visualisation vers l'extension d'une couche particulière
+  pour faciliter la consultation de couches ayant une extension réduite,
+<li>compléter la liste des serveurs à partir de ceux présents dans le Géocatalogue,
+</ul>
+
+
+<h3>Composants utilisés</h3>
+Cette application utilise principalement :<ul>
+<li>la <a href='http://leafletjs.com/' target='_blank'>bibliothèque Leaflet</a>
+  et le <a href='https://github.com/unbam/Leaflet.SlideMenu' target='_blank'>composant Leaflet.SlideMenu</a>,
+<li>le <a href='https://github.com/mar10/fancytree' target='_blank'>composant Fancytree</a> de jQuery.
+</ul>
+
+</p>
+--<br>
+Page mise à jour le 26/3/2017.

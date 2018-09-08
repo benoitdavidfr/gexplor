@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--PhpDoc:
+name: index.html
+title: index.html - page d'accueil de gp
+hrefs: [gp.html]
+doc: |
+journal: |
+  1/3/2017 :
+    améliorations pour publication
+  13/2/2017 :
+    création
+-->
+<html><head><meta charset='UTF-8'><title>tile protocol</title></head><body>
+
+<h2>Le protocole "Tile"</h2>
+
+Leaflet utilise un protocole très simple d'accès aux couches géographiques tuilées popularisé par OSM et Google Maps (parfois appelé XYZ notamment dans <a href='https://en.wikipedia.org/wiki/Tiled_web_map'>https://en.wikipedia.org/wiki/Tiled_web_map</a>).<br>
+
+Les tuiles sont accessibles en projection Web Mercator par l'URL <code>{layerUrl}/{z}/{x}/{y}.{fmt}</code> où:<ul>
+<li>{layerUrl} est l'URL identifiant une couche
+<li>{z} est le niveau de zoom selon un schéma de numérotation défini
+<li>{x} et {y} sont les numéros de colonne et de ligne de l'image selon un schéma de numérotation défini
+<li>{fmt} est le format des images qui doit valoir jpg ou png
+</ul>
+
+Par exemple OSM est désigné dans Leaflet par l'URL <code>http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png</code><br>
+
+Ce protocole a deux avantages :<ul>
+<li>il est très simple et
+<li>il est très utilisé
+</ul>
+
+J'expérimente une extension de ce protocole notamment :<ul>
+<li>en considérant que les couches sont regroupées dans un serveur et
+<li>en fournissant quelques métadonnées simples aux niveaux du serveur et de chaque couche.
+</ul>
+
+Cette extension est notamment mise en oeuvre par :<ul>
+<li><a href='http://igngp.geoapi.fr/'>http://igngp.geoapi.fr/</a>
+<li><a href='http://cadastre.geoapi.fr/'>http://cadastre.geoapi.fr/</a>
+</ul>
